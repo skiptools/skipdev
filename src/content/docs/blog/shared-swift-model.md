@@ -19,12 +19,12 @@ If you haven't already, we highly recommend reading [Part 2](/blog/skip-native-t
 
 The app we create in Part 2 uses a compiled Swift model layer and a shared SwiftUI interface, which Skip [transpiles](https://en.wikipedia.org/wiki/Source-to-source_compiler) to Jetpack Compose on Android. The following diagram illustrates this dual-platform, single-codebase architecture:
 
-![Skip Native Diagram](https://assets.skip.tools/diagrams/skip-diagrams-native-model.svg)
+![Skip Native Diagram](https://assets.skip.dev/diagrams/skip-diagrams-native-model.svg)
 {: .diagram-vector }
 
 In this article, by contrast, we create separate iOS and Android apps. The iOS app and shared model layer are written in Swift and SwiftUI using Xcode. The Android app is written in [Kotlin](https://kotlinlang.org) and [Jetpack Compose](https://developer.android.com/compose) using Android Studio, and it imports the compiled Swift model as a dependency. This structure  allows you to reuse the lower layers of your app logic while fully embracing the standard IDEs and UI toolkits on each platform: 
 
-![Skip Shared Model Diagram](https://assets.skip.tools/diagrams/skip-diagrams-native-twoapps.svg)
+![Skip Shared Model Diagram](https://assets.skip.dev/diagrams/skip-diagrams-native-twoapps.svg)
 {: .diagram-vector }
 
 :::note
@@ -33,7 +33,7 @@ Thanks to Skip's ability to [move fluidly between SwiftUI and Compose](/docs/pla
 
 ## TravelPosters
 
-<img alt="Simulators displaying the same app on iPhone and Android" src="https://assets.skip.tools/screens/skip-native-travelposters-sims.png" style="width: 100%; max-width: 600px;" />
+<img alt="Simulators displaying the same app on iPhone and Android" src="https://assets.skip.dev/screens/skip-native-travelposters-sims.png" style="width: 100%; max-width: 600px;" />
 
 Our sample apps in this installment are iOS and Android versions of `TravelPosters`, a simple scrolling grid displaying posters of famous cities. Each poster displays the city's name and current temperature. You can mark your favorites, and these favorites are remembered across app launches.
 
@@ -80,7 +80,7 @@ Now use the `skip` tool to create the shared model package:
 skip init --native-model travel-posters-model TravelPostersModel
 ```
 
-<img alt="Output of running skip init --native-model" src="https://assets.skip.tools/screens/skip-native-package-init.png" style="width: 100%; max-width: 600px;" />
+<img alt="Output of running skip init --native-model" src="https://assets.skip.dev/screens/skip-native-package-init.png" style="width: 100%; max-width: 600px;" />
 
 This command generates a `travel-posters-model` SwiftPM package containing the `TravelPostersModel` Swift module. The `--native-model` option ensures that the module will already be configured to compile natively on Android, and to bridge its public API to Kotlin. Our particular needs, however, require a couple of additional steps.
 
@@ -265,13 +265,13 @@ Because our model is a standard SwiftPM package, you incorporate and use it on i
 1. Use Xcode to create a new Workspace in the `travelposters` directory alongside the `travel-posters-model` package.
 1. Use Xcode to create a new App project in the `travelposters/iOS` directory. Close the project after creating it, because we're going to add it to our Workspace instead.
 
-    <img alt="Creating a new app project in Xcode" src="https://assets.skip.tools/screens/skip-native-travelposters-iosapp.png" style="width: 100%; max-width: 600px;" />
+    <img alt="Creating a new app project in Xcode" src="https://assets.skip.dev/screens/skip-native-travelposters-iosapp.png" style="width: 100%; max-width: 600px;" />
 
 1. Add the `travel-posters-model` package to your Workspace.
 1. Add the `iOS/TravelPosters/TravelPosters.xcodeproj` app to your Workspace.
 1. Add a package dependency from the app to the `travel-posters-model` local package.
 
-    <img alt="Adding a package dependency in Xcode" src="https://assets.skip.tools/screens/skip-native-travelposters-iosmodel.png" style="width: 100%; max-width: 600px;" />
+    <img alt="Adding a package dependency in Xcode" src="https://assets.skip.dev/screens/skip-native-travelposters-iosmodel.png" style="width: 100%; max-width: 600px;" />
 
 You can now use your Xcode Workspace to iterate on both the shared model package and your iOS app. Browse the complete iOS `TravelPosters` app [here](https://github.com/skiptools/skipapp-travelposters-native/tree/main/iOS/TravelPostersNative/TravelPostersNative).
 
@@ -279,11 +279,11 @@ You can now use your Xcode Workspace to iterate on both the shared model package
 
 We create our `TravelPosters` Android app using Android Studio, starting with the "Empty Activity" template. Tell Android Studio to place the app in our `travelposters/Android` folder.
 
-<img alt="Creating a new app project in Android Studio" src="https://assets.skip.tools/screens/skip-native-travelposters-androidapp.png" style="width: 100%; max-width: 600px;" />
+<img alt="Creating a new app project in Android Studio" src="https://assets.skip.dev/screens/skip-native-travelposters-androidapp.png" style="width: 100%; max-width: 600px;" />
 
 Next, make `Android/lib`, `Android/lib/debug`, and `Android/lib/release` directories. This is where we'll place our compiled Swift model and Skip libraries.
 
-<img alt="Creating directories for our compiled Swift model" src="https://assets.skip.tools/screens/skip-native-travelposters-lib.png" style="width: 100%; max-width: 600px;" />
+<img alt="Creating directories for our compiled Swift model" src="https://assets.skip.dev/screens/skip-native-travelposters-lib.png" style="width: 100%; max-width: 600px;" />
 
 We must also configure our project to *use* the new `lib` directories. Edit the `app` module's `build.gradle.kts` file to add these and other necessary dependencies:
 
@@ -356,7 +356,7 @@ skip export --project travel-posters-model -d Android/lib/release/ --release
 Make sure to sync Android Studio whenever you update the libraries so that it picks up the latest changes.
 :::
 
-<img alt="Syncing Android Studio" src="https://assets.skip.tools/screens/skip-native-travelposters-syncstudio.png" style="width: 100%; max-width: 600px;" />
+<img alt="Syncing Android Studio" src="https://assets.skip.dev/screens/skip-native-travelposters-syncstudio.png" style="width: 100%; max-width: 600px;" />
 
 ### Automation
 

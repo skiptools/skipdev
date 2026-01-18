@@ -14,10 +14,10 @@ The following example screens and source code is from SkipUI's
 
 
 <div class="showcase-screenshot-container">
-<img alt="Android screenshot for Link component (light mode)" src="http://assets.skip.tools/showcase/Link-android-light_framed.png" />
-<img alt="iPhone screenshot for Link component (light mode)" src="http://assets.skip.tools/showcase/Link-iphone-light_framed.png" />
-<img alt="iPhone screenshot for Link component (dark mode)" src="http://assets.skip.tools/showcase/Link-iphone-dark_framed.png" />
-<img alt="Android screenshot for Link component (dark mode)" src="http://assets.skip.tools/showcase/Link-android-dark_framed.png" />
+<img alt="Android screenshot for Link component (light mode)" src="http://assets.skip.dev/showcase/Link-android-light_framed.png" />
+<img alt="iPhone screenshot for Link component (light mode)" src="http://assets.skip.dev/showcase/Link-iphone-light_framed.png" />
+<img alt="iPhone screenshot for Link component (dark mode)" src="http://assets.skip.dev/showcase/Link-iphone-dark_framed.png" />
+<img alt="Android screenshot for Link component (dark mode)" src="http://assets.skip.dev/showcase/Link-android-dark_framed.png" />
 </div>
 
 

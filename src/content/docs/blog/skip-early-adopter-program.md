@@ -7,7 +7,7 @@ permalink: /blog/skip-early-adopter-program/
 author: the Skip Development Team
 ---
 
-We are delighted to announce that the Skip Developer Program is now available! And for a limited time, we are offering a 50% Early Adopter discount for the first year to businesses who subscribe through this [purchase link](/purchase/?discount=early-adopter). When you become a Skip Early Adopter, your feedback determines where we focus Skip’s rapidly-expanding API support, and your bug reports are our top priorities.
+We are delighted to announce that the Skip Developer Program is now available! And for a limited time, we are offering a 50% Early Adopter discount for the first year to businesses who subscribe through this [pricing link](/pricing/?discount=early-adopter). When you become a Skip Early Adopter, your feedback determines where we focus Skip’s rapidly-expanding API support, and your bug reports are our top priorities.
 
 Skip is the only tool that enables you to develop a genuinely native app for *both* major mobile platforms, using the official toolkits from each vendor: SwiftUI on iOS and Jetpack Compose on Android. This means that your apps will look **and** feel native to users. Skip apps are fast and efficient, and they don't suffer from the high memory use and graphical jankiness of other cross-platform solutions.
 

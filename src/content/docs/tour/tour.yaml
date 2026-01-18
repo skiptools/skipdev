@@ -1,0 +1,114 @@
+# this layout serves as both the index of videos 
+# as well as the template for each individual video page
+layout: default
+videos:
+  - info:
+    title: "Skip Teaser"
+    duration: "1:00"
+    link: /tour/teaser/
+    video: https://skip.tools/assets/video/teaser.mov
+    poster: https://assets.skip.tools/tour/teaser-poster.png
+    yt: https://www.youtube.com/watch?v=Jy8t4jDUcRo
+    description: |
+      One-minute teaser demonstrating a cross-platform SwiftUI app made with Skip
+
+  - info:
+    title: "Skip Showreel"
+    duration: "3:06"
+    link: /tour/skip-showreel/
+    video: https://assets.skip.tools/videos/SkipDemo.mov
+    poster: https://assets.skip.tools/tour/showreel_video_poster.png
+    yt: https://youtu.be/rfo3Mci63ts
+    description: |
+      This is a quick overview of the Skip tool and a demonstration of how it can be used to build and run native apps on both iOS and Android.
+
+  - info:
+    title: "Getting Started with Skip"
+    duration: "12:47"
+    link: /tour/introduction/
+    video: https://skip.tools/assets/video/getting-started-2.mov
+    poster: https://assets.skip.tools/tour/getting-started-2-poster.png
+    yt: https://youtu.be/AWRPubyQ9V8
+    description: |
+      This video demonstrates getting started with using Skip. It walks through installing Skip and creating your first dual-platform app. Follow along with the video and you will have your own SwiftUI app running side-by-side on the iOS Simulator and Android emulator.
+
+  - info:
+    title: "Skip for Shared Model Layer"
+    duration: "4:01"
+    link: /tour/shared-model/
+    video: https://skip.tools/assets/video/shared-model.mov
+    poster: https://assets.skip.tools/tour/shared-model-poster.png
+    yt: https://www.youtube.com/watch?v=-KZHNos0clY
+    description: |
+      This video demonstrates using a Skip shared Swift model layer to power separate iOS and Android apps.
+
+#  - info:
+#    title: "Skip Introduction"
+#    duration: "12:00"
+#    link: /tour/introduction/
+#    video: https://skip.tools/assets/video/introduction.mov
+#    poster: https://assets.skip.tools/tour/demo_video_poster.png
+#    yt: https://www.youtube.com/watch?v=8u4KWvsfOtk
+#    description: |
+#      This is a brief introduction to the Skip tool and how it integrates with the Xcode development workflow for building dual-platform apps for the iPhone and Android.
+#
+#  - info:
+#    title: "Getting Started with Skip"
+#    duration: "6:30"
+#    link: /tour/getting-started/
+#    video: https://skip.tools/assets/video/getting-started.m4v
+#    poster: https://assets.skip.tools/tour/getting-started-poster.png
+#    yt: https://www.youtube.com/watch?v=znI_tykUaBc
+#    description: |
+#      This video demonstrates getting started with using Skip. It walks through installing Skip and creating your first dual-platform app. Follow along with the video and you will have your own SwiftUI app running side-by-side on the iOS Simulator and Android emulator.
+
+  - info:
+    title: "Using the Swift Android SDK"
+    duration: "7:38"
+    link: /tour/swift-android-sdk/
+    video: https://skip.tools/assets/video/swift-android-sdk.mov
+    poster: https://assets.skip.tools/tour/swift-android-sdk-poster.png
+    yt: https://youtu.be/kbxCuEwg4sA
+    description: |
+      Learn how to install and use the Swift Android SDK to build and test Swift on Android using the command line. 
+
+  - info:
+    title: "Scrumskipper: Running Apple's SwiftUI sample app on Android"
+    duration: "28:00"
+    link: /tour/scrumskipper/
+    video: https://skip.tools/assets/video/scrumskipper.mov
+    poster: https://assets.skip.tools/tour/scrumskipper-poster.png
+    yt: https://www.youtube.com/watch?v=EBp8m8h2fIY
+    description: |
+      Scrumdinger is Apple’s canonical SwiftUI iPhone app. In this video, we’ll use Skip to run Scrumdinger as a native Android app as well. Learn the steps to bring an existing iOS codebase to Android.
+
+  - info:
+    title: "Skip Showcase Walkthrough"
+    duration: "18:00"
+    link: /tour/showcase/
+    video: https://skip.tools/assets/video/showcasewalkthrough2.m4v
+    poster: https://assets.skip.tools/tour/showcasewalkthrough-poster.png
+    yt: https://www.youtube.com/watch?v=_biiUvvA9Ug
+    description: |
+      Explore the Skip Showcase app demonstrating and exercising Skip's support for various SwiftUI components on Android. Learn what your SwiftUI interfaces will look like when represented by Jetpack Compose views on Android devices.
+
+  - info:
+    title: "Contributing to SkipUI"
+    duration: "35:00"
+    link: /tour/contributing-to-skipui/
+    video: https://skip.tools/assets/video/contributing-to-skipui.m4v
+    poster: https://assets.skip.tools/tour/contributing-to-skipui-poster.png
+    yt: https://www.youtube.com/watch?v=gJm0zBej0z0
+    description: |
+      Learn how to contribute to Skip's open-source SkipUI library implementing SwiftUI on top of Jetpack Compose for Android. Exercise your new SwiftUI support in Skip's Showcase app.
+
+  - info:
+    title: "Skip Webinar"
+    duration: "57:00"
+    link: /tour/webinar-2024-05-07/
+    video: https://skip.tools/assets/video/skip-webinar-2024-05-07.mp4
+    poster: https://assets.skip.tools/tour/webinar_video_poster.png
+    yt: https://www.youtube.com/watch?v=ouTJGPaoV0k
+    description: |
+      This is a recording of Skip's May 7, 2024 webinar. The webinar describes the current mobile development landscape, discusses how Skip fits in, and features code samples, live demonstrations, and some Q&A.
+

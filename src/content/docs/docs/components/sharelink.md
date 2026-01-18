@@ -14,10 +14,10 @@ The following example screens and source code is from SkipUI's
 
 
 <div class="showcase-screenshot-container">
-<img alt="Android screenshot for ShareLink component (light mode)" src="http://assets.skip.tools/showcase/ShareLink-android-light_framed.png" />
-<img alt="iPhone screenshot for ShareLink component (light mode)" src="http://assets.skip.tools/showcase/ShareLink-iphone-light_framed.png" />
-<img alt="iPhone screenshot for ShareLink component (dark mode)" src="http://assets.skip.tools/showcase/ShareLink-iphone-dark_framed.png" />
-<img alt="Android screenshot for ShareLink component (dark mode)" src="http://assets.skip.tools/showcase/ShareLink-android-dark_framed.png" />
+<img alt="Android screenshot for ShareLink component (light mode)" src="http://assets.skip.dev/showcase/ShareLink-android-light_framed.png" />
+<img alt="iPhone screenshot for ShareLink component (light mode)" src="http://assets.skip.dev/showcase/ShareLink-iphone-light_framed.png" />
+<img alt="iPhone screenshot for ShareLink component (dark mode)" src="http://assets.skip.dev/showcase/ShareLink-iphone-dark_framed.png" />
+<img alt="Android screenshot for ShareLink component (dark mode)" src="http://assets.skip.dev/showcase/ShareLink-android-dark_framed.png" />
 </div>
 
 
