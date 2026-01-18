@@ -29,8 +29,8 @@ contributing, you can run this site locally.
 The site uses Astro and Starlight as a static site generator,
 which is then distributed through GitHub Pages.
 
-See the [Starlight’s docs](https://starlight.astro.build/) and
-read [the Astro documentation](https://docs.astro.build) to learn
+See the [Starlight docs](https://starlight.astro.build/) and
+[Astro documentation](https://docs.astro.build) to learn
 more, but in general to preview changes locally, you should be able to
 just run:
 
@@ -59,20 +59,45 @@ All commands are run from the root of the project, from a terminal:
 | `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
 | `npm run astro -- --help` | Get help using the Astro CLI                     |
 
-## Project Structure
+### Project Structure
 
-Inside this Astro + Starlight project, you'll see the following folders and files:
+Following is an abbreviated outline of the structure of the
+documentation folders and files:
 
 ```
 .
-├── public/
-├── src/
-│   ├── assets/
-│   ├── content/
-│   │   └── docs/
-│   └── content.config.ts
 ├── astro.config.mjs
+├── LICENSE.txt
+├── package-lock.json
 ├── package.json
+├── public
+│   └── favicon.svg
+├── README.md
+├── src
+│   ├── assets
+│   │   └── skipicon.svg
+│   ├── components
+│   │   └── CustomHeader.astro
+│   ├── content
+│   │   ├── docs
+│   │   │   ├── blog
+│   │   │   ├── docs
+│   │   │   ├── index.mdx
+│   │   │   ├── sponsor
+│   │   │   └── tour
+│   │   ├── i18n
+│   │   │   ├── fr.json
+│   │   │   └── zh-cn.json
+│   │   └── tour-collection
+│   │       ├── introduction.mdx
+│   │       ├── skip-showreel.mdx
+│   │       └── teaser.mdx
+│   ├── content.config.ts
+│   ├── pages
+│   │   └── example.astro
+│   ├── routeData.ts
+│   └── styles
+│       └── custom.css
 └── tsconfig.json
 ```
 
