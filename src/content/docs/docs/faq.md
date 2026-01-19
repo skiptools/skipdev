@@ -104,7 +104,7 @@ iOS 16+. It is estimated at [developer.apple.com](https://developer.apple.com/su
 
 ### What is the minimum Android version for Skip apps? {#android_version}
 
-Skip targets Android API level 34 (which is the minimum allowed level for submitting new apps to the Play Store, according to [https://developer.android.com/google/play/requirements/target-sdk](https://developer.android.com/google/play/requirements/target-sdk)) with a minimum supported version of API level 29. Android API 29 ("Q"; Android 10.0) will run on approximately 90% of active Android devices as of May, 2025, according to [https://apilevels.com](https://apilevels.com).
+Skip targets Android API level 34 (which is the minimum allowed level for submitting new apps to the Play Store, according to [https://developer.android.com/google/play/requirements/target-sdk](https://developer.android.com/google/play/requirements/target-sdk)) with a minimum supported version of API level 28. Android API 28 ("P"; Android 9) will run on over 95% of active Android devices as of January, 2026, according to the device reach estimate by Android Studio.
 
 ### How large are apps that are built using Skip? {#app_size}
 
@@ -140,7 +140,7 @@ The Skip Core Frameworks are the fundamental building blocks on which the rest o
 
 ### Can I preview the Kotlin that Skip's transpiled mode generates? {#playground}
 
-We provide a “Playground” page at [https://skip.dev/playground/](/playground/) that runs a limited online version of the Skip transpiler in order to preview snippets of transpiled code. When using Skip for development, you can [access the transpiled Kotlin](/docs/debugging/#accessing-transpiled-output) it generates at any time.
+For examples of the Swift to Kotlin transpilation, see the examples in the [Transpilation reference](/docs/swiftsupport/#examples). When using Skip for development, you can [access the transpiled Kotlin](/docs/debugging/#accessing-transpiled-output) it generates at any time.
 
 ### How much runtime overhead does SkipUI add to the Compose side of the app? {#overhead}
 
@@ -367,5 +367,5 @@ Note that the .apk size by itself is not a good indication for how large the app
 
 ### Does Skip support 16kb page sizes? {#skip_fuse_16kb_page_size}
 
-Yes, the Swift SDK for Android builds 16KB-aligned libraries by default as of Swift 6.2. This makes Skip Fuse apps compatible with Android's [requirement](https://developer.android.com/guide/practices/page-sizes) for native librarie as of November 1, 2025.
+Yes, the Swift SDK for Android builds 16KB-aligned libraries by default as of Swift 6.2. This makes Skip Fuse apps compatible with Android's [requirement](https://developer.android.com/guide/practices/page-sizes) for native libraries as of November 1, 2025.
 

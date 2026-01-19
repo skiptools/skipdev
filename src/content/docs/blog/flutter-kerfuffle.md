@@ -122,7 +122,7 @@ internal class Weather: Decodable {
 }
 ```
 
-(Skip is not a cloud-based tool, but there is an online [playground](/playground) where you can experiment with Swift-to-Kotlin transpilation.)
+You can see more examples of the Swift-to-Kotlin translation in our [Transpilation Reference](/docs/swiftsupport/#examples).
 
 *Skip is fully ejectable.* When you eject Skip, you are left with a native iOS app and a native Android app, both using their respective platform vendor-recommended technologies. You can immediately continue to iterate on these apps, with no rewrites and no pause in your ability to integrate new platform features.
 

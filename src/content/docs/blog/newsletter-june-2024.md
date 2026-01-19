@@ -17,8 +17,7 @@ draft: false
 <p>
     We&#39;ve posted a new Skip &quot;Showreel&quot; video, providing a quick 3-minute overview of Skip and the highlights of using it to build native dual-platform apps. You can find it on YouTube at: 
     <a href="https://www.youtube.com/watch?v=lQjaaAqgxp4">https://www.youtube.com/watch?v=lQjaaAqgxp4</a>. This and other videos are also available from our Tour page at: 
-    <a href="/tour/">/tour/</a>. We will be posting new videos in the coming weeks and months, so consider either following us on YouTube, or subscribing to our RSS feed from 
-    <a href="/blog/">/blog/</a>.
+    <a href="/tour/">/tour/</a>. We will be posting new videos in the coming weeks and months, so consider either following us on YouTube, or subscribing to our RSS feed.
 </p>
 
 <p>

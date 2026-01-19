@@ -9,7 +9,7 @@ head:
   - tag: title
     content: 'Skip: Build truly native iPhone and Android apps with Skip'
 hero:
-  tagline: Skip brings Swift app development to Android. It is a toolkit that enables developers to build genuinely native apps for both iOS and Android from a single Swift and SwiftUI codebase.
+  tagline: Skip brings Swift app development to Android. It is a tool that enables developers to build genuinely native apps for both iOS and Android from a single Swift and SwiftUI codebase.
   #image:
   #  file: ../../assets/houston.webp
   banner:
@@ -23,7 +23,7 @@ hero:
       variant: primary
     - text: Get Started
       link: /docs/gettingstarted/
-      icon: right-caret
+      icon: right-arrow
       variant: secondary
 ---
 
@@ -37,25 +37,67 @@ import { Card, CardGrid } from '@astrojs/starlight/components';
   </video>
 </div>
 
+
+# How Skip Works
+
+As you write your Swift and SwiftUI source, the Skip Xcode plugin continuously builds the equivalent code for Android. Develop dual-platform libraries or entire apps, with native performance and native user interfaces on both platforms.
+
+
 ## Skip Advantages
 
+
+
 <CardGrid>
-	<Card title="Genuinely Native" icon="approve-check-circle">
-		Skip apps don't just “look native”, they _are_ native: SwiftUI on iOS and Jetpack Compose on Android. You know the difference, and so do your users.
-	</Card>
-	<Card title="Feather Weight" icon="cloud-download">
-		With _Skip Zero_, your iOS app has no dependencies on any Skip frameworks. And the resulting Android app only requires open source libraries.
-	</Card>
-	<Card title="Memory Efficient" icon="magnifier">
-		With no additional managed runtime, Skip apps are as efficient as they can possibly be on both platforms.
-	</Card>
-	<Card title="Idyllic IDE" icon="heart">
-		Skip's IDE is Xcode, the premier development environment for Swift. For serious Android customization, incorporate Kotlin written directly in Android Studio.
-	</Card>
-	<Card title="Perfect Integration" icon="star">
-		Skip supports thousands of cross-platform modules. It also bridges seamlessly with Kotlin and Compose, so integrating with Android libraries is painless.
-	</Card>
-	<Card title="Foundationally Open" icon="github">
-		Swift-on-Android is only half the story. Skip's app development frameworks are all free and open-source.
-	</Card>
+
+  <Card title="SwiftUI, All the Way Down" icon="approve-check-circle">
+	Write real SwiftUI once and get a first-class native UI on both platforms.
+	Skip translates SwiftUI views into Jetpack Compose, preserving layout,
+	accessibility, and platform conventions.
+	No jank, no outdated interface conventions, no uncanny valley.
+
+	[Learn more →](/docs/modules/skip-ui/)
+  </Card>
+
+  <Card title="No Runtime. No Bloat." icon="cloud-download">
+	Skip does not embed a managed runtime or heavyweight engine.
+	Your iOS app can ship with zero Skip dependencies, and your Android app
+	depends only on standard open-source libraries.
+
+	[Learn more →](/docs/faq/#skipzero)
+  </Card>
+
+  <Card title="Native Performance by Design" icon="magnifier">
+	Because Skip apps use real native code, your apps have predictable memory
+	usage, fast startup times, and performance characteristics identical to
+	hand-written Swift and Kotlin.
+
+	[Learn more →](/docs/project-types/)
+  </Card>
+
+  <Card title="Xcode Is Your IDE" icon="heart">
+	Keep using Xcode as your primary development environment.
+	Build, debug, and refactor Swift application and library code exactly as you always have.
+	Drop into Android Studio only when you want platform-specific customization.
+
+	[Learn more →](/docs/app-development/)
+  </Card>
+
+  <Card title="Seamless Android Interop" icon="star">
+	Need a specific Android SDK or library?
+	Skip interoperates cleanly with Kotlin and Jetpack Compose, so you can
+	integrate Android APIs without fighting the framework.
+
+	[Learn more →](/docs/platformcustomization/)
+  </Card>
+
+  <Card title="Open Source, Built for the Long Term" icon="github">
+	Skip and its core frameworks are free and open source.
+	No lock-in, no proprietary runtimes, and no waiting on vendors to catch up
+	with the latest iOS or Android releases.
+
+	[Learn more →](/blog/skip-is-free/)
+  </Card>
+
 </CardGrid>
+
+

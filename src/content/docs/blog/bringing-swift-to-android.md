@@ -87,7 +87,7 @@ internal class AddAction: Action<Int> {
 
 [`ViewBuilders`](https://developer.apple.com/documentation/swiftui/viewbuilder) - a special case of Swift’s [`ResultBuilders`](https://github.com/apple/swift-evolution/blob/main/proposals/0289-result-builders.md) - lie at the heart of SwiftUI’s easy-to-use syntax. SwiftSyntax is able to perfectly parse these as well, but this is one area where our output does not look hand-written. Kotlin doesn’t support the expressive `ViewBuilder` syntax, and [Jetpack Compose](https://developer.android.com/develop/ui/compose) - Android’s modern UI framework - is based on nested function calls instead. The transpilation from `ViewBuilders` to function calls is effective, but it results in mechanical-looking code.
 
-You can see all of this in action using our online Swift-to-Kotlin [transpiler playground](/playground/). While it doesn’t replicate the integrated Xcode experience of the real thing, it is fun to experiment with, and it demonstrates the speed and sophistication of SwiftSyntax.
+You can see all of this in action at our Swift-to-Kotlin [transpiler samples](/docs/swiftsupport/#examples).
 
 ## Swift Package Manager Integration
 

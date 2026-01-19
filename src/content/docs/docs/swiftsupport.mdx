@@ -338,3 +338,731 @@ Swift's `if let x = f()` (or `guard let x = f()`) syntax does a few things at th
 
 While Kotlin's `if (x != null)` checks do have some intelligence - Kotlin will *usually* let you treat `x` as non-null in the body of of the `if` block - there is no Kotlin language construct that can do all of the things `if let` does. Depending on the details of how your Swift code uses `if let`, therefore, Skip may have to generate a significant amount of Kotlin to ensure identical behavior across platforms. This includes generating nested `if` statements and potentially duplicating entire `else` code blocks. While the resulting Kotlin may look complicated, it is no less efficient than the original Swift.
 
+## Transpilation Examples {#examples}
+
+The following examples show the approximate Kotlin code that Skip's transpilation will generate for various common Swift code. These may vary depending on project context and Skip version (these were generated with Skip 1.7.0).
+
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+
+
+### Basic Class
+
+<Tabs>
+<TabItem label="Swift" icon="swift">
+```swift
+class MyClass {
+    static let staticValue = 1
+    var stringField = "abc"
+    var intField = 123
+    var doubleField = 456.78
+}
+```
+</TabItem>
+<TabItem label="Kotlin" icon="kotlin">
+```kotlin
+internal open class MyClass {
+   internal open var stringField = "abc"
+   internal open var intField = 123
+   internal open var doubleField = 456.78
+
+   companion object {
+      internal val staticValue = 1
+   }
+}
+ ```
+</TabItem>
+</Tabs>
+
+### Class Inheritance
+
+<Tabs>
+<TabItem label="Swift" icon="swift">
+```swift
+public class Base { 
+    var type: String
+    init(type: String = "Base") {
+        self.type = type
+    }
+}
+
+internal class Sub : Base { 
+    var level: Int
+    init(level: Int) {
+        super.init(type: "Sub")
+        self.level = level
+    }
+}
+```
+</TabItem>
+<TabItem label="Kotlin" icon="kotlin">
+```kotlin
+open class Base {
+    internal open var type: String
+    internal constructor(type: String = "Base") {
+        this.type = type
+    }
+
+    companion object: CompanionClass() {
+    }
+    open class CompanionClass {
+    }
+}
+
+internal open class Sub: Base {
+    internal open var level: Int
+    internal constructor(level: Int): super(type = "Sub") {
+        this.level = level
+    }
+
+    companion object: Base.CompanionClass() {
+    }
+}
+```
+</TabItem>
+</Tabs>
+
+### Immutable Struct
+
+<Tabs>
+<TabItem label="Swift" icon="swift">
+```swift
+struct MyStruct {
+    let str: String = "abc"
+    let num: Int
+}
+```
+</TabItem>
+<TabItem label="Kotlin" icon="kotlin">
+```kotlin
+internal class MyStruct {
+    internal val str: String = "abc"
+    internal val num: Int
+
+    constructor(num: Int) {
+        this.num = num
+    }
+}
+```
+</TabItem>
+</Tabs>
+
+### Mutable Struct
+
+<Tabs>
+<TabItem label="Swift" icon="swift">
+```swift
+// Skip adds methods to mutable structs that allow Skip to replicate Swift struct value semantics
+struct MyStruct {
+    var str: String = "abc"
+    var num: Int
+}
+```
+</TabItem>
+<TabItem label="Kotlin" icon="kotlin">
+```kotlin
+// Skip adds methods to mutable structs that allow Skip to replicate Swift struct value semantics
+internal class MyStruct: MutableStruct {
+    internal var str: String
+        set(newValue) {
+            willmutate()
+            field = newValue
+            didmutate()
+        }
+    internal var num: Int
+        set(newValue) {
+            willmutate()
+            field = newValue
+            didmutate()
+        }
+
+    constructor(str: String = "abc", num: Int) {
+        this.str = str
+        this.num = num
+    }
+
+    override var supdate: ((Any) -> Unit)? = null
+    override var smutatingcount = 0
+    override fun scopy(): MutableStruct = MyStruct(str, num)
+}
+```
+</TabItem>
+</Tabs>
+
+### Hashable & Codable Struct
+
+<Tabs>
+<TabItem label="Swift" icon="swift">
+```swift
+struct MyStruct : Hashable, Codable {
+    var str: String = "abc"
+    var num: Int
+}
+```
+</TabItem>
+<TabItem label="Kotlin" icon="kotlin">
+```kotlin
+internal class MyStruct: Codable, MutableStruct {
+    internal var str: String
+        set(newValue) {
+            willmutate()
+            field = newValue
+            didmutate()
+        }
+    internal var num: Int
+        set(newValue) {
+            willmutate()
+            field = newValue
+            didmutate()
+        }
+
+    constructor(str: String = "abc", num: Int) {
+        this.str = str
+        this.num = num
+    }
+
+    override var supdate: ((Any) -> Unit)? = null
+    override var smutatingcount = 0
+    override fun scopy(): MutableStruct = MyStruct(str, num)
+
+    override fun equals(other: Any?): Boolean {
+        if (other !is MyStruct) return false
+        return str == other.str && num == other.num
+    }
+
+    override fun hashCode(): Int {
+        var result = 1
+        result = Hasher.combine(result, str)
+        result = Hasher.combine(result, num)
+        return result
+    }
+
+    private enum class CodingKeys(override val rawValue: String, @Suppress("UNUSED_PARAMETER") unusedp: Nothing? = null): CodingKey, RawRepresentable<String> {
+        str("str"),
+        num("num");
+
+        companion object {
+            fun init(rawValue: String): CodingKeys? {
+                return when (rawValue) {
+                    "str" -> CodingKeys.str
+                    "num" -> CodingKeys.num
+                    else -> null
+                }
+            }
+        }
+    }
+
+    override fun encode(to: Encoder) {
+        val container = to.container(keyedBy = CodingKeys::class)
+        container.encode(str, forKey = CodingKeys.str)
+        container.encode(num, forKey = CodingKeys.num)
+    }
+
+    constructor(from: Decoder) {
+        val container = from.container(keyedBy = CodingKeys::class)
+        this.str = container.decode(String::class, forKey = CodingKeys.str)
+        this.num = container.decode(Int::class, forKey = CodingKeys.num)
+    }
+
+    companion object: DecodableCompanion<MyStruct> {
+        override fun init(from: Decoder): MyStruct = MyStruct(from = from)
+
+        private fun CodingKeys(rawValue: String): CodingKeys? = CodingKeys.init(rawValue = rawValue)
+    }
+}
+```
+</TabItem>
+</Tabs>
+
+### Basic Protocol
+
+<Tabs>
+<TabItem label="Swift" icon="swift">
+```swift
+protocol MyContract {
+    var name: String { get }
+    func perform() throws -> Int
+}
+```
+</TabItem>
+<TabItem label="Kotlin" icon="kotlin">
+```kotlin
+internal interface MyContract {
+    val name: String
+    fun perform(): Int
+}
+```
+</TabItem>
+</Tabs>
+
+### Protocol with Extension
+
+<Tabs>
+<TabItem label="Swift" icon="swift">
+```swift
+protocol MyContract {
+    var name: String { get }
+    func perform() throws -> Int
+}
+
+extension MyContract {
+    var name: String { 
+        "default"
+    }
+}
+```
+</TabItem>
+<TabItem label="Kotlin" icon="kotlin">
+```kotlin
+internal interface MyContract {
+    val name: String
+        get() = "default"
+    fun perform(): Int
+}
+```
+</TabItem>
+</Tabs>
+
+### Protocol with associatedtype
+
+<Tabs>
+<TabItem label="Swift" icon="swift">
+```swift
+protocol MyContract {
+    associatedtype R
+    var name: String { get }
+    func perform() throws -> R
+}
+
+class MyClass: MyContract {
+    var name: String
+    var value: Int
+
+    init(name: String, value: Int) {
+        self.name = name
+        self.value = value
+    }
+
+    func perform() -> Int {
+        return value
+    }
+}
+```
+</TabItem>
+<TabItem label="Kotlin" icon="kotlin">
+```kotlin
+internal interface MyContract<R> {
+    val name: String
+    fun perform(): R
+}
+
+internal open class MyClass: MyContract<Int> {
+    override var name: String
+    internal open var value: Int
+
+    internal constructor(name: String, value: Int) {
+        this.name = name
+        this.value = value
+    }
+
+    override fun perform(): Int = value
+}
+```
+</TabItem>
+</Tabs>
+
+### Basic Enum
+
+<Tabs>
+<TabItem label="Swift" icon="swift">
+```swift
+enum Size {
+    case small, medium, large
+}
+
+enum Position : CaseIterable {
+    case one, two, three, four, five
+}
+```
+</TabItem>
+<TabItem label="Kotlin" icon="kotlin">
+```kotlin
+import skip.lib.Array
+
+internal enum class Size {
+    small,
+    medium,
+    large;
+}
+
+internal enum class Position: CaseIterable {
+    one,
+    two,
+    three,
+    four,
+    five;
+
+    companion object: CaseIterableCompanion<Position> {
+        override val allCases: Array<Position>
+            get() = arrayOf(one, two, three, four, five)
+    }
+}
+```
+</TabItem>
+</Tabs>
+
+### RawRepresentable Enum
+
+<Tabs>
+<TabItem label="Swift" icon="swift">
+```swift
+enum Size : String {
+    case small, medium, large = "LG"
+}
+```
+</TabItem>
+<TabItem label="Kotlin" icon="kotlin">
+```kotlin
+internal enum class Size(override val rawValue: String, @Suppress("UNUSED_PARAMETER") unusedp: Nothing? = null): RawRepresentable<String> {
+    small("small"),
+    medium("medium"),
+    large("LG");
+
+    companion object {
+        fun init(rawValue: String): Size? {
+            return when (rawValue) {
+                "small" -> Size.small
+                "medium" -> Size.medium
+                "LG" -> Size.large
+                else -> null
+            }
+        }
+    }
+}
+
+internal fun Size(rawValue: String): Size? = Size.init(rawValue = rawValue)
+```
+</TabItem>
+</Tabs>
+
+### Enum with Associated Values
+
+<Tabs>
+<TabItem label="Swift" icon="swift">
+```swift
+// Sealed classes are Kotlin's closest analog to enums with associated values
+enum E : Hashable {
+  case option1
+  case option2(Int, String)
+}
+
+func process(e: E) {
+    if case .option2(let i, _) = e {
+        print("i = \(i)")
+    }
+} 
+
+```
+</TabItem>
+<TabItem label="Kotlin" icon="kotlin">
+```kotlin
+// Sealed classes are Kotlin's closest analog to enums with associated values
+internal sealed class E {
+    class Option1Case: E() {
+    }
+    class Option2Case(val associated0: Int, val associated1: String): E() {
+        override fun equals(other: Any?): Boolean {
+            if (other !is Option2Case) return false
+            return associated0 == other.associated0 && associated1 == other.associated1
+        }
+        override fun hashCode(): Int {
+            var result = 1
+            result = Hasher.combine(result, associated0)
+            result = Hasher.combine(result, associated1)
+            return result
+        }
+    }
+
+    companion object {
+        val option1: E = Option1Case()
+        fun option2(associated0: Int, associated1: String): E = Option2Case(associated0, associated1)
+    }
+}
+
+internal fun process(e: E) {
+    if (e is E.Option2Case) {
+        val i = e.associated0
+        print("i = ${i}")
+    }
+}
+```
+</TabItem>
+</Tabs>
+
+### Dictionary
+
+<Tabs>
+<TabItem label="Swift" icon="swift">
+```swift
+let d = [1: "a", 2: "b", 3: "c"]
+for (key, value) in d {
+    print(key)
+    print(value)
+}
+```
+</TabItem>
+<TabItem label="Kotlin" icon="kotlin">
+```kotlin
+internal val d = dictionaryOf(Tuple2(1, "a"), Tuple2(2, "b"), Tuple2(3, "c"))
+for ((key, value) in d.sref()) {
+    print(key)
+    print(value)
+}
+```
+</TabItem>
+</Tabs>
+
+### Optional Constructor
+
+<Tabs>
+<TabItem label="Swift" icon="swift">
+```swift
+// Kotlin does not have optional constructors. Skip replicates their behavior
+class C {
+    let i: Int
+
+    init?(param: Int) {
+        if param == 0 {
+            return nil
+        } else {
+            i = param
+        }
+    }
+}
+func f() -> Int {
+    return C(param: 0)?.i ?? -1
+}
+func g() -> C {
+    return C(param: 0)!
+}
+```
+</TabItem>
+<TabItem label="Kotlin" icon="kotlin">
+```kotlin
+// Kotlin does not have optional constructors. Skip replicates their behavior
+internal open class C {
+    internal val i: Int
+
+    internal constructor(param: Int) {
+        if (param == 0) {
+            throw NullReturnException()
+        } else {
+            i = param
+        }
+    }
+}
+internal fun f(): Int {
+    return (try { C(param = 0) } catch (_: NullReturnException) { null })?.i ?: -1
+}
+internal fun g(): C = C(param = 0)
+```
+</TabItem>
+</Tabs>
+
+### Async Function
+
+<Tabs>
+<TabItem label="Swift" icon="swift">
+```swift
+func compute(_ input1: Int, _ input2: Int) async throws -> Int {
+    // Do some expensive things
+    return input1 * input2
+}
+
+func printResult() async throws {
+    let result = try await compute(3, 5)
+    print(result)
+}
+```
+</TabItem>
+<TabItem label="Kotlin" icon="kotlin">
+```kotlin
+internal suspend fun compute(input1: Int, input2: Int): Int = Async.run l@{
+    // Do some expensive things
+    return@l input1 * input2
+}
+
+internal suspend fun printResult(): Unit = Async.run {
+    val result = compute(3, 5)
+    print(result)
+}
+```
+</TabItem>
+</Tabs>
+
+### Type Inference
+
+<Tabs>
+<TabItem label="Swift" icon="swift">
+```swift
+enum Size {
+    case small, medium, large
+}
+  
+func mySizes() -> [Size] {
+    // Kotlin does not have implicitly-qualified members
+    [.medium, .large]
+}
+
+
+```
+</TabItem>
+<TabItem label="Kotlin" icon="kotlin">
+```kotlin
+import skip.lib.Array
+
+internal enum class Size {
+    small,
+    medium,
+    large;
+}
+
+internal fun mySizes(): Array<Size> {
+    // Kotlin does not have implicitly-qualified members
+    return arrayOf(Size.medium, Size.large)
+}
+```
+</TabItem>
+</Tabs>
+
+### SwiftUI
+
+<Tabs>
+<TabItem label="Swift" icon="swift">
+```swift
+import SwiftUI
+
+struct ContentView : View {
+  @State var value = 0.0
+  
+  var body: some View {
+    VStack {
+      Text("Current value: \(value)")
+      Slider(value: $value)
+      Button("Reset") {
+        value = 0.0
+      }
+    }
+  }
+}
+```
+</TabItem>
+<TabItem label="Kotlin" icon="kotlin">
+```kotlin
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.saveable.Saver
+import androidx.compose.runtime.saveable.rememberSaveable
+import androidx.compose.runtime.setValue
+
+import skip.ui.*
+import skip.foundation.*
+import skip.model.*
+
+internal class ContentView: View {
+    internal var value: Double
+        get() = _value.wrappedValue
+        set(newValue) {
+            _value.wrappedValue = newValue
+        }
+    internal var _value: skip.ui.State<Double>
+
+    override fun body(): View {
+        return ComposeBuilder { composectx: ComposeContext ->
+            VStack { ->
+                ComposeBuilder { composectx: ComposeContext ->
+                    Text({
+                        val str = LocalizedStringKey.StringInterpolation(literalCapacity = 0, interpolationCount = 0)
+                        str.appendLiteral("Current value: ")
+                        str.appendInterpolation(value)
+                        LocalizedStringKey(stringInterpolation = str)
+                    }()).Compose(composectx)
+                    Slider(value = Binding({ _value.wrappedValue }, { it -> _value.wrappedValue = it })).Compose(composectx)
+                    Button(LocalizedStringKey(stringLiteral = "Reset")) { -> value = 0.0 }.Compose(composectx)
+                    ComposeResult.ok
+                }
+            }.Compose(composectx)
+        }
+    }
+
+    @Composable
+    @Suppress("UNCHECKED_CAST")
+    override fun Evaluate(context: ComposeContext, options: Int): kotlin.collections.List<Renderable> {
+        val rememberedvalue by rememberSaveable(stateSaver = context.stateSaver as Saver<skip.ui.State<Double>, Any>) { mutableStateOf(_value) }
+        _value = rememberedvalue
+
+        return super.Evaluate(context, options)
+    }
+
+    constructor(value: Double = 0.0) {
+        this._value = skip.ui.State(value)
+    }
+}
+```
+</TabItem>
+</Tabs>
+
+### Conditional Compilation
+
+<Tabs>
+<TabItem label="Swift" icon="swift">
+```swift
+// Use #if os(Android) to conditionally include code for Android and non-Android platforms
+func languageName() -> String {
+    #if os(Android)
+    "Kotlin"
+    #else
+    "Swift"
+    #endif
+}
+
+func languageName2() -> String {
+    #if !os(Android)
+    "Swift"
+    #else
+    "Kotlin"
+    #endif
+}
+```
+</TabItem>
+<TabItem label="Kotlin" icon="kotlin">
+```kotlin
+// Use #if os(Android) to conditionally include code for Android and non-Android platforms
+internal fun languageName(): String = "Kotlin"
+
+internal fun languageName2(): String = "Kotlin"
+```
+</TabItem>
+</Tabs>
+
+### SKIP Comments
+
+<Tabs>
+<TabItem label="Swift" icon="swift">
+```swift
+// Skip has a set of special comments for specifying Kotlin code
+func languageName() -> String {
+    // SKIP REPLACE: return "Kotlin"
+    "Swift"
+}
+```
+</TabItem>
+<TabItem label="Kotlin" icon="kotlin">
+```kotlin
+// Skip has a set of special comments for specifying Kotlin code
+internal fun languageName(): String = "Kotlin"
+```
+</TabItem>
+</Tabs>
+

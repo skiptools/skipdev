@@ -38,7 +38,7 @@ Tapped 1 cask (15 files, 417KB).
   ▄▄▄▄▄█ ██    ▄  ██  ██   █    
  █▄▄▄▄▄▄▄██▄▄▄█ █▄██▄▄██▄▄▄█    
 
-Welcome to Skip 1.6.36!
+Welcome to Skip 1.7.0!
 
 Run "skip checkup" to perform a full system evaluation.
 Run "skip create" to start a new project.
@@ -65,7 +65,7 @@ Linux and Windows support is preliminary and currently doesn't support many feat
 ## Skip Commands {#intro}
 
 ```console title="skip command output"
-OVERVIEW: skip 1.6.36
+OVERVIEW: skip 1.7.0
 
 USAGE: skip <subcommand>
 

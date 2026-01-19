@@ -17,7 +17,7 @@ Skip's *native* mode compiles your Swift natively with the [Swift SDK for Androi
 The following diagram depicts a native project:
 
 <div class="diagram-vector">
-  
+
 ![Skip Native Diagram](https://assets.skip.dev/diagrams/skip-diagrams-native.svg)
 
 </div>
