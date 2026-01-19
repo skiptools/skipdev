@@ -1,5 +1,4 @@
 ---
-layout: docs
 title: Cross-Platform Topics
 permalink: /docs/platformcustomization/
 ---

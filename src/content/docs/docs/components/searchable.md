@@ -1,6 +1,5 @@
 ---
 title: Searchable
-layout: docs
 permalink: /docs/components/searchable/
 component: Searchable
 ---

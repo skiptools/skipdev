@@ -1,6 +1,5 @@
 ---
 title: Border
-layout: docs
 permalink: /docs/components/border/
 component: Border
 ---

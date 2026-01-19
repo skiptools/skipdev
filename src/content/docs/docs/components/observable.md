@@ -1,6 +1,5 @@
 ---
 title: Observable
-layout: docs
 permalink: /docs/components/observable/
 component: Observable
 ---

@@ -1,6 +1,5 @@
 ---
 title: Overlay
-layout: docs
 permalink: /docs/components/overlay/
 component: Overlay
 ---

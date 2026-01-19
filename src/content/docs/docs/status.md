@@ -1,5 +1,4 @@
 ---
-layout: docs
 title: Skip Fuse vs Lite
 permalink: /docs/status/
 ---

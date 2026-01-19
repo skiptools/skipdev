@@ -1,6 +1,5 @@
 ---
 title: Color
-layout: docs
 permalink: /docs/components/color/
 component: Color
 ---

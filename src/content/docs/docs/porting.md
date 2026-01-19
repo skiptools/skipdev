@@ -1,5 +1,4 @@
 ---
-layout: docs
 title: Porting Swift Packages Android
 permalink: /docs/porting/
 ---

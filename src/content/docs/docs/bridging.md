@@ -1,5 +1,4 @@
 ---
-layout: docs
 title: Bridging Reference
 permalink: /docs/bridging/
 ---

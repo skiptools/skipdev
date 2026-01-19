@@ -1,6 +1,5 @@
 ---
 title: Grid
-layout: docs
 permalink: /docs/components/grid/
 component: Grid
 ---

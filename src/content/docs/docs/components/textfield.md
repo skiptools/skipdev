@@ -1,6 +1,5 @@
 ---
 title: TextField
-layout: docs
 permalink: /docs/components/textfield/
 component: TextField
 ---

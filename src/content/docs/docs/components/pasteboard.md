@@ -1,6 +1,5 @@
 ---
 title: Pasteboard
-layout: docs
 permalink: /docs/components/pasteboard/
 component: Pasteboard
 ---

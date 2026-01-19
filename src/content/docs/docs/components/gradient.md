@@ -1,6 +1,5 @@
 ---
 title: Gradient
-layout: docs
 permalink: /docs/components/gradient/
 component: Gradient
 ---

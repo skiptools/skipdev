@@ -1,5 +1,4 @@
 ---
-layout: docs
 title: C Development Reference
 permalink: /docs/c-development/
 ---

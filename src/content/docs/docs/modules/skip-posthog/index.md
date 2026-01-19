@@ -1,6 +1,5 @@
 ---
 title: PostHog
-layout: docs
 note: This documentation section is derived from https://raw.githubusercontent.com/skiptools/skip-posthog/main/README.md using the scripts/syncdocs.sh script. Do not change the file here, change it there.
 ---
 

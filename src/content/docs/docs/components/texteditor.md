@@ -1,6 +1,5 @@
 ---
 title: TextEditor
-layout: docs
 permalink: /docs/components/texteditor/
 component: TextEditor
 ---

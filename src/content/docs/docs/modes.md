@@ -1,5 +1,4 @@
 ---
-layout: docs
 Xtitle: Native and Transpiled Modes
 title: Skip Fuse vs Lite
 permalink: /docs/modes/

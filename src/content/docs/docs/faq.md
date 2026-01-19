@@ -1,5 +1,4 @@
 ---
-layout: docs
 title: FAQs
 menutitle: FAQ
 permalink: /docs/faq/

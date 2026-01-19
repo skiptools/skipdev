@@ -1,6 +1,5 @@
 ---
 title: Label
-layout: docs
 permalink: /docs/components/label/
 component: Label
 ---

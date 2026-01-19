@@ -1,6 +1,5 @@
 ---
 title: Offset
-layout: docs
 permalink: /docs/components/offset/
 component: Offset
 ---

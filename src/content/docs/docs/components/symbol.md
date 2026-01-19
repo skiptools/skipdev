@@ -1,6 +1,5 @@
 ---
 title: Symbol
-layout: docs
 permalink: /docs/components/symbol/
 component: Symbol
 ---

@@ -1,6 +1,5 @@
 ---
 title: Image
-layout: docs
 permalink: /docs/components/image/
 component: Image
 ---

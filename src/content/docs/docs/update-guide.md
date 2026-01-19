@@ -1,5 +1,4 @@
 ---
-layout: docs
 title: Update Guide
 permalink: /docs/update-guide/
 ---

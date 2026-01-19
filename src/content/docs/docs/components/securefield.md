@@ -1,6 +1,5 @@
 ---
 title: SecureField
-layout: docs
 permalink: /docs/components/securefield/
 component: SecureField
 ---

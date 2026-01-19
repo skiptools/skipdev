@@ -1,6 +1,5 @@
 ---
 title: Project Types
-layout: docs
 permalink: /docs/project-types/
 ---
 

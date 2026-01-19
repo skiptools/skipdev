@@ -1,6 +1,5 @@
 ---
 title: SkipUI Component Samples
-layout: docs
 permalink: /docs/components/
 ---
 

@@ -1,5 +1,4 @@
 ---
-layout: docs
 title: What is Skip?
 menutitle: Docs
 permalink: /docs/
@@ -8,7 +7,7 @@ permalink: /docs/
 
 The mobile app market is divided between the iPhone and Android. The iPhone is popular in the West and leads in app revenue, while Android has many more worldwide users overall.[^apprevenue]
 
-[^apprevenue]: Spending Power: iOS users spend $140 annually on apps versus $69 for Android users. iOS also dominates subscription revenue, with 5× higher average revenue per user (ARPU). Source: [iOS vs Android: Subscription Metrics Compared —± appenure.com](https://www.appeneure.com/blog/ios-vs-android-subscription-metrics-compared/seobot-blog)
+[^apprevenue]: Spending Power: iOS users spend $140 annually on apps versus $69 for Android users. iOS also dominates subscription revenue, with 5× higher average revenue per user (ARPU). Source: [iOS vs Android: Subscription Metrics Compared — appenure.com](https://www.appeneure.com/blog/ios-vs-android-subscription-metrics-compared/seobot-blog)
 
 <style>
 :root {

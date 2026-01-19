@@ -1,6 +1,5 @@
 ---
 title: SafeArea
-layout: docs
 permalink: /docs/components/safearea/
 component: SafeArea
 ---

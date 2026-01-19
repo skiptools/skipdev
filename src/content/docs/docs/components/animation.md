@@ -1,6 +1,5 @@
 ---
 title: Animation
-layout: docs
 permalink: /docs/components/animation/
 component: Animation
 ---

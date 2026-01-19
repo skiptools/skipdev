@@ -1,6 +1,5 @@
 ---
 title: Frame
-layout: docs
 permalink: /docs/components/frame/
 component: Frame
 ---

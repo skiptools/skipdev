@@ -1,6 +1,5 @@
 ---
 title: ConfirmationDialog
-layout: docs
 permalink: /docs/components/confirmationdialog/
 component: ConfirmationDialog
 ---

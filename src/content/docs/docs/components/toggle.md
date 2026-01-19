@@ -1,6 +1,5 @@
 ---
 title: Toggle
-layout: docs
 permalink: /docs/components/toggle/
 component: Toggle
 ---

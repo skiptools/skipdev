@@ -1,5 +1,4 @@
 ---
-layout: docs
 title: Deployment
 permalink: /docs/deployment/
 

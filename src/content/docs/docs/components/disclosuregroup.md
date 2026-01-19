@@ -1,6 +1,5 @@
 ---
 title: DisclosureGroup
-layout: docs
 permalink: /docs/components/disclosuregroup/
 component: DisclosureGroup
 ---

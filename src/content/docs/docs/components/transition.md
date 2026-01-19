@@ -1,6 +1,5 @@
 ---
 title: Transition
-layout: docs
 permalink: /docs/components/transition/
 component: Transition
 ---

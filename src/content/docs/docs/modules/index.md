@@ -1,6 +1,5 @@
 ---
 title: Skip Module Index
-layout: docs
 tableOfContents: false
 ---
 

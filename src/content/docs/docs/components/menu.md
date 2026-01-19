@@ -1,6 +1,5 @@
 ---
 title: Menu
-layout: docs
 permalink: /docs/components/menu/
 component: Menu
 ---

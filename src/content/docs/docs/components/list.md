@@ -1,6 +1,5 @@
 ---
 title: List
-layout: docs
 permalink: /docs/components/list/
 component: List
 ---

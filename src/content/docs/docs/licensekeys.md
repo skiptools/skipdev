@@ -1,5 +1,4 @@
 ---
-layout: docs
 title: License Keys
 permalink: /docs/licensekeys/
 ---

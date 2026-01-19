@@ -1,6 +1,5 @@
 ---
 title: Icon
-layout: docs
 permalink: /docs/components/icon/
 component: Icon
 ---

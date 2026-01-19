@@ -1,6 +1,5 @@
 ---
 title: ScrollView
-layout: docs
 permalink: /docs/components/scrollview/
 component: ScrollView
 ---

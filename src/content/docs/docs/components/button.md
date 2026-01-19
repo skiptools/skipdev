@@ -1,6 +1,5 @@
 ---
 title: Button
-layout: docs
 permalink: /docs/components/button/
 component: Button
 ---

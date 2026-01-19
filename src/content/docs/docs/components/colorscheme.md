@@ -1,6 +1,5 @@
 ---
 title: ColorScheme
-layout: docs
 permalink: /docs/components/colorscheme/
 component: ColorScheme
 ---

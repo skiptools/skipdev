@@ -1,6 +1,5 @@
 ---
 title: Gesture
-layout: docs
 permalink: /docs/components/gesture/
 component: Gesture
 ---

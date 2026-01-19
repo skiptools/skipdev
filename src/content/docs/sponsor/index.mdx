@@ -2,14 +2,15 @@
 title: Support the Future of Skip
 description: Support the Future of Skip
 template: splash
+editUrl: false
 hero:
   tagline: Support the Future of Skip
-  image:
-    file: ../../../assets/houston.webp
-  actions:
-    - text: Get Started
-      link: /docs/gettingstarted/
-      icon: right-arrow
+  #image:
+  #  file: ../../../assets/houston.webp
+  #actions:
+    #- text: Get Started
+    #  link: /docs/gettingstarted/
+    #  icon: right-arrow
     #- text: Read the Starlight docs
     #  link: https://starlight.astro.build
     #  icon: external
@@ -18,23 +19,89 @@ hero:
 
 import { Card, CardGrid } from '@astrojs/starlight/components';
 
-## Skip Advantages
+## Sponsorship Tiers
 
-<CardGrid stagger>
-    <Card title="Update content" icon="pencil">
-        Edit `src/content/docs/index.mdx` to see this page change.
-    </Card>
-    <Card title="Change page layout" icon="document">
-        Delete `template: splash` in `src/content/docs/index.mdx` to display a
-        sidebar on this page.
-    </Card>
-    <Card title="Add new content" icon="add-document">
-        Add Markdown or MDX files to `src/content/docs` to create new pages.
-    </Card>
-    <Card title="Configure your site" icon="setting">
-        Edit your `sidebar` and other config in `astro.config.mjs`.
-    </Card>
-    <Card title="Read the docs" icon="open-book">
-        Learn more in [the Starlight Docs](https://starlight.astro.build/).
-    </Card>
+Help us continue building Skip while gaining visibility and access to our team. Choose the tier that's right for you and your organization.
+
+<CardGrid>
+  <Card title="Individual" icon="heart">
+  ### $10/month
+  
+  For developers who want to support Skip's mission. Join a community of enthusiasts who get early access to new features, internal tooling we've built for Skip, and direct connection with the team — all while supporting the project you love.
+  
+  **Benefits:**
+  - **Access to private insiders area in Slack** — where Skip insiders share tips, play with upcoming features, and connect directly with the core team.
+  - **Cursor/Claude/AGENTS.md rules** — Our own personal ruleset for working with AI coding assistants, straight from the Skip founder's own development setup.
+  - **Early documentation for pre-release builds** — preview documentation for unreleased Skip features and start experimenting with tomorrow's enhancements today.
+
+  <div style="margin-top: 1.5rem;">
+    <a href="https://github.com/sponsors/skiptools" style="display: inline-block; padding: 0.5rem 1rem; background: var(--sl-color-accent); color: white; border-radius: 0.25rem; text-decoration: none; font-weight: 600;">
+      Support as an Individual
+    </a>
+  </div>
+  </Card>
+
+  <Card title="Supporter" icon="approve-check">
+    ### $500/month
+    
+    For companies who want to support Skip while getting some extra exposure.
+    
+    **Benefits:**
+    - **Logo on the sponsors page** — your logo proudly displayed on the sponsors page
+    - **Insiders team access** — all the perks of the Insiders tier for everyone in your team
+    - **Support Skip** — sleep easy knowing that you're supporting the ongoing development of Skip
+    
+    <div style="margin-top: 1.5rem;">
+      <a href="https://github.com/sponsors/skiptools" style="display: inline-block; padding: 0.5rem 1rem; background: var(--sl-color-accent); color: white; border-radius: 0.25rem; text-decoration: none; font-weight: 600;">
+        Become a Supporter
+      </a>
+    </div>
+  </Card>
+
+  <Card title="Ambassador" icon="rocket">
+    ### $2,500/month
+    
+    For companies looking to boost visibility and credibility with the Skip community.
+    
+    **Benefits:**
+    - **Logo on the Skip homepage** — your logo displayed in a rotating spot on the homepage
+    - **Logo on the sponsors page** — your logo proudly displayed on the sponsors page
+    - **Website in the showcase** — a spot on the showcase page for your company's website
+    - **Insiders team access** — all the perks of the Insiders tier for everyone in your team
+    - **Skip Plus team access** — access to the internal components and project templates
+    - **Access to sponsor Slack** — a private Slack channel for sponsors to talk to the Skip team
+    - **Support Skip** — sleep easy knowing that you're supporting the development of Skip
+    
+    <div style="margin-top: 1.5rem;">
+      <a href="https://github.com/sponsors/skiptools" style="display: inline-block; padding: 0.5rem 1rem; background: var(--sl-color-accent); color: white; border-radius: 0.25rem; text-decoration: none; font-weight: 600;">
+        Become an Ambassador
+      </a>
+    </div>
+  </Card>
+
+  <Card title="Partner" icon="star">
+    ### $5,000/month
+    
+    For companies who want increased exposure and easy access to the Skip team.
+    
+    **Benefits:**
+    - **Permanent logo on the Skip homepage** — your logo permanently displayed on the homepage
+    - **Priority logo placement on sponsors page** — your logo will appear at the top of the sponsors page
+    - **Featured spot in the showcase** — a featured spot on the showcase page for your website
+    - **Expedited bug fixes and issue resolution** — we'll address issues you run into on an expedited schedule
+    - **Insiders team access** — all the perks of the Insiders tier for everyone in your team
+    - **Skip Plus team access** — access to the internal components and project templates
+    - **Custom license** — Skip and all its components will be provided under a custom-tailored commercial license for your team, free of the constraints of the Skip OSS license
+    - **Support Skip** — sleep easy knowing that you're supporting the development of Skip
+    
+    <div style="margin-top: 1.5rem;">
+      <a href="https://github.com/sponsors/skiptools" style="display: inline-block; padding: 0.5rem 1rem; background: var(--sl-color-accent); color: white; border-radius: 0.25rem; text-decoration: none; font-weight: 600;">
+        Become a Partner
+      </a>
+    </div>
+  </Card>
 </CardGrid>
+
+## Questions?
+
+For questions about corporate sponsorship or to discuss custom arrangements, please contact us at [sponsor@skip.tools](mailto:sponsor@skip.tools).

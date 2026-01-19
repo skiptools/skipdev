@@ -1,6 +1,5 @@
 ---
 title: Link
-layout: docs
 permalink: /docs/components/link/
 component: Link
 ---

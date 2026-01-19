@@ -1,6 +1,5 @@
 ---
 title: Picker
-layout: docs
 permalink: /docs/components/picker/
 component: Picker
 ---

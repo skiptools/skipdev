@@ -1,6 +1,5 @@
 ---
 title: Sheet
-layout: docs
 permalink: /docs/components/sheet/
 component: Sheet
 ---

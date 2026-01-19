@@ -1,6 +1,5 @@
 ---
 title: Storage
-layout: docs
 permalink: /docs/components/storage/
 component: Storage
 ---

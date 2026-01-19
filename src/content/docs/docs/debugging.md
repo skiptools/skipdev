@@ -1,5 +1,4 @@
 ---
-layout: docs
 title: Debugging
 permalink: /docs/debugging/
 ---

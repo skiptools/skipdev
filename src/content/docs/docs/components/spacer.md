@@ -1,6 +1,5 @@
 ---
 title: Spacer
-layout: docs
 permalink: /docs/components/spacer/
 component: Spacer
 ---

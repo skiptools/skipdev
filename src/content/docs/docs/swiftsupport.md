@@ -1,5 +1,4 @@
 ---
-layout: docs
 title: Transpilation Reference
 permalink: /docs/swiftsupport/
 ---

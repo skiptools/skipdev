@@ -1,6 +1,5 @@
 ---
 title: ZIndex
-layout: docs
 permalink: /docs/components/zindex/
 component: ZIndex
 ---

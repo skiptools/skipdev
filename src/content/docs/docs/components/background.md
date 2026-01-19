@@ -1,6 +1,5 @@
 ---
 title: Background
-layout: docs
 permalink: /docs/components/background/
 component: Background
 ---

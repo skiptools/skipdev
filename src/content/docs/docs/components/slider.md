@@ -1,6 +1,5 @@
 ---
 title: Slider
-layout: docs
 permalink: /docs/components/slider/
 component: Slider
 ---

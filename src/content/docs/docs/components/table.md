@@ -1,6 +1,5 @@
 ---
 title: Table
-layout: docs
 permalink: /docs/components/table/
 component: Table
 ---

@@ -1,6 +1,5 @@
 ---
 title: Localization
-layout: docs
 permalink: /docs/components/localization/
 component: Localization
 ---

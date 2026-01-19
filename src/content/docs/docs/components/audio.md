@@ -1,6 +1,5 @@
 ---
 title: Audio
-layout: docs
 permalink: /docs/components/audio/
 component: Audio
 ---

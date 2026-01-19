@@ -1,6 +1,5 @@
 ---
 title: GeometryReader
-layout: docs
 permalink: /docs/components/geometryreader/
 component: GeometryReader
 ---

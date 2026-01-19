@@ -1,6 +1,5 @@
 ---
 title: "skipapp-bookings"
-layout: docs
 note: This documentation section is derived from https://raw.githubusercontent.com/skiptools/skipapp-bookings/main/README.md using the scripts/syncdocs.sh script. Do not change the file here, change it there.
 ---
 

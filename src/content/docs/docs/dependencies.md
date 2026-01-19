@@ -1,5 +1,4 @@
 ---
-layout: docs
 title: Dependencies
 permalink: /docs/dependencies/
 ---

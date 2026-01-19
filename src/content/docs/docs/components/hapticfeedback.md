@@ -1,6 +1,5 @@
 ---
 title: HapticFeedback
-layout: docs
 permalink: /docs/components/hapticfeedback/
 component: HapticFeedback
 ---

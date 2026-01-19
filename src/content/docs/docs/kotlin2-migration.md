@@ -1,5 +1,4 @@
 ---
-layout: docs
 title: Kotlin 2 Migration
 permalink: /docs/kotlin2-migration/
 ---

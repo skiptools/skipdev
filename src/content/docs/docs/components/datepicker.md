@@ -1,6 +1,5 @@
 ---
 title: DatePicker
-layout: docs
 permalink: /docs/components/datepicker/
 component: DatePicker
 ---

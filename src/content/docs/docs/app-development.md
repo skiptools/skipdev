@@ -1,5 +1,4 @@
 ---
-layout: docs
 title: App Development
 permalink: /docs/app-development/
 ---

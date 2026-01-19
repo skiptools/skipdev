@@ -1,6 +1,5 @@
 ---
 title: Form
-layout: docs
 permalink: /docs/components/form/
 component: Form
 ---

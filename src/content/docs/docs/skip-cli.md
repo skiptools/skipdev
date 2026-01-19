@@ -1,5 +1,4 @@
 ---
-layout: docs
 title: Skip CLI Reference
 permalink: /docs/skip-cli/
 ---

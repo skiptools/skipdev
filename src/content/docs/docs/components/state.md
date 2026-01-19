@@ -1,6 +1,5 @@
 ---
 title: State
-layout: docs
 permalink: /docs/components/state/
 component: State
 ---

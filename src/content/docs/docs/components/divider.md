@@ -1,6 +1,5 @@
 ---
 title: Divider
-layout: docs
 permalink: /docs/components/divider/
 component: Divider
 ---

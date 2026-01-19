@@ -1,6 +1,5 @@
 ---
 title: ScenePhase
-layout: docs
 permalink: /docs/components/scenephase/
 component: ScenePhase
 ---

@@ -1,6 +1,5 @@
 ---
 title: OnSubmit
-layout: docs
 permalink: /docs/components/onsubmit/
 component: OnSubmit
 ---

@@ -1,6 +1,5 @@
 ---
 title: Timer
-layout: docs
 permalink: /docs/components/timer/
 component: Timer
 ---

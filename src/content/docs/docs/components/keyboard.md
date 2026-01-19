@@ -1,6 +1,5 @@
 ---
 title: Keyboard
-layout: docs
 permalink: /docs/components/keyboard/
 component: Keyboard
 ---

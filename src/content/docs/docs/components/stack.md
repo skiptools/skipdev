@@ -1,6 +1,5 @@
 ---
 title: Stack
-layout: docs
 permalink: /docs/components/stack/
 component: Stack
 ---

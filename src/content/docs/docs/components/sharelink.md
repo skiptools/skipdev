@@ -1,6 +1,5 @@
 ---
 title: ShareLink
-layout: docs
 permalink: /docs/components/sharelink/
 component: ShareLink
 ---

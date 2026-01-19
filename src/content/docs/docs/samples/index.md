@@ -1,6 +1,5 @@
 ---
 title: Skip Sample Apps
-layout: docs
 ---
 
 # Skip Sample Apps

@@ -1,6 +1,5 @@
 ---
 title: NavigationStack
-layout: docs
 permalink: /docs/components/navigationstack/
 component: NavigationStack
 ---

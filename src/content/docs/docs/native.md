@@ -1,5 +1,4 @@
 ---
-layout: docs
 title: Native Swift Tech Preview
 permalink: /docs/native/
 ---

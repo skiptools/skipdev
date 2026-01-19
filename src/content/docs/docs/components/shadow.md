@@ -1,6 +1,5 @@
 ---
 title: Shadow
-layout: docs
 permalink: /docs/components/shadow/
 component: Shadow
 ---

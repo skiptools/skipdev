@@ -1,6 +1,5 @@
 ---
 title: Shape
-layout: docs
 permalink: /docs/components/shape/
 component: Shape
 ---

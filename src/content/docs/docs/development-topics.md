@@ -1,5 +1,4 @@
 ---
-layout: docs
 title: Common Topics
 permalink: /docs/development-topics/
 

@@ -1,6 +1,5 @@
 ---
 title: ProgressView
-layout: docs
 permalink: /docs/components/progressview/
 component: ProgressView
 ---

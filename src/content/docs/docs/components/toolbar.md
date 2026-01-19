@@ -1,6 +1,5 @@
 ---
 title: Toolbar
-layout: docs
 permalink: /docs/components/toolbar/
 component: Toolbar
 ---

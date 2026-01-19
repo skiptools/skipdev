@@ -1,6 +1,5 @@
 ---
 title: OffsetPosition
-layout: docs
 permalink: /docs/components/offsetposition/
 component: OffsetPosition
 ---

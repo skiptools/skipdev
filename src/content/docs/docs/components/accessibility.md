@@ -1,6 +1,5 @@
 ---
 title: Accessibility
-layout: docs
 permalink: /docs/components/accessibility/
 component: Accessibility
 ---

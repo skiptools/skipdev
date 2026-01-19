@@ -1,6 +1,5 @@
 ---
 title: TabView
-layout: docs
 permalink: /docs/components/tabview/
 component: TabView
 ---

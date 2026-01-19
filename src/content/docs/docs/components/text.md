@@ -1,6 +1,5 @@
 ---
 title: Text
-layout: docs
 permalink: /docs/components/text/
 component: Text
 ---

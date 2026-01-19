@@ -1,6 +1,5 @@
 ---
 title: VideoPlayer
-layout: docs
 permalink: /docs/components/videoplayer/
 component: VideoPlayer
 ---

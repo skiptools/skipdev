@@ -1,6 +1,5 @@
 ---
 title: Alert
-layout: docs
 permalink: /docs/components/alert/
 component: Alert
 ---

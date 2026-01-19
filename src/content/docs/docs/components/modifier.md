@@ -1,6 +1,5 @@
 ---
 title: Modifier
-layout: docs
 permalink: /docs/components/modifier/
 component: Modifier
 ---

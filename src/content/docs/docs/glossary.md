@@ -1,5 +1,4 @@
 ---
-layout: docs
 title: Glossary
 permalink: /docs/glossary/
 ---
