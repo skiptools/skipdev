@@ -15,9 +15,9 @@ The biggest mistake that new Skip developers make is to assume that a Skip or An
 
 We designed Skip from the ground up knowing that all multi-platform tools have limitations, and Skip is no exception. That is why we concentrated on making it trivial to [exclude unsupported iOS code](/docs/platformcustomization/#compiler-directives) from your Android build. You can truly use *any* iOS features, right inline, without compromise and without re-architecting your app.
 
-Of course, using an iOS feature without Android support means you'll need to provide an Android fallback or alternative. You may be able to find a solution among the [thousands of cross-platform modules](https://swiftpackageindex.com/search?query=platform%3Aios%2Candroid) Skip already supports, or to [port](/docs/porting) a Swift package that doesn't yet compile for Android.
+Of course, using an iOS feature without Android support means you'll need to provide an Android fallback or alternative. You may be able to find a solution among the [thousands of cross-platform modules](https://swiftpackageindex.com/search?query=platform%3Aios%2Candroid) Skip already supports, or to [port](/docs/porting/) a Swift package that doesn't yet compile for Android.
 
-Skip also makes it easy to [integrate Android-specific solutions](/docs/platformcustomization), whether to work around limitations or to differentiate your Android experience. 
+Skip also makes it easy to [integrate Android-specific solutions](/docs/platformcustomization/), whether to work around limitations or to differentiate your Android experience. 
 
 So remember: build errors show you what may not yet be supported out of the box on Android. They might require extra work to overcome, but they are not blockers! 
 
@@ -126,7 +126,7 @@ The most common build errors are:
 
 ### Runtime Errors and Debugging
 
-Dealing with errors is an integral part of development. Be sure to read the [Debugging](/docs/debugging) chapter to learn how to access generated code, view your log statements, and debug the Android side of your Skip framework or application.
+Dealing with errors is an integral part of development. Be sure to read the [Debugging](/docs/debugging/) chapter to learn how to access generated code, view your log statements, and debug the Android side of your Skip framework or application.
 
 ---
 

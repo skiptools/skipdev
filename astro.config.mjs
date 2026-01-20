@@ -12,7 +12,6 @@ import { remarkHeadingId } from "remark-custom-heading-id";
 export default defineConfig({
   site: 'https://skip.dev',
   //trailingSlash: 'always', // aspirational
-  //base: '/docs',
   markdown: {
     remarkPlugins: [remarkHeadingId],
     rehypePlugins: [[rehypeExternalLinks, {

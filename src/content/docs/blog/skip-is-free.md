@@ -32,8 +32,8 @@ As of Skip 1.7, all licensing requirements have been removed. No license keys, n
 
 - **Current Skip developers**: Your setup remains completely unchanged, except you will no longer need your license key after upgrading.
 - **New Skip users**: You can start building immediately — no evaluation license required.
-- **Open source skipstone**: We’ve open-sourced the skip tool (internally known as skipstone), which is the engine that powers Skip. This is the tool that handles all the critical build-time functionality: Project creation and management, Xcode and SwiftPM plugin logic, iOS-to-Android project transformation, resource and localization bundling, JNI bridge creation, source transpilation, app packaging, and project export. It is now available as a public GitHub repository at https://github.com/skiptools/skipstone under a free and open-source license.
-- **Migrate the skip.tools site to skip.dev**: As part of this process, we are launching our new home at https://skip.dev! This new site hosts our documentation, blog, and case studies, and it is also open-source and welcomes contributions at https://github.com/skiptools/skip.dev. We will eventually be migrating the entirety of https://skip.tools to https://skip.dev.
+- **Open source skipstone**: We’ve open-sourced the Skip engine, known as "skipstone". This is the tool that handles all the critical build-time functionality: Project creation and management, Xcode and SwiftPM plugin logic, iOS-to-Android project transformation, resource and localization bundling, JNI bridge creation, source transpilation, app packaging, and project export. It is now available as a public GitHub repository at https://github.com/skiptools under a free and open-source license.
+- **Migrate skip.tools to skip.dev**: As part of this process, we are launching our new home at https://skip.dev! This new site hosts our documentation, blog, and case studies, and it is also open-source and welcomes contributions at https://github.com/skiptools/skip.dev. We will eventually be migrating the entirety of https://skip.tools to https://skip.dev.
 
 ### Supporting Skip’s Future
 
@@ -59,4 +59,4 @@ Thank you for your support, and as always, Happy Skipping!
 
 ---
 
-**Ready to get started?** [Get started](/docs/gettingstarted) with Skip 1.7 today and join the community building the future of native cross-platform development.
+**Ready to get started?** [Get started](/docs/gettingstarted/) with Skip 1.7 today and join the community building the future of native cross-platform development.

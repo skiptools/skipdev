@@ -54,7 +54,7 @@ If you're working on a [transpiled library](/docs/modes/#transpiled) that involv
 
 1. Make sure you're set up for [local library development](#local-libraries). Don't forget to point Android Studio at your local libraries.
 1. Stub out the feature in Swift and Xcode.
-1. Build your app (in the case of SkipUI work, we use the [Showcase app](/docs/samples/skipapp-showcase)) so that your Swift stubs are transpiled.
+1. Build your app (in the case of SkipUI work, we use the [Showcase app](/docs/samples/skipapp-showcase/)) so that your Swift stubs are transpiled.
 1. [Open the app](/docs/platformcustomization/#android-studio) in Android Studio.
 1. Iterate on the implementation in Android Studio using pure Kotlin/Compose. Yes, this involves editing the transpiled file containing your stubs, and you may even have to override the file's read-only flag to do so. **Take care not to run an Xcode build** during this phase, because it will overwrite the file with its own transpilation. 
 1. Once you have settled on your Android implementation, use it to fill in your Swift stubs. You can do this by separating it into an included [Kotlin file](/docs/platformcustomization/#kotlin-files) whose API you call from Swift, or by back-porting the Kotlin you wrote into inline Swift.
