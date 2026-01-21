@@ -33,7 +33,6 @@ const links: Link[] = [
   },
 ];
 ---
-
 <div class="header sl-flex">
   <div class="full-width sl-flex">
     <SiteTitle />
@@ -51,6 +50,19 @@ const links: Link[] = [
         ))
       }
     </div>
+
+    <div class="github-star">
+      <a 
+        class="github-button" 
+        href="https://github.com/skiptools/skip" 
+        data-icon="octicon-star" 
+        data-size="large" 
+        data-show-count="true" 
+        aria-label="Star Skip on GitHub"
+      >
+        Star
+      </a>
+    </div>
     <div class="sl-flex social-icons">
       <SocialIcons />
     </div>
@@ -58,6 +70,8 @@ const links: Link[] = [
     <ThemeSelect />
   </div>
 </div>
+
+<script async defer src="https://buttons.github.io/buttons.js"></script>
 
 <style>
   .header {
