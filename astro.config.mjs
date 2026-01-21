@@ -26,7 +26,7 @@ export default defineConfig({
 	integrations: [
 		starlight({
 			title: 'Skip',
-      favicon: './src/assets/skipicon.svg',
+      favicon: '/favicon.svg',
       logo: {
         src: './src/assets/skipicon.svg',
       },
