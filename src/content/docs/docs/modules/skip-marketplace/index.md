@@ -8,7 +8,7 @@ editUrl: https://github.com/skiptools/skip-marketplace/edit/main/README.md
 :::note[Source Repository]{icon="github"}
 This framework is available at [github.com/skiptools/skip-marketplace](https://github.com/skiptools/skip-marketplace) and can be checked out and improved locally as described in the [Contribution Guide](/docs/contributing/#local-libraries).
 :::
-# SkipMarketplace
+
 
 This module provide support for interfacing with an app's
 marketplace, such as the Google Play Store for Android

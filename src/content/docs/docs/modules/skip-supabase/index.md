@@ -8,7 +8,7 @@ editUrl: https://github.com/skiptools/skip-supabase/edit/main/README.md
 :::note[Source Repository]{icon="github"}
 This framework is available at [github.com/skiptools/skip-supabase](https://github.com/skiptools/skip-supabase) and can be checked out and improved locally as described in the [Contribution Guide](/docs/contributing/#local-libraries).
 :::
-# SkipSupabase
+
 
 This package provides Supabase support for [Skip Lite](https://skip.dev) transpiled Swift.
 The Swift side uses the official Supabase iOS SDK directly,

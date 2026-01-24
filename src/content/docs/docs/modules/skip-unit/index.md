@@ -8,7 +8,7 @@ editUrl: https://github.com/skiptools/skip-unit/edit/main/README.md
 :::note[Source Repository]{icon="github"}
 This framework is available at [github.com/skiptools/skip-unit](https://github.com/skiptools/skip-unit) and can be checked out and improved locally as described in the [Contribution Guide](/docs/contributing/#local-libraries).
 :::
-# SkipUnit
+
 
 Base Skip gradle plugin module and unit testing for [Skip](https://skip.tools) apps, adapting Swift XCUnit to transpiled Kotlin JUnit test cases.
 

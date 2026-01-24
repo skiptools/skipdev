@@ -1,26 +1,23 @@
 ---
-title: "skipapp-fireside"
-note: This documentation section is derived from https://raw.githubusercontent.com/skiptools/skipapp-fireside/main/README.md using the scripts/syncdocs.sh script. Do not change the file here, change it there.
+title: Fireside (Lite)
+description: Documentation for Fireside (Lite) fetched from GitHub.
+note: This documentation section is derived from the GitHub README.md source using the scripts/sync-modules.mjs script. Do not make edits to the file here, change it there.
+editUrl: https://github.com/skiptools/skipapp-fireside/edit/main/README.md
 ---
 
-<style type="text/css">
-  div p img {
-    width: 90%;
-  }
-</style>
-
 :::note[Source Repository]{icon="github"}
-This sample app is available at [https://github.com/skiptools/skipapp-fireside.git](https://source.skip.tools/skipapp-fireside.git), which can be checked out and run once Skip is [installed](/docs/gettingstarted/).
+This sample app is available at [github.com/skiptools/skipapp-fireside](https://github.com/skiptools/skipapp-fireside) and can be checked out and improved locally as described in the [Contribution Guide](/docs/contributing/#local-libraries).
 :::
 
-This is a [Skip Lite](/docs/status#skip_lite) dual-platform app project.
+
+This is a [Skip Lite](https://skip.dev) dual-platform app project.
 It creates a native app for both iOS and Android.
 
 This app shows Skip Lite's integration with the Firebase backend
 cloud computing services
 using the official native Firebase SDKs for iOS and Android.
 It utilizes the
-[Skip Firebase](/docs/modules/skip-firebase)
+[Skip Firebase](https://source.skip.dev/skip-firebase)
 framework.
 
 <video id="intro_video" style="width: 100%" controls autoplay>
@@ -43,9 +40,9 @@ $ brew install skiptools/skip/skip
 ```
 $ ~/Library/Android/sdk/emulator/emulator @Pixel_6_API_30
 ```
-3. Download this [repository as a zip file](https://source.skip.tools/skipapp-fireside/archive/main.zip) and unzip it, or clone the repository:
+3. Download this [repository as a zip file](https://source.skip.dev/skipapp-fireside/archive/main.zip) and unzip it, or clone the repository:
 ```
-$ git clone https://source.skip.tools/skipapp-fireside.git
+$ git clone https://source.skip.dev/skipapp-fireside.git
 ```
 4. Open the Xcode project in the *Darwin* folder:
 ```
@@ -73,7 +70,7 @@ The general flow for contributing to this and any other Skip package is:
 2. Check out your fork locally
 3. When developing alongside a Skip app, add the package to a [shared workspace](/docs/contributing) to see your changes incorporated in the app
 4. Push your changes to your fork and ensure the CI checks all pass in the Actions tab
-5. Add your name to the Skip [Contributor Agreement](https://source.skip.tools/clabot-config)
+5. Add your name to the Skip [Contributor Agreement](https://source.skip.dev/clabot-config)
 6. Open a Pull Request from your fork with a description of your changes
 
 ## Running

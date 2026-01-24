@@ -8,7 +8,7 @@ editUrl: https://github.com/skiptools/skip-firebase/edit/main/README.md
 :::note[Source Repository]{icon="github"}
 This framework is available at [github.com/skiptools/skip-firebase](https://github.com/skiptools/skip-firebase) and can be checked out and improved locally as described in the [Contribution Guide](/docs/contributing/#local-libraries).
 :::
-# SkipFirebase
+
 
 This package provides Firebase support for [Skip](https://skip.dev) Swift projects.
 The Swift side uses the official Firebase iOS SDK directly,

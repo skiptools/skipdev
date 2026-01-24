@@ -8,7 +8,7 @@ editUrl: https://github.com/skiptools/skip-sql/edit/main/README.md
 :::note[Source Repository]{icon="github"}
 This framework is available at [github.com/skiptools/skip-sql](https://github.com/skiptools/skip-sql) and can be checked out and improved locally as described in the [Contribution Guide](/docs/contributing/#local-libraries).
 :::
-# SkipSQL
+
 
 The SkipSQL module is a dual-platform [Skip Lite](https://skip.dev) framework that provides access to sqlite database in Darwin and Android systems.
 

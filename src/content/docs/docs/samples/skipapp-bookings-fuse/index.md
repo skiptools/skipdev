@@ -1,20 +1,16 @@
 ---
-title: "skipapp-bookings-fuse"
-note: This documentation section is derived from https://raw.githubusercontent.com/skiptools/skipapp-bookings-fuse/main/README.md using the scripts/syncdocs.sh script. Do not change the file here, change it there.
+title: Travel Bookings (Fuse)
+description: Documentation for Travel Bookings (Fuse) fetched from GitHub.
+note: This documentation section is derived from the GitHub README.md source using the scripts/sync-modules.mjs script. Do not make edits to the file here, change it there.
+editUrl: https://github.com/skiptools/skipapp-bookings-fuse/edit/main/README.md
 ---
 
-<style type="text/css">
-  div p img {
-    width: 90%;
-  }
-</style>
-
 :::note[Source Repository]{icon="github"}
-This sample app is available at [https://github.com/skiptools/skipapp-bookings-fuse.git](https://source.skip.tools/skipapp-bookings-fuse.git), which can be checked out and run once Skip is [installed](/docs/gettingstarted/).
+This sample app is available at [github.com/skiptools/skipapp-bookings-fuse](https://github.com/skiptools/skipapp-bookings-fuse) and can be checked out and improved locally as described in the [Contribution Guide](/docs/contributing/#local-libraries).
 :::
 
 
-This is a [Skip Fuse](/docs/status#skip_fuse) dual-platform app project.
+This is a [Skip Fuse](https://skip.dev) dual-platform app project.
 It builds a native app for both iOS and Android.
 
 ## Building

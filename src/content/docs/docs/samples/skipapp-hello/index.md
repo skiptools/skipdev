@@ -1,19 +1,16 @@
 ---
-title: "skipapp-hello"
-note: This documentation section is derived from https://raw.githubusercontent.com/skiptools/skipapp-hello/main/README.md using the scripts/syncdocs.sh script. Do not change the file here, change it there.
+title: Hello Skip (Lite)
+description: Documentation for Hello Skip (Lite) fetched from GitHub.
+note: This documentation section is derived from the GitHub README.md source using the scripts/sync-modules.mjs script. Do not make edits to the file here, change it there.
+editUrl: https://github.com/skiptools/skipapp-hello/edit/main/README.md
 ---
 
-<style type="text/css">
-  div p img {
-    width: 90%;
-  }
-</style>
-
 :::note[Source Repository]{icon="github"}
-This sample app is available at [https://github.com/skiptools/skipapp-hello.git](https://source.skip.tools/skipapp-hello.git), which can be checked out and run once Skip is [installed](/docs/gettingstarted/).
+This sample app is available at [github.com/skiptools/skipapp-hello](https://github.com/skiptools/skipapp-hello) and can be checked out and improved locally as described in the [Contribution Guide](/docs/contributing/#local-libraries).
 :::
 
-This is a [Skip Lite](/docs/status#skip_lite) dual-platform app project.
+
+This is a [Skip Lite](https://skip.dev) dual-platform app project.
 It builds a native app for both iOS and Android.
 
 This is the exact project with will be output when running the command:
@@ -110,7 +107,7 @@ The general flow for contributing to this and any other Skip package is:
 2. Check out your fork locally
 3. When developing alongside a Skip app, add the package to a [shared workspace](/docs/contributing) to see your changes incorporated in the app
 4. Push your changes to your fork and ensure the CI checks all pass in the Actions tab
-5. Add your name to the Skip [Contributor Agreement](https://source.skip.tools/clabot-config)
+5. Add your name to the Skip [Contributor Agreement](https://source.skip.dev/clabot-config)
 6. Open a Pull Request from your fork with a description of your changes
 
 ## Running

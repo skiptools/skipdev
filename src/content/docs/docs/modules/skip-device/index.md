@@ -8,7 +8,7 @@ editUrl: https://github.com/skiptools/skip-device/edit/main/README.md
 :::note[Source Repository]{icon="github"}
 This framework is available at [github.com/skiptools/skip-device](https://github.com/skiptools/skip-device) and can be checked out and improved locally as described in the [Contribution Guide](/docs/contributing/#local-libraries).
 :::
-# SkipDevice
+
 
 The SkipDevice module is a dual-platform Skip framework that provides access to 
 network reachability, location, and device sensor data.

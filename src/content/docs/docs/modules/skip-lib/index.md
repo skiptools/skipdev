@@ -8,7 +8,7 @@ editUrl: https://github.com/skiptools/skip-lib/edit/main/README.md
 :::note[Source Repository]{icon="github"}
 This framework is available at [github.com/skiptools/skip-lib](https://github.com/skiptools/skip-lib) and can be checked out and improved locally as described in the [Contribution Guide](/docs/contributing/#local-libraries).
 :::
-# SkipLib
+
 
 Swift standard library for [Skip Lite](/docs/status#skip_lite) transpiled Swift.
 

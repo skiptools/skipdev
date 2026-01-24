@@ -1,20 +1,16 @@
 ---
-title: "skipapp-databake"
-note: This documentation section is derived from https://raw.githubusercontent.com/skiptools/skipapp-databake/main/README.md using the scripts/syncdocs.sh script. Do not change the file here, change it there.
+title: Data Bake (Lite)
+description: Documentation for Data Bake (Lite) fetched from GitHub.
+note: This documentation section is derived from the GitHub README.md source using the scripts/sync-modules.mjs script. Do not make edits to the file here, change it there.
+editUrl: https://github.com/skiptools/skipapp-databake/edit/main/README.md
 ---
 
-<style type="text/css">
-  div p img {
-    width: 90%;
-  }
-</style>
-
 :::note[Source Repository]{icon="github"}
-This sample app is available at [https://github.com/skiptools/skipapp-databake.git](https://source.skip.tools/skipapp-databake.git), which can be checked out and run once Skip is [installed](/docs/gettingstarted/).
+This sample app is available at [github.com/skiptools/skipapp-databake](https://github.com/skiptools/skipapp-databake) and can be checked out and improved locally as described in the [Contribution Guide](/docs/contributing/#local-libraries).
 :::
 
 
-This app demonstrates using a local database in a [Skip Lite](/docs/status#skip_lite) app
+This app demonstrates using a local database in a [Skip Lite](https://skip.dev) app
 using the SkipSQL package to update an embedded database.
 
 ![Screenshot](https://assets.skip.dev/skipapp-databake-dev-screenshot.png)
@@ -22,7 +18,7 @@ using the SkipSQL package to update an embedded database.
 
 ## Architecture
 
-This sample app build on the [SkipSQL](http://source.skip.tools/skip-sql) package
+This sample app build on the [SkipSQL](http://skip.dev/docs/modules/skip-sql) package
 to provide an embedded database and a domain-specific model layer ("DataBakeModel")
 that provides an interface for storing and retrieving instance of a
 `DataItem` from rows in the database.
@@ -61,7 +57,7 @@ The general flow for contributing to this and any other Skip package is:
 2. Check out your fork locally
 3. When developing alongside a Skip app, add the package to a [shared workspace](/docs/contributing) to see your changes incorporated in the app
 4. Push your changes to your fork and ensure the CI checks all pass in the Actions tab
-5. Add your name to the Skip [Contributor Agreement](https://source.skip.tools/clabot-config)
+5. Add your name to the Skip [Contributor Agreement](https://source.skip.dev/clabot-config)
 6. Open a Pull Request from your fork with a description of your changes
 
 ## Running
@@ -80,7 +76,7 @@ Android Studio's logcat tab for the transpiled Kotlin app.
 
 ## Project
 
-This project was initialized with the [skip](https://skip.tools) command:
+This project was initialized with the [skip](https://skip.dev) command:
 
 ```
 skip init --appid=skip.data.bake.App --icon-color=34AADC --free skipapp-databake DataBake DataBakeModel

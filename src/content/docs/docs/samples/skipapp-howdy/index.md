@@ -1,20 +1,95 @@
 ---
-title: "skipapp-howdy"
-note: This documentation section is derived from https://raw.githubusercontent.com/skiptools/skipapp-howdy/main/README.md using the scripts/syncdocs.sh script. Do not change the file here, change it there.
+title: Howdy Skip (Fuse)
+description: Documentation for Howdy Skip (Fuse) fetched from GitHub.
+note: This documentation section is derived from the GitHub README.md source using the scripts/sync-modules.mjs script. Do not make edits to the file here, change it there.
+editUrl: https://github.com/skiptools/skipapp-howdy/edit/main/README.md
 ---
 
-<style type="text/css">
-  div p img {
-    width: 90%;
-  }
-</style>
-
 :::note[Source Repository]{icon="github"}
-This sample app is available at [https://github.com/skiptools/skipapp-howdy.git](https://source.skip.tools/skipapp-howdy.git), which can be checked out and run once Skip is [installed](/docs/gettingstarted/).
+This sample app is available at [github.com/skiptools/skipapp-howdy](https://github.com/skiptools/skipapp-howdy) and can be checked out and improved locally as described in the [Contribution Guide](/docs/contributing/#local-libraries).
 :::
 
-This is a [Skip Fuse](/docs/status#skip_fuse) dual-platform app project.
-It builds a native app for both iOS and Android using compiled Swift and SwiftUI.
+
+This is a [Skip](https://skip.dev) dual-platform app project.
+It builds a native app for both iOS and Android.
+
+This is a fully-native compiled Swift app, in contrast
+with the [skipapp-hello](https://source.skip.dev/skipapp-hello)
+sample, which is a fully-transpiled sample app.
+
+To learn about the distinction, see the
+[Native and Transpiled Modes](/docs/modes/)
+documentaton.
+
+This repository contains the exact project with will be output when running the command:
+
+```
+skip init --native-app --appid=skip.howdy.App skipapp-howdy HowdySkip
+```
+
+The project structure looks like this:
+
+```
+skipapp-howdy
+├── Android
+│   ├── app
+│   │   ├── build.gradle.kts
+│   │   ├── proguard-rules.pro
+│   │   └── src
+│   │       └── main
+│   │           ├── AndroidManifest.xml
+│   │           ├── kotlin
+│   │           │   └── Main.kt
+│   │           └── res
+│   │               ├── mipmap-anydpi
+│   │               │   └── ic_launcher.xml
+│   │               └── mipmap-hdpi
+│   │                   ├── ic_launcher_background.png
+│   │                   ├── ic_launcher_foreground.png
+│   │                   ├── ic_launcher_monochrome.png
+│   │                   └── ic_launcher.png
+│   ├── gradle
+│   │   └── wrapper
+│   │       └── gradle-wrapper.properties
+│   ├── gradle.properties
+│   └── settings.gradle.kts
+├── Darwin
+│   ├── Assets.xcassets
+│   │   ├── AccentColor.colorset
+│   │   │   └── Contents.json
+│   │   ├── AppIcon.appiconset
+│   │   │   ├── AppIcon@2x.png
+│   │   │   ├── AppIcon@3x.png
+│   │   │   └── Contents.json
+│   │   └── Contents.json
+│   ├── Entitlements.plist
+│   ├── HowdySkip.xcconfig
+│   ├── HowdySkip.xcodeproj
+│   │   ├── project.pbxproj
+│   │   ├── project.xcworkspace
+│   │   │   └── contents.xcworkspacedata
+│   │   └── xcshareddata
+│   │       └── xcschemes
+│   │           └── HowdySkip App.xcscheme
+│   ├── Info.plist
+│   └── Sources
+│       └── Main.swift
+├── Package.swift
+├── README.md
+├── Skip.env
+└── Sources
+    └── HowdySkip
+        ├── ContentView.swift
+        ├── HowdySkipApp.swift
+        ├── Resources
+        │   ├── Localizable.xcstrings
+        │   └── Module.xcassets
+        │       └── Contents.json
+        ├── Skip
+        │   └── skip.yml
+        └── ViewModel.swift
+```
+
 
 ## Building
 
@@ -25,7 +100,7 @@ into a Kotlin Gradle project for Android using the Skip plugin.
 Building the module requires that Skip be installed using
 [Homebrew](https://brew.sh) with `brew install skiptools/skip/skip`.
 
-This will also install the necessary Android prerequisites:
+This will also install the necessary transpiler prerequisites:
 Kotlin, Gradle, and the Android build tools.
 
 Installation prerequisites can be confirmed by running `skip checkup`.
@@ -40,19 +115,6 @@ Kotlin JUnit tests in the Robolectric Android simulation environment.
 Parity testing can be performed with `skip test`,
 which will output a table of the test results for both platforms.
 
-## Contributing
-
-We welcome contributions to this package in the form of enhancements and bug fixes.
-
-The general flow for contributing to this and any other Skip package is:
-
-1. Fork this repository and enable actions from the "Actions" tab
-2. Check out your fork locally
-3. When developing alongside a Skip app, add the package to a [shared workspace](/docs/contributing) to see your changes incorporated in the app
-4. Push your changes to your fork and ensure the CI checks all pass in the Actions tab
-5. Add your name to the Skip [Contributor Agreement](https://source.skip.tools/clabot-config)
-6. Open a Pull Request from your fork with a description of your changes
-
 ## Running
 
 Xcode and Android Studio must be downloaded and installed in order to
@@ -61,8 +123,8 @@ An Android emulator must already be running, which can be launched from
 Android Studio's Device Manager.
 
 To run both the Swift and Kotlin apps simultaneously,
-launch the HelloSkipFuseApp target from Xcode.
+launch the HowdySkipApp target from Xcode.
 A build phases runs the "Launch Android APK" script that
 will deploy the transpiled app a running Android emulator or connected device.
 Logging output for the iOS app can be viewed in the Xcode console, and in
-Android Studio's Logcat tab for the generated Android app.
+Android Studio's logcat tab for the transpiled Kotlin app.

@@ -8,7 +8,7 @@ editUrl: https://github.com/skiptools/skip-ui/edit/main/README.md
 :::note[Source Repository]{icon="github"}
 This framework is available at [github.com/skiptools/skip-ui](https://github.com/skiptools/skip-ui) and can be checked out and improved locally as described in the [Contribution Guide](/docs/contributing/#local-libraries).
 :::
-# SkipUI
+
 
 SwiftUI support for [Skip](https://skip.dev) apps.
 

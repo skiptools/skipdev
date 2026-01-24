@@ -8,7 +8,7 @@ editUrl: https://github.com/skiptools/skip-keychain/edit/main/README.md
 :::note[Source Repository]{icon="github"}
 This framework is available at [github.com/skiptools/skip-keychain](https://github.com/skiptools/skip-keychain) and can be checked out and improved locally as described in the [Contribution Guide](/docs/contributing/#local-libraries).
 :::
-# SkipKeychain
+
 
 This is a [Skip](https://skip.dev) Swift/Kotlin library project providing a simple unified API to secure key/value storage. It uses the Keychain on Darwin platforms and `EncyptedSharedPreferences` on Android.
 

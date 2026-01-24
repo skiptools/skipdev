@@ -8,7 +8,7 @@ editUrl: https://github.com/skiptools/skip-kit/edit/main/README.md
 :::note[Source Repository]{icon="github"}
 This framework is available at [github.com/skiptools/skip-kit](https://github.com/skiptools/skip-kit) and can be checked out and improved locally as described in the [Contribution Guide](/docs/contributing/#local-libraries).
 :::
-# SkipKit
+
 
 This [Skip Lite](https://skip.dev) module enhances the `SkipUI` package with commonly-used features,
 such as a permission checker and a picker for photos and other media.

@@ -1,21 +1,17 @@
 ---
-title: "skipapp-bookings"
-note: This documentation section is derived from https://raw.githubusercontent.com/skiptools/skipapp-bookings/main/README.md using the scripts/syncdocs.sh script. Do not change the file here, change it there.
+title: Travel Bookings (Lite)
+description: Documentation for Travel Bookings (Lite) fetched from GitHub.
+note: This documentation section is derived from the GitHub README.md source using the scripts/sync-modules.mjs script. Do not make edits to the file here, change it there.
+editUrl: https://github.com/skiptools/skipapp-bookings/edit/main/README.md
 ---
 
-<style type="text/css">
-  div p img {
-    width: 90%;
-  }
-</style>
-
 :::note[Source Repository]{icon="github"}
-This sample app is available at [https://github.com/skiptools/skipapp-bookings.git](https://source.skip.tools/skipapp-bookings.git), which can be checked out and run once Skip is [installed](/docs/gettingstarted/).
+This sample app is available at [github.com/skiptools/skipapp-bookings](https://github.com/skiptools/skipapp-bookings) and can be checked out and improved locally as described in the [Contribution Guide](/docs/contributing/#local-libraries).
 :::
 
 
 This is a demonstration of a full-featured
-[Skip Lite](/docs/status#skip_lite) dual-platform app project
+[Skip Lite](https://skip.dev) dual-platform app project
 for both iOS and Android. It is a travel exploration app
 that displays cities loaded from a bundled JSON asset,
 and has the following features:
@@ -27,8 +23,8 @@ and has the following features:
   - Dynamic temperature update using a weather web service endpoint
   - A settings view enabling override of preferred color scheme and display units
   
-<video autoplay muted loop playsinline controlslist="nodownload" style="background: transparent; width: 100%;" poster="https://www.skip.tools/assets/video/skip-splash-poster.png">
-    <source src="https://www.skip.tools/assets/video/skip-splash.mov" type="video/webm">
+<video autoplay muted loop playsinline controlslist="nodownload" style="background: transparent; width: 100%;" poster="https://www.skip.dev/assets/video/skip-splash-poster.png">
+    <source src="https://www.skip.dev/assets/video/skip-splash.mov" type="video/webm">
     Your browser does not support the video tag.
 </video>
 
@@ -73,7 +69,7 @@ The general flow for contributing to this and any other Skip package is:
 2. Check out your fork locally
 3. When developing alongside a Skip app, add the package to a [shared workspace](/docs/contributing) to see your changes incorporated in the app
 4. Push your changes to your fork and ensure the CI checks all pass in the Actions tab
-5. Add your name to the Skip [Contributor Agreement](https://source.skip.tools/clabot-config)
+5. Add your name to the Skip [Contributor Agreement](https://source.skip.dev/clabot-config)
 6. Open a Pull Request from your fork with a description of your changes
 
 ## Running

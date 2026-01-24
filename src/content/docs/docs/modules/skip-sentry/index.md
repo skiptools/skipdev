@@ -8,7 +8,7 @@ editUrl: https://github.com/skiptools/skip-sentry/edit/main/README.md
 :::note[Source Repository]{icon="github"}
 This framework is available at [github.com/skiptools/skip-sentry](https://github.com/skiptools/skip-sentry) and can be checked out and improved locally as described in the [Contribution Guide](/docs/contributing/#local-libraries).
 :::
-# SkipSentry
+
 
 This is a [Skip](https://skip.dev) Swift/Kotlin library project that
 abstracts the

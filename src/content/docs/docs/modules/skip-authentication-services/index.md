@@ -8,7 +8,7 @@ editUrl: https://github.com/skiptools/skip-authentication-services/edit/main/REA
 :::note[Source Repository]{icon="github"}
 This framework is available at [github.com/skiptools/skip-authentication-services](https://github.com/skiptools/skip-authentication-services) and can be checked out and improved locally as described in the [Contribution Guide](/docs/contributing/#local-libraries).
 :::
-# SkipAuthenticationServices
+
 
 This module provides a compatibility API corresponding to Apple's [AuthenticationServices](https://developer.apple.com/documentation/AuthenticationServices) framework.
 

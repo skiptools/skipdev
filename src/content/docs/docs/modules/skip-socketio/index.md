@@ -8,7 +8,7 @@ editUrl: https://github.com/skiptools/skip-socketio/edit/main/README.md
 :::note[Source Repository]{icon="github"}
 This framework is available at [github.com/skiptools/skip-socketio](https://github.com/skiptools/skip-socketio) and can be checked out and improved locally as described in the [Contribution Guide](/docs/contributing/#local-libraries).
 :::
-# SkipSocketIO
+
 
 This is a [Skip](https://skip.dev) Swift/Kotlin library project that
 abstracts the Socket.io [iOS](https://socket.io/blog/socket-io-on-ios/)

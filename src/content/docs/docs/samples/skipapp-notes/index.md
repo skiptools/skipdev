@@ -1,20 +1,17 @@
 ---
-title: "skipapp-notes"
-note: This documentation section is derived from https://raw.githubusercontent.com/skiptools/skipapp-notes/main/README.md using the scripts/syncdocs.sh script. Do not change the file here, change it there.
+title: Notes (Lite)
+description: Documentation for Notes (Lite) fetched from GitHub.
+note: This documentation section is derived from the GitHub README.md source using the scripts/sync-modules.mjs script. Do not make edits to the file here, change it there.
+editUrl: https://github.com/skiptools/skipapp-notes/edit/main/README.md
 ---
 
-<style type="text/css">
-  div p img {
-    width: 90%;
-  }
-</style>
-
 :::note[Source Repository]{icon="github"}
-This sample app is available at [https://github.com/skiptools/skipapp-notes.git](https://source.skip.tools/skipapp-notes.git), which can be checked out and run once Skip is [installed](/docs/gettingstarted/).
+This sample app is available at [github.com/skiptools/skipapp-notes](https://github.com/skiptools/skipapp-notes) and can be checked out and improved locally as described in the [Contribution Guide](/docs/contributing/#local-libraries).
 :::
 
-Skip notes is a [Skip Fuse](/docs/status#skip_fuse) dual-platform note taking app
-built using Skip
+
+Skip notes is a [Skip Fuse](https://skip.dev) dual-platform note taking app
+built using [Skip](https://skip.dev)
 and distributed through the [App Fair](https://appfair.org).
 
 <div align="center">
@@ -65,7 +62,7 @@ The general flow for contributing to this and any other Skip package is:
 2. Check out your fork locally
 3. When developing alongside a Skip app, add the package to a [shared workspace](/docs/contributing) to see your changes incorporated in the app
 4. Push your changes to your fork and ensure the CI checks all pass in the Actions tab
-5. Add your name to the Skip [Contributor Agreement](https://source.skip.tools/clabot-config)
+5. Add your name to the Skip [Contributor Agreement](https://source.skip.dev/clabot-config)
 6. Open a Pull Request from your fork with a description of your changes
 
 ## Running

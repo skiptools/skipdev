@@ -8,7 +8,7 @@ editUrl: https://github.com/skiptools/skip-model/edit/main/README.md
 :::note[Source Repository]{icon="github"}
 This framework is available at [github.com/skiptools/skip-model](https://github.com/skiptools/skip-model) and can be checked out and improved locally as described in the [Contribution Guide](/docs/contributing/#local-libraries).
 :::
-# SkipModel
+
 
 Model object observation for [Skip Lite](https://skip.dev) transpiled Swift. Parts of this package are also used by [Skip Fuse](/docs/status/#skip_fuse) to bridge `@Observables` to Compose.
 

@@ -1,22 +1,19 @@
 ---
-title: "skipapp-fireside-fuse"
-note: This documentation section is derived from https://raw.githubusercontent.com/skiptools/skipapp-fireside-fuse/main/README.md using the scripts/syncdocs.sh script. Do not change the file here, change it there.
+title: Fireside (Fuse)
+description: Documentation for Fireside (Fuse) fetched from GitHub.
+note: This documentation section is derived from the GitHub README.md source using the scripts/sync-modules.mjs script. Do not make edits to the file here, change it there.
+editUrl: https://github.com/skiptools/skipapp-fireside-fuse/edit/main/README.md
 ---
 
-<style type="text/css">
-  div p img {
-    width: 90%;
-  }
-</style>
-
 :::note[Source Repository]{icon="github"}
-This sample app is available at [https://github.com/skiptools/skipapp-fireside-fuse.git](https://source.skip.tools/skipapp-fireside-fuse.git), which can be checked out and run once Skip is [installed](/docs/gettingstarted/).
+This sample app is available at [github.com/skiptools/skipapp-fireside-fuse](https://github.com/skiptools/skipapp-fireside-fuse) and can be checked out and improved locally as described in the [Contribution Guide](/docs/contributing/#local-libraries).
 :::
 
-This is a [Skip Fuse](/docs/status#skip_fuse) dual-platform app project demonstrating the use
+
+This is a [Skip Fuse](https://skip.dev) dual-platform app project demonstrating the use
 of Firebase Firestore and Firebase Messaging.
 It builds a native app for both iOS and Android.
-See the `skip-firebase` module [documentation](/docs/modules/skip-firebase) for details on integrating Firebase into your cross-platform Skip projects.
+See the `skip-firebase` module [documentation](https://source.skip.dev/skip-firebase) for details on integrating Firebase into your cross-platform Skip projects.
 
 ## Building
 

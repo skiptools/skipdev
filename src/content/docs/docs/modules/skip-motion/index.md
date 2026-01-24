@@ -8,7 +8,7 @@ editUrl: https://github.com/skiptools/skip-motion/edit/main/README.md
 :::note[Source Repository]{icon="github"}
 This framework is available at [github.com/skiptools/skip-motion](https://github.com/skiptools/skip-motion) and can be checked out and improved locally as described in the [Contribution Guide](/docs/contributing/#local-libraries).
 :::
-# SkipMotion
+
 
 This is a [Skip](https://skip.dev) Swift/Kotlin library project that 
 provides the ability to play Lottie animations in dual-platform Skip apps

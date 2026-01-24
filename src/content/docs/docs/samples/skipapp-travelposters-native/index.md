@@ -1,19 +1,16 @@
 ---
-title: "skipapp-travelposters-native"
-note: This documentation section is derived from https://raw.githubusercontent.com/skiptools/skipapp-travelposters-native/main/README.md using the scripts/syncdocs.sh script. Do not change the file here, change it there.
+title: Travel Posters (Split)
+description: Documentation for Travel Posters (Split) fetched from GitHub.
+note: This documentation section is derived from the GitHub README.md source using the scripts/sync-modules.mjs script. Do not make edits to the file here, change it there.
+editUrl: https://github.com/skiptools/skipapp-travelposters-native/edit/main/README.md
 ---
 
-<style type="text/css">
-  div p img {
-    width: 90%;
-  }
-</style>
-
 :::note[Source Repository]{icon="github"}
-This sample app is available at [https://github.com/skiptools/skipapp-travelposters-native.git](https://source.skip.tools/skipapp-travelposters-native.git), which can be checked out and run once Skip is [installed](/docs/gettingstarted/).
+This sample app is available at [github.com/skiptools/skipapp-travelposters-native](https://github.com/skiptools/skipapp-travelposters-native) and can be checked out and improved locally as described in the [Contribution Guide](/docs/contributing/#local-libraries).
 :::
 
-This is a demonstration of using a shared [Skip Fuse](/docs/status#skip_fuse) dual-platform model library in native Swift to power both an iOS and an Android app.
+
+This is a demonstration of using a shared [Skip Fuse](https://skip.tools) dual-platform model library in native Swift to power both an iOS and an Android app.
 
 For more information on this project, see the blog post
 [Native Swift on Android, Part 3: Sharing a Swift Model Layer](/blog/shared-swift-model/).
@@ -58,7 +55,7 @@ Use Android Studio to build and run the Android app. Before building the Android
 
 Note the following declaration in `Android/app/build.gradle.kts`:
 
-```kts
+```kotlinscript
 android {
     packaging {
         jniLibs {

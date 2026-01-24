@@ -8,7 +8,7 @@ editUrl: https://github.com/skiptools/skip-zip/edit/main/README.md
 :::note[Source Repository]{icon="github"}
 This framework is available at [github.com/skiptools/skip-zip](https://github.com/skiptools/skip-zip) and can be checked out and improved locally as described in the [Contribution Guide](/docs/contributing/#local-libraries).
 :::
-# SkipZip
+
 
 SkipZip is a Skip framework that provides support for creating and extracting zip archives.
 

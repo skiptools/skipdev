@@ -1,19 +1,16 @@
 ---
-title: "skipapp-showcase"
-note: This documentation section is derived from https://raw.githubusercontent.com/skiptools/skipapp-showcase/main/README.md using the scripts/syncdocs.sh script. Do not change the file here, change it there.
+title: Showcase (Lite)
+description: Documentation for Showcase (Lite) fetched from GitHub.
+note: This documentation section is derived from the GitHub README.md source using the scripts/sync-modules.mjs script. Do not make edits to the file here, change it there.
+editUrl: https://github.com/skiptools/skipapp-showcase/edit/main/README.md
 ---
 
-<style type="text/css">
-  div p img {
-    width: 90%;
-  }
-</style>
-
 :::note[Source Repository]{icon="github"}
-This sample app is available at [https://github.com/skiptools/skipapp-showcase.git](https://source.skip.tools/skipapp-showcase.git), which can be checked out and run once Skip is [installed](/docs/gettingstarted/).
+This sample app is available at [github.com/skiptools/skipapp-showcase](https://github.com/skiptools/skipapp-showcase) and can be checked out and improved locally as described in the [Contribution Guide](/docs/contributing/#local-libraries).
 :::
 
-Showcase is a [Skip Lite](/docs/status#skip_lite) app that demonstrates many of the components available in SkipUI.
+
+Showcase is a [Skip Lite](https://skip.dev) app that demonstrates many of the components available in SkipUI.
 
 <div align="center">
   <a href="https://play.google.com/store/apps/details?id=org.appfair.app.Showcase" style="display: inline-block;"><img src="https://appfair.org/assets/badges/google-play-store.svg" alt="Download on the Google Play Store" style="height: 60px; vertical-align: middle; object-fit: contain;" /></a>
@@ -40,9 +37,9 @@ To get started:
 $ brew install skiptools/skip/skip
 ```
 2. Configure and launch an Android emulator from the [Android Studio device manager](https://developer.android.com/studio/run/emulator-launch-without-app).
-3. Download this [repository as a zip file](https://source.skip.tools/skipapp-showcase/archive/main.zip) and unzip it, or clone the repository:
+3. Download this [repository as a zip file](https://source.skip.dev/skipapp-showcase/archive/main.zip) and unzip it, or clone the repository:
 ```
-$ git clone https://source.skip.tools/skipapp-showcase.git
+$ git clone https://source.skip.dev/skipapp-showcase.git
 ```
 4. Open the Xcode workspace: `Project.xcworkspace`
 5. Select and Run the `Showcase App` target with an iOS simulator destination; the app will build and run side-by-side on the iOS simulator and Android emulator.
@@ -73,7 +70,7 @@ The general flow for contributing to this and any other Skip package is:
 2. Check out your fork locally
 3. When developing alongside a Skip app, add the package to a [shared workspace](/docs/contributing) to see your changes incorporated in the app
 4. Push your changes to your fork and ensure the CI checks all pass in the Actions tab
-5. Add your name to the Skip [Contributor Agreement](https://source.skip.tools/clabot-config)
+5. Add your name to the Skip [Contributor Agreement](https://source.skip.dev/clabot-config)
 6. Open a Pull Request from your fork with a description of your changes
 
 ## Running

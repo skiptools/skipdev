@@ -8,7 +8,7 @@ editUrl: https://github.com/skiptools/skip-fuse/edit/main/README.md
 :::note[Source Repository]{icon="github"}
 This framework is available at [github.com/skiptools/skip-fuse](https://github.com/skiptools/skip-fuse) and can be checked out and improved locally as described in the [Contribution Guide](/docs/contributing/#local-libraries).
 :::
-# SkipFuse
+
 
 SkipFuse helps fuse the Swift and Android worlds for [Skip Fuse](/docs/modes/#native) modules and apps. It is an umbrella framework that vends cross-platform functionality. For example, SkipFuse:
 

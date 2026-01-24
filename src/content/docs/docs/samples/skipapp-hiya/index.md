@@ -1,22 +1,16 @@
 ---
-title: "skipapp-hiya"
-note: This documentation section is derived from https://raw.githubusercontent.com/skiptools/skipapp-hiya/main/README.md using the scripts/syncdocs.sh script. Do not change the file here, change it there.
+title: Hiya Skip (Mixed)
+description: Documentation for Hiya Skip (Mixed) fetched from GitHub.
+note: This documentation section is derived from the GitHub README.md source using the scripts/sync-modules.mjs script. Do not make edits to the file here, change it there.
+editUrl: https://github.com/skiptools/skipapp-hiya/edit/main/README.md
 ---
 
-<style type="text/css">
-  div p img {
-    width: 90%;
-  }
-</style>
-
 :::note[Source Repository]{icon="github"}
-This sample app is available at [https://github.com/skiptools/skipapp-hiya.git](https://source.skip.tools/skipapp-hiya.git), which can be checked out and run once Skip is [installed](/docs/gettingstarted/).
+This sample app is available at [github.com/skiptools/skipapp-hiya](https://github.com/skiptools/skipapp-hiya) and can be checked out and improved locally as described in the [Contribution Guide](/docs/contributing/#local-libraries).
 :::
 
 
-# HiyaSkip
-
-This is a Skip dual-platform app project
+This is a [Skip](https://skip.dev) dual-platform app project
 that demonstrates the integration between a native Swift model
 layer compiled for Android connected to a transpiled SwiftUI
 user interface. For more information on using natively-compiled
@@ -32,7 +26,7 @@ skip init --native-model --appid=hiya.skip skipapp-hiya HiyaSkip HiyaSkipModel H
 The package will contain three modules:
 
 1. A top-level `HiyaSkip` target that uses SwiftUI that will be transpiled to Jetpack Compose on Android to make up the user interface portion of the app
-2. A `HiyaSkipModel` model layer that will be compiled natively for both Android and iOS. It contains an `@Observable ViewModel` that will be used directly on iOS, and on Android will be bridged to the transpiled user-interface layer using [SkipFuse](/docs/modules/skip-fuse) and [SkipBridge](/docs/modules/skip-bridge).
+2. A `HiyaSkipModel` model layer that will be compiled natively for both Android and iOS. It contains an `@Observable ViewModel` that will be used directly on iOS, and on Android will be bridged to the transpiled user-interface layer using [SkipFuse](https://source.skip.dev/skip-fuse) and [SkipBridge](https://source.skip.dev/skip-bridge).
 3. A pure swift cross-platform `HiyaSkipLogic` module that does not use any bridging, and is depended on by `HiyaSkipModel`
 
 
@@ -140,7 +134,7 @@ The general flow for contributing to this and any other Skip package is:
 2. Check out your fork locally
 3. When developing alongside a Skip app, add the package to a [shared workspace](/docs/contributing) to see your changes incorporated in the app
 4. Push your changes to your fork and ensure the CI checks all pass in the Actions tab
-5. Add your name to the Skip [Contributor Agreement](https://source.skip.tools/clabot-config)
+5. Add your name to the Skip [Contributor Agreement](https://source.skip.dev/clabot-config)
 6. Open a Pull Request from your fork with a description of your changes
 
 ## Running

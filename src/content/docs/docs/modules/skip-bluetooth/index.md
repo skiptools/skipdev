@@ -8,7 +8,7 @@ editUrl: https://github.com/skiptools/skip-bluetooth/edit/main/README.md
 :::note[Source Repository]{icon="github"}
 This framework is available at [github.com/skiptools/skip-bluetooth](https://github.com/skiptools/skip-bluetooth) and can be checked out and improved locally as described in the [Contribution Guide](/docs/contributing/#local-libraries).
 :::
-# SkipBluetooth
+
 
 This is a [Skip Lite](https://skip.dev) Swift/Kotlin library project that
 provides API parity to `CoreBluetooth` for Android.

@@ -8,7 +8,7 @@ editUrl: https://github.com/skiptools/skip-auth0/edit/main/README.md
 :::note[Source Repository]{icon="github"}
 This framework is available at [github.com/skiptools/skip-auth0](https://github.com/skiptools/skip-auth0) and can be checked out and improved locally as described in the [Contribution Guide](/docs/contributing/#local-libraries).
 :::
-# SkipAuth0
+
 
 This is a free [Skip](https://skip.dev) Swift/Kotlin library project containing the following modules:
 

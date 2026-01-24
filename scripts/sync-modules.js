@@ -39,8 +39,23 @@ const MODULES = [
   { repo: 'skip-zip', name: 'Zip' },
 ];
 
-const owner = 'skiptools';
-const branch = 'main';
+const SAMPLES = [
+  { repo: 'skipapp-showcase-fuse', name: 'Showcase (Fuse)' },
+  { repo: 'skipapp-showcase', name: 'Showcase (Lite)' },
+  { repo: 'skipapp-hello', name: 'Hello Skip (Lite)' },
+  { repo: 'skipapp-howdy', name: 'Howdy Skip (Fuse)' },
+  { repo: 'skipapp-hiya', name: 'Hiya Skip (Mixed)' },
+  { repo: 'skipapp-bookings-fuse', name: 'Travel Bookings (Fuse)' },
+  { repo: 'skipapp-bookings', name: 'Travel Bookings (Lite)' },
+  { repo: 'skipapp-travelposters-native', name: 'Travel Posters (Split)' },
+  { repo: 'skipapp-fireside-fuse', name: 'Fireside (Fuse)' },
+  { repo: 'skipapp-fireside', name: 'Fireside (Lite)' },
+  { repo: 'skipapp-notes', name: 'Notes (Lite)' },
+  { repo: 'skipapp-databake', name: 'Data Bake (Lite)' },
+  { repo: 'skipapp-weather', name: 'Weather (Lite)' },
+  { repo: 'skipapp-lottiedemo', name: 'Lottie (Lite)' },
+  { repo: 'skipapp-scrumskipper', name: 'Scrumskipper (Lite)' },
+];
 
 const replacements = [
     //{ search: '# Skip Lib', replace: '# Introduction to Skip Lib' },
@@ -51,27 +66,40 @@ const replacements = [
     { search: 'href="https://skip.dev/docs/', replace: 'href="/docs/' },
 ];
 
-const OUTPUT_DIR = './src/content/docs/docs/modules';
+const owner = 'skiptools';
+const branch = 'main';
 
-async function sync() {
-  if (!fs.existsSync(OUTPUT_DIR)) fs.mkdirSync(OUTPUT_DIR, { recursive: true });
+async function processRepositories() {
+  for (const mod of MODULES.concat(SAMPLES)) {
+    const isApp = mod.repo.startsWith("skipapp-") ? true : false;
+    const modType = isApp ? 'sample app' : 'framework';
+    const OUTPUT_DIR = './src/content/docs/docs/' + (isApp ? 'samples' : 'modules');
 
-  for (const mod of MODULES) {
-    const url = `https://raw.githubusercontent.com/${owner}/${mod.repo}/refs/heads/${branch}/README.md`;
-    
+    const rawBaseUrl = `https://raw.githubusercontent.com/${owner}/${mod.repo}/${branch}`;
+    const url = rawBaseUrl + '/README.md';
+
     console.log(`Fetching ${mod.name}...`);
-    
+
     try {
       const response = await fetch(url);
       if (!response.ok) throw new Error(`Failed to fetch ${mod.repo}`);
-      
+
       let content = await response.text();
+
+      // Remove the first top-level heading (# Title)
+      // This prevents double titles if Starlight uses the frontmatter title
+      content = content.replace(/^#\s+.+$/m, '');
 
       // Post-processing replacements
       replacements.forEach(({ search, replace }) => {
         content = content.replaceAll(search, replace);
       });
 
+      // fix local image refs
+      content = content.replaceAll('src="Android/fastlane', `src="${rawBaseUrl}/Android/fastlane`);
+      content = content.replaceAll('src="Darwin/fastlane', `src="${rawBaseUrl}/Darwin/fastlane`);
+
+      // trim everything after the repo license
       content = content.replace(/## License[\s\S]*/i, '');
 
       // Convert GitHub Alerts (> [!NOTE]) to Starlight Admonitions (:::note)
@@ -94,11 +122,11 @@ editUrl: https://github.com/${owner}/${mod.repo}/edit/${branch}/README.md
 ---
 
 :::note[Source Repository]{icon="github"}
-This framework is available at [github.com/${owner}/${mod.repo}](https://github.com/${owner}/${mod.repo}) and can be checked out and improved locally as described in the [Contribution Guide](/docs/contributing/#local-libraries).
+This ${modType} is available at [github.com/${owner}/${mod.repo}](https://github.com/${owner}/${mod.repo}) and can be checked out and improved locally as described in the [Contribution Guide](/docs/contributing/#local-libraries).
 :::
 `;
       const finalContent = frontmatter + content;
-      
+
       // Save file
       const folderPath = path.join(OUTPUT_DIR, mod.repo);
       if (!fs.existsSync(folderPath)) fs.mkdirSync(folderPath);
@@ -106,18 +134,18 @@ This framework is available at [github.com/${owner}/${mod.repo}](https://github.
       const filePath = path.join(folderPath, 'index.md');
       // If file exists, make it writable so we can overwrite it
       if (fs.existsSync(filePath)) fs.chmodSync(filePath, 0o644);
-      
+
       fs.writeFileSync(filePath, finalContent);
-      
+
       // Set file to read-only (owner/group/others can only read)
       fs.chmodSync(filePath, 0o444);
 
       console.log(`✅ Successfully synced ${mod.name}`);
-      
+
     } catch (err) {
       console.error(`❌ Error syncing ${mod.name}:`, err.message);
     }
   }
 }
 
-sync();
+processRepositories();

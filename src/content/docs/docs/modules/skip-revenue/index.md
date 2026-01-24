@@ -8,7 +8,7 @@ editUrl: https://github.com/skiptools/skip-revenue/edit/main/README.md
 :::note[Source Repository]{icon="github"}
 This framework is available at [github.com/skiptools/skip-revenue](https://github.com/skiptools/skip-revenue) and can be checked out and improved locally as described in the [Contribution Guide](/docs/contributing/#local-libraries).
 :::
-# SkipRevenueUI
+
 
 This is a free [Skip](https://skip.dev) Swift/Kotlin library project containing the following modules:
 

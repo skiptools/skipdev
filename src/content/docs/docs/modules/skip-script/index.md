@@ -36,7 +36,7 @@ let package = Package(
 )
 ```
 
-# Usage
+
 
 :::note
 Note that SkipScript will automatically be imported when it is included

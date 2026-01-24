@@ -8,7 +8,7 @@ editUrl: https://github.com/skiptools/skip-posthog/edit/main/README.md
 :::note[Source Repository]{icon="github"}
 This framework is available at [github.com/skiptools/skip-posthog](https://github.com/skiptools/skip-posthog) and can be checked out and improved locally as described in the [Contribution Guide](/docs/contributing/#local-libraries).
 :::
-# SkipPostHog
+
 
 A [Skip](https://skip.dev) interface for integrating PostHog analytics into your cross-platform iOS and Android applications.
 

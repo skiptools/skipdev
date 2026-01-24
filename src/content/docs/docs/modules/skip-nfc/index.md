@@ -8,7 +8,7 @@ editUrl: https://github.com/skiptools/skip-nfc/edit/main/README.md
 :::note[Source Repository]{icon="github"}
 This framework is available at [github.com/skiptools/skip-nfc](https://github.com/skiptools/skip-nfc) and can be checked out and improved locally as described in the [Contribution Guide](/docs/contributing/#local-libraries).
 :::
-# SkipNFC
+
 
 This package provides rudimentary support for Android and iOS NFC interaction
 for [Skip](https://skip.dev) apps.
