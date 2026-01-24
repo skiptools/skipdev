@@ -1,13 +1,16 @@
 ---
 title: SkipFoundation
-note: This documentation section is derived from https://raw.githubusercontent.com/skiptools/skip-foundation/main/README.md using the scripts/syncdocs.sh script. Do not change the file here, change it there.
+description: Documentation for SkipFoundation fetched from GitHub.
+note: This documentation section is derived from the GitHub README.md source using the scripts/sync-modules.mjs script. Do not make edits to the file here, change it there.
+editUrl: https://github.com/skiptools/skip-foundation/edit/main/README.md
 ---
 
 :::note[Source Repository]{icon="github"}
-The skip-foundation framework is available at [https://github.com/skiptools/skip-foundation.git](https://source.skip.tools/skip-foundation.git), which can be checked out and tested with `skip test` once Skip is [installed](/docs/gettingstarted/).
+This framework is available at [github.com/skiptools/skip-foundation](https://github.com/skiptools/skip-foundation) and can be checked out and improved locally as described in the [Contribution Guide](/docs/contributing/#local-libraries).
 :::
+# SkipFoundation
 
-Foundation support for [Skip Lite](/docs/status#skip_lite) transpiled Swift.
+Foundation support for [Skip Lite](https://skip.dev) transpiled Swift.
 
 See what API is currently implemented [here](#foundation-support).
 
@@ -19,9 +22,9 @@ SkipFoundation also implements portions of the CryptoKit API.
 
 ## Dependencies
 
-SkipFoundation depends on the [skip](https://source.skip.tools/skip) transpiler plugin as well as the [SkipLib](/docs/modules/skip-lib) package.
+SkipFoundation depends on the [skip](https://source.skip.dev/skip) transpiler plugin as well as the [SkipLib](https://source.skip.dev/skip-lib) package.
 
-SkipFoundation is part of the core *Skip Core Frameworks* and is not intended to be imported directly.
+SkipFoundation is part of the *Skip Core Frameworks* and is not intended to be imported directly.
 The module is transparently adopted through the translation of `import Foundation` into `import skip.foundation.*` by the Skip transpiler.
 
 ### Android Libraries
@@ -44,7 +47,7 @@ To help fill in unimplemented API in SkipFoundation:
 1. Find unimplemented API.
 1. Write an appropriate Kotlin implementation. See [Implementation Strategy](#implementation-strategy) below.
 1. Edit the corresponding tests to make sure they are no longer skipped, and that they pass. If there aren't existing tests, write some. See [Tests](#tests).
-1. [Submit a PR.](https://source.skip.tools/skip-foundation/pulls)
+1. [Submit a PR.](https://source.skip.dev/skip-foundation/pulls)
 
 Other forms of contributions such as test cases, comments, and documentation are also welcome!
 
@@ -66,7 +69,7 @@ You should also implement a constructor that accepts the equivalent Kotlin or Ja
 
 ## Tests
 
-SkipFoundation's `Tests/` folder contains the entire set of official Foundation framework test cases. Through the magic of [SkipUnit](/docs/modules/skip-unit), this allows us to validate our SkipFoundation API implementations on Android against the same test suite used by the Foundation team on iOS.
+SkipFoundation's `Tests/` folder contains the entire set of official Foundation framework test cases. Through the magic of [SkipUnit](https://source.skip.dev/skip-unit), this allows us to validate our SkipFoundation API implementations on Android against the same test suite used by the Foundation team on iOS.
 
 It is SkipFoundation's goal to include - and pass - as much of the official test suite as possible.
 

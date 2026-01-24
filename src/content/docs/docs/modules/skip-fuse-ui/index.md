@@ -1,11 +1,14 @@
 ---
 title: SkipFuseUI
-note: This documentation section is derived from https://raw.githubusercontent.com/skiptools/skip-fuse-ui/main/README.md using the scripts/syncdocs.sh script. Do not change the file here, change it there.
+description: Documentation for SkipFuseUI fetched from GitHub.
+note: This documentation section is derived from the GitHub README.md source using the scripts/sync-modules.mjs script. Do not make edits to the file here, change it there.
+editUrl: https://github.com/skiptools/skip-fuse-ui/edit/main/README.md
 ---
 
 :::note[Source Repository]{icon="github"}
-The skip-fuse-ui framework is available at [https://github.com/skiptools/skip-fuse-ui.git](https://source.skip.tools/skip-fuse-ui.git), which can be checked out and tested with `skip test` once Skip is [installed](/docs/gettingstarted/).
+This framework is available at [github.com/skiptools/skip-fuse-ui](https://github.com/skiptools/skip-fuse-ui) and can be checked out and improved locally as described in the [Contribution Guide](/docs/contributing/#local-libraries).
 :::
+# SkipFuseUI
 
 Bridging between SwiftUI and Jetpack Compose for [Skip Fuse](/docs/modes/) apps. SkipFuseUI uses [SkipUI](/docs/modules/skip-ui/) under the hood to adapt the SwiftUI APIs to Compose. See its documentation for information about SwiftUI-on-Android.
 

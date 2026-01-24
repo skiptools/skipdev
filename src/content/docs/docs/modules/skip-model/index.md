@@ -1,13 +1,16 @@
 ---
 title: SkipModel
-note: This documentation section is derived from https://raw.githubusercontent.com/skiptools/skip-model/main/README.md using the scripts/syncdocs.sh script. Do not change the file here, change it there.
+description: Documentation for SkipModel fetched from GitHub.
+note: This documentation section is derived from the GitHub README.md source using the scripts/sync-modules.mjs script. Do not make edits to the file here, change it there.
+editUrl: https://github.com/skiptools/skip-model/edit/main/README.md
 ---
 
 :::note[Source Repository]{icon="github"}
-The skip-model framework is available at [https://github.com/skiptools/skip-model.git](https://source.skip.tools/skip-model.git), which can be checked out and tested with `skip test` once Skip is [installed](/docs/gettingstarted/).
+This framework is available at [github.com/skiptools/skip-model](https://github.com/skiptools/skip-model) and can be checked out and improved locally as described in the [Contribution Guide](/docs/contributing/#local-libraries).
 :::
+# SkipModel
 
-Model object observation for [Skip Lite](/docs/status#skip_lite) transpiled Swift. Parts of this package are also used by [Skip Fuse](/docs/status/#skip_fuse) to bridge `@Observables` to Compose.
+Model object observation for [Skip Lite](https://skip.dev) transpiled Swift. Parts of this package are also used by [Skip Fuse](/docs/status/#skip_fuse) to bridge `@Observables` to Compose.
 
 See what API is included [here](#api-support).
 
@@ -23,7 +26,7 @@ let package = Package(
         .library(name: "MyProduct", targets: ["MyTarget"]),
     ],
     dependencies: [
-        .package(url: "https://source.skip.tools/skip-model.git", from: "1.0.0"),
+        .package(url: "https://source.skip.dev/skip-model.git", from: "1.0.0"),
     ],
     targets: [
         .target(name: "MyTarget", dependencies: [
@@ -39,9 +42,9 @@ SkipModel vends the `skip.model` Kotlin package. This package contains `Observab
 
 ## Dependencies
 
-SkipLib depends on the [skip](https://source.skip.tools/skip) transpiler plugin and the [SkipFoundation](/docs/modules/skip-foundation) package.
+SkipLib depends on the [skip](https://source.skip.dev/skip) transpiler plugin and the [SkipFoundation](https://source.skip.dev/skip-foundation) package.
 
-SkipModel is part of the core *Skip Core Frameworks* and is not intended to be imported directly. The transpiler includes `import skip.model.*` in generated Kotlin for any Swift source that imports the `Combine`, `Observation`, or `SwiftUI` frameworks.
+SkipModel is part of the core *SkipStack* and is not intended to be imported directly. The transpiler includes `import skip.model.*` in generated Kotlin for any Swift source that imports the `Combine`, `Observation`, or `SwiftUI` frameworks.
 
 ## Status
 
@@ -53,7 +56,7 @@ Much of Skip's model support is implemented directly in the Skip transpiler. The
 
 ## Contributing
 
-We welcome contributions to SkipModel. The Skip product [documentation](/docs/contributing/) includes helpful instructions and tips on local Skip library development. When submitting code, please include unit tests in your [PR](https://source.skip.tools/skip-model/pulls).
+We welcome contributions to SkipModel. The Skip product [documentation](/docs/contributing/) includes helpful instructions and tips on local Skip library development. When submitting code, please include unit tests in your [PR](https://source.skip.dev/skip-model/pulls).
 
 ## Model Objects
 

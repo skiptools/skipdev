@@ -1,11 +1,14 @@
 ---
 title: SkipLib
-note: This documentation section is derived from https://raw.githubusercontent.com/skiptools/skip-lib/main/README.md using the scripts/syncdocs.sh script. Do not change the file here, change it there.
+description: Documentation for SkipLib fetched from GitHub.
+note: This documentation section is derived from the GitHub README.md source using the scripts/sync-modules.mjs script. Do not make edits to the file here, change it there.
+editUrl: https://github.com/skiptools/skip-lib/edit/main/README.md
 ---
 
 :::note[Source Repository]{icon="github"}
-The skip-lib framework is available at [https://github.com/skiptools/skip-lib.git](https://source.skip.tools/skip-lib.git), which can be checked out and tested with `skip test` once Skip is [installed](/docs/gettingstarted/).
+This framework is available at [github.com/skiptools/skip-lib](https://github.com/skiptools/skip-lib) and can be checked out and improved locally as described in the [Contribution Guide](/docs/contributing/#local-libraries).
 :::
+# SkipLib
 
 Swift standard library for [Skip Lite](/docs/status#skip_lite) transpiled Swift.
 
@@ -20,14 +23,14 @@ SkipLib vends the `skip.lib` Kotlin package. It serves two purposes:
 
 ## Dependencies
 
-SkipLib depends on the [skip](https://source.skip.tools/skip) transpiler plugin and has no additional library dependencies.
+SkipLib depends on the [skip](https://source.skip.dev/skip) transpiler plugin and has no additional library dependencies.
 
 It is part of the core *Skip Core Frameworks* and is not intended to be imported directly.
 The module is transparently adopted through the automatic addition of `import skip.lib.*` to transpiled files by the Skip transpiler.
 
 ## Status
 
-- SkipLib's Swift symbol files (see [Implementation Strategy](#implementation-strategy)) are nominally complete. They should declare all Swift standard library API. This is difficult to validate, however, so if you find anything missing, please [report it](https://source.skip.tools/skip-lib/issues) to us.
+- SkipLib's Swift symbol files (see [Implementation Strategy](#implementation-strategy)) are nominally complete. They should declare all Swift standard library API. This is difficult to validate, however, so if you find anything missing, please [report it](https://source.skip.dev/skip-lib/issues) to us.
 - Unimplemented API is appropriately marked with `@available(*, unavailable)` annotations. Skip will generate an error when you attempt to use an unimplemented API.
 - In particular, a significant portion of the [collections](#collections) API is not yet implemented.
 - Unit testing is not comprehensive.
@@ -43,7 +46,7 @@ The most pressing need is to reduce the amount of unimplemented API. To help fil
 1. Find unimplemented API. Unimplemented API should be marked with `@available(*, unavailable)` in the Swift symbol files.
 1. Write an appropriate Kotlin implementation. See [Implementation Strategy](#implementation-strategy) below. For [collections](#collections) API, make sure your implementation is duplicated for `String` as well.
 1. Write unit tests.
-1. [Submit a PR.](https://source.skip.tools/skip-lib/pulls)
+1. [Submit a PR.](https://source.skip.dev/skip-lib/pulls)
 
 Other forms of contributions such as test cases, comments, and documentation are also welcome!
 

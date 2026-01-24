@@ -1,13 +1,16 @@
 ---
 title: SkipUnit
-note: This documentation section is derived from https://raw.githubusercontent.com/skiptools/skip-unit/main/README.md using the scripts/syncdocs.sh script. Do not change the file here, change it there.
+description: Documentation for SkipUnit fetched from GitHub.
+note: This documentation section is derived from the GitHub README.md source using the scripts/sync-modules.mjs script. Do not make edits to the file here, change it there.
+editUrl: https://github.com/skiptools/skip-unit/edit/main/README.md
 ---
 
 :::note[Source Repository]{icon="github"}
-The skip-unit framework is available at [https://github.com/skiptools/skip-unit.git](https://source.skip.tools/skip-unit.git), which can be checked out and tested with `skip test` once Skip is [installed](/docs/gettingstarted/).
+This framework is available at [github.com/skiptools/skip-unit](https://github.com/skiptools/skip-unit) and can be checked out and improved locally as described in the [Contribution Guide](/docs/contributing/#local-libraries).
 :::
+# SkipUnit
 
-Base Skip gradle plugin module and unit testing for Skip apps, adapting Swift XCUnit to transpiled Kotlin JUnit test cases.
+Base Skip gradle plugin module and unit testing for [Skip](https://skip.tools) apps, adapting Swift XCUnit to transpiled Kotlin JUnit test cases.
 
 ## About
 
@@ -18,7 +21,7 @@ Combined with the Skip [transpiler](https://source.skip.tools/skip), this provid
 
 SkipUnit depends on the [skip](https://source.skip.tools/skip) transpiler plugin and has no additional library dependencies.
 
-It is part of the *Skip Core Frameworks* and is not intended to be imported directly.
+It is part of the core *SkipStack* and is not intended to be imported directly.
 The module is transparently adopted through the translation of `import XCUnit` into `import skip.unit.*` by the Skip transpiler.
 
 ## Parity Testing

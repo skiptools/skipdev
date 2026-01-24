@@ -1,13 +1,16 @@
 ---
 title: SkipBridge
-note: This documentation section is derived from https://raw.githubusercontent.com/skiptools/skip-bridge/main/README.md using the scripts/syncdocs.sh script. Do not change the file here, change it there.
+description: Documentation for SkipBridge fetched from GitHub.
+note: This documentation section is derived from the GitHub README.md source using the scripts/sync-modules.mjs script. Do not make edits to the file here, change it there.
+editUrl: https://github.com/skiptools/skip-bridge/edit/main/README.md
 ---
 
 :::note[Source Repository]{icon="github"}
-The skip-bridge framework is available at [https://github.com/skiptools/skip-bridge.git](https://source.skip.tools/skip-bridge.git), which can be checked out and tested with `skip test` once Skip is [installed](/docs/gettingstarted/).
+This framework is available at [github.com/skiptools/skip-bridge](https://github.com/skiptools/skip-bridge) and can be checked out and improved locally as described in the [Contribution Guide](/docs/contributing/#local-libraries).
 :::
+# SkipBridge
 
-Bridging between Swift and Kotlin/Java for [Skip Fuse](/docs/status#skip_fuse) apps.
+Bridging between Swift and Kotlin/Java for [Skip Fuse](https://skip.dev) apps.
 
-Documentation can be found at [/docs/modes/](/docs/modes/).
+Documentation can be found at [https://skip.dev/docs/modes/](/docs/modes/).
 

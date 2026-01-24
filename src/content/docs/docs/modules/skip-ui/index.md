@@ -1,13 +1,16 @@
 ---
 title: SkipUI
-note: This documentation section is derived from https://raw.githubusercontent.com/skiptools/skip-ui/main/README.md using the scripts/syncdocs.sh script. Do not change the file here, change it there.
+description: Documentation for SkipUI fetched from GitHub.
+note: This documentation section is derived from the GitHub README.md source using the scripts/sync-modules.mjs script. Do not make edits to the file here, change it there.
+editUrl: https://github.com/skiptools/skip-ui/edit/main/README.md
 ---
 
 :::note[Source Repository]{icon="github"}
-The skip-ui framework is available at [https://github.com/skiptools/skip-ui.git](https://source.skip.tools/skip-ui.git), which can be checked out and tested with `skip test` once Skip is [installed](/docs/gettingstarted/).
+This framework is available at [github.com/skiptools/skip-ui](https://github.com/skiptools/skip-ui) and can be checked out and improved locally as described in the [Contribution Guide](/docs/contributing/#local-libraries).
 :::
+# SkipUI
 
-SwiftUI support for Skip apps.
+SwiftUI support for [Skip](https://skip.dev) apps.
 
 ## Setup
 
@@ -21,7 +24,7 @@ let package = Package(
         .library(name: "MyProduct", targets: ["MyTarget"]),
     ],
     dependencies: [
-        .package(url: "https://source.skip.tools/skip-ui.git", from: "1.0.0"),
+        .package(url: "https://source.skip.dev/skip-ui.git", from: "1.0.0"),
     ],
     targets: [
         .target(name: "MyTarget", dependencies: [
@@ -35,19 +38,16 @@ let package = Package(
 
 SkipUI vends the `skip.ui` Kotlin package. It is a reimplementation of SwiftUI for Kotlin on Android using Jetpack Compose. Its goal is to mirror as much of SwiftUI as possible, allowing Skip developers to use SwiftUI with confidence.
 
-<div class="diagram-vector">
-  
 ![SkipUI Diagram](https://assets.skip.dev/diagrams/skip-diagrams-ui.svg)
-
-</div>
+{: .diagram-vector }
 
 SkipUI is used directly by [Skip Lite](/docs/status/#skip_fuse) transpiled Swift, and it is used indirectly by [Skip Fuse](/docs/status/#skip_fuse) compiled Swift through the SkipFuseUI native framework.
 
 ## Dependencies
 
-SkipUI depends on the [skip](https://source.skip.tools/skip) transpiler plugin. The transpiler must transpile SkipUI's own source code, and SkipUI relies on the transpiler's transformation of SwiftUI code. See [Implementation Strategy](#implementation-strategy) for details. SkipUI also depends on the [SkipFoundation](/docs/modules/skip-foundation) and [SkipModel](/docs/modules/skip-model) packages.
+SkipUI depends on the [skip](https://source.skip.dev/skip) transpiler plugin. The transpiler must transpile SkipUI's own source code, and SkipUI relies on the transpiler's transformation of SwiftUI code. See [Implementation Strategy](#implementation-strategy) for details. SkipUI also depends on the [SkipFoundation](https://source.skip.dev/skip-foundation) and [SkipModel](https://source.skip.dev/skip-model) packages.
 
-SkipUI is part of the core *Skip Core Frameworks* and is not intended to be imported directly.
+SkipUI is part of the core *Core Skip Frameworks* and is not intended to be imported directly.
 The module is transparently adopted by importing SwiftUI in compiled Swift, and through the translation of `import SwiftUI` into `import skip.ui.*` for transpiled code.
 
 ### Android Libraries
@@ -359,7 +359,7 @@ In addition to the `.material3ColorScheme` modifier detailed above, Skip include
 - The modifiers place your closure into the SwiftUI `Environment`. This means that you can apply the modifier on a root view, and it will affect all subviews. While you may be used to placing navigation and tab bar modifiers on the views *within* the `NavigationStack` or `TabView`, the `.material3` family of modifiers always go *on or outside* the views you want to affect.
 - Because they are designed to reach beneath Skip's SwiftUI covers, the modifiers use Compose terminology and types. In fact the properties of the supplied `Material3<Component>Options` structs typically exactly match the corresponding `androidx.compose.material3` component function parameters.
 
-:::tip
+:::note
 You can find details on Material 3 component API in [this Android API documentation](https://developer.android.com/reference/kotlin/androidx/compose/material3/package-summary).
 :::
 
@@ -710,6 +710,7 @@ Support levels:
               <ul>
                   <li><code>init(selection: Binding&lt;Date>, displayedComponents: DatePickerComponents = [.hourAndMinute, .date], @ViewBuilder label: () -> any View)</code></li>
                   <li><code>init(_ title: String, selection: Binding&lt;Date>, displayedComponents: DatePickerComponents = [.hourAndMinute, .date])</code></li>
+                  <li>Date range constraints (<code>in: ClosedRange&lt;Date></code>) are supported via Skip Fuse bridging</li>
               </ul>
           </details>      
        </td>
@@ -1124,6 +1125,9 @@ Support levels:
               <summary><code>Slider</code> (<a href="/docs/components/slider/">example</a>)</summary>
               <ul>
                   <li><code>init(value: Binding&lt;Double>, in bounds: ClosedRange&lt;Double> = 0.0...1.0, step: Double? = nil)</code></li>
+                  <li><code>init(value: Binding&lt;Double>, in bounds: ClosedRange&lt;Double> = 0.0...1.0, step: Double? = nil, @ViewBuilder label: () -> any View)</code></li>
+                  <li><code>init(value: Binding&lt;Double>, in bounds: ClosedRange&lt;Double> = 0.0...1.0, step: Double? = nil, onEditingChanged: (Bool) -> Void)</code></li>
+                  <li><code>init(value: Binding&lt;Double>, in bounds: ClosedRange&lt;Double> = 0.0...1.0, step: Double? = nil, @ViewBuilder label: () -> any View, onEditingChanged: (Bool) -> Void)</code></li>
               </ul>
           </details>      
        </td>
@@ -1136,7 +1140,27 @@ Support levels:
               <ul>
                   <li>In Compose, when multiple elements want to expand they will share the available space equally</li>
               </ul>
-          </details>      
+          </details>
+       </td>
+    </tr>
+    <tr>
+      <td>🟡</td>
+      <td>
+          <details>
+              <summary><code>Stepper</code></summary>
+              <ul>
+                  <li><code>init(value: Binding&lt;Int>, step: Int = 1, @ViewBuilder label: () -> any View)</code></li>
+                  <li><code>init(value: Binding&lt;Int>, in bounds: ClosedRange&lt;Int>, step: Int = 1, @ViewBuilder label: () -> any View)</code> (Fuse bridging)</li>
+                  <li><code>init(value: Binding&lt;Double>, step: Double = 1.0, @ViewBuilder label: () -> any View)</code></li>
+                  <li><code>init(value: Binding&lt;Double>, in bounds: ClosedRange&lt;Double>, step: Double = 1.0, @ViewBuilder label: () -> any View)</code> (Fuse bridging)</li>
+                  <li><code>init(_ title: String, value: Binding&lt;Int>, step: Int = 1)</code></li>
+                  <li><code>init(_ title: String, value: Binding&lt;Int>, in bounds: ClosedRange&lt;Int>, step: Int = 1)</code> (Fuse bridging)</li>
+                  <li><code>init(_ title: String, value: Binding&lt;Double>, step: Double = 1.0)</code></li>
+                  <li><code>init(_ title: String, value: Binding&lt;Double>, in bounds: ClosedRange&lt;Double>, step: Double = 1.0)</code> (Fuse bridging)</li>
+                  <li><code>init(_ title: String, onIncrement: (() -> Void)?, onDecrement: (() -> Void)?)</code></li>
+                  <li><code>init(@ViewBuilder label: () -> any View, onIncrement: (() -> Void)?, onDecrement: (() -> Void)?)</code></li>
+              </ul>
+          </details>
        </td>
     </tr>
     <tr>
@@ -1311,7 +1335,7 @@ Support levels:
     </tr>
     <tr>
       <td>✅</td>
-      <td>Custom <code>ViewThatFits</code></td>
+      <td><code>ViewThatFits</code></td>
     </tr>
     <tr>
       <td>✅</td>
@@ -1375,6 +1399,10 @@ Support levels:
       <td><code>.alert</code></td>
     </tr>
     <tr>
+      <td>✅</td>
+      <td><code>.allowsHitTesting</code></td>
+    </tr>
+    <tr>
       <td>🟡</td>
       <td>
             <details>
@@ -1416,6 +1444,29 @@ Support levels:
       <td><code>.backgroundStyle</code></td>
     </tr>
     <tr>
+      <td>🟡</td>
+      <td>
+          <details>
+              <summary><code>.badge</code></summary>
+              <ul>
+                  <li>Supported on <code>List</code> items</li>
+                  <li>Not yet supported on <code>TabView</code></li>
+              </ul>
+          </details>
+      </td>
+    </tr>
+    <tr>
+      <td>🟢</td>
+      <td>
+          <details>
+              <summary><code>.blendMode</code></summary>
+              <ul>
+                  <li><code>.plusDarker</code> and <code>.plusLighter</code> both map to Compose <code>Plus</code></li>
+              </ul>
+          </details>
+       </td>
+    </tr>
+    <tr>
       <td>🟢</td>
       <td>
           <details>
@@ -1433,6 +1484,10 @@ Support levels:
     <tr>
       <td>✅</td>
       <td><code>.border</code> (<a href="/docs/components/border/">example</a>)</td>
+    </tr>
+    <tr>
+      <td>✅</td>
+      <td><code>.brightness</code></td>
     </tr>
     <tr>
       <td>🟢</td>
@@ -1473,12 +1528,20 @@ Support levels:
               <ul>
                   <li>See also <a href="#colorscheme">ColorScheme</a></li>
               </ul>
-          </details> 
+          </details>
       </td>
     </tr>
     <tr>
       <td>✅</td>
+      <td><code>.colorMultiply</code></td>
+    </tr>
+    <tr>
+      <td>✅</td>
       <td><code>.confirmationDialog</code> (<a href="/docs/components/confirmationdialog/">example</a>)</td>
+    </tr>
+    <tr>
+      <td>✅</td>
+      <td><code>.contrast</code></td>
     </tr>
     <tr>
       <td>✅</td>
@@ -1506,6 +1569,17 @@ Support levels:
       <td><code>.disabled</code></td>
     </tr>
     <tr>
+      <td>🟢</td>
+      <td>
+          <details>
+              <summary><code>.drawingGroup</code></summary>
+              <ul>
+                  <li><code>opaque</code> and <code>colorMode</code> parameters are ignored</li>
+              </ul>
+          </details>
+       </td>
+    </tr>
+    <tr>
       <td>✅</td>
       <td><code>.environment</code></td>
     </tr>
@@ -1520,6 +1594,10 @@ Support levels:
     <tr>
       <td>✅</td>
       <td><code>.focused</code></td>
+    </tr>
+    <tr>
+      <td>✅</td>
+      <td><code>.flipsForRightToLeftLayoutDirection</code></td>
     </tr>
     <tr>
       <td>✅</td>
@@ -1578,6 +1656,10 @@ Support levels:
     <tr>
       <td>✅</td>
       <td><code>.hidden</code></td>
+    </tr>
+    <tr>
+      <td>✅</td>
+      <td><code>.hueRotation</code></td>
     </tr>
     <tr>
       <td>🟢</td>
@@ -1663,6 +1745,10 @@ Support levels:
     <tr>
       <td>✅</td>
       <td><code>.listStyle</code></td>
+    </tr>
+    <tr>
+      <td>✅</td>
+      <td><code>.luminanceToAlpha</code></td>
     </tr>
     <tr>
       <td>✅</td>
@@ -1872,14 +1958,15 @@ Support levels:
        </td>
     </tr>
     <tr>
-      <td>🟢</td>
+      <td>✅</td>
        <td>
           <details>
               <summary><code>.rotationEffect</code></summary>
               <ul>
                   <li><code>func rotationEffect(_ angle: Angle) -> some View</code></li>
+                  <li><code>func rotationEffect(_ angle: Angle, anchor: UnitPoint) -> some View</code></li>
               </ul>
-          </details>      
+          </details>
        </td>
     </tr>
     <tr>
@@ -1890,8 +1977,12 @@ Support levels:
               <ul>
                   <li><code>func rotation3DEffect(_ angle: Angle, axis: (x: CGFloat, y: CGFloat, z: CGFloat), perspective: CGFloat = 1.0) -> some View</code></li>
               </ul>
-          </details>      
+          </details>
        </td>
+    </tr>
+    <tr>
+      <td>✅</td>
+      <td><code>.saturation</code></td>
     </tr>
     <tr>
       <td>🟢</td>
@@ -1902,7 +1993,7 @@ Support levels:
                   <li><code>func scale(_ scale: CGFloat) -> any Shape</code></li>
                   <li><code>func scale(x: CGFloat = 1.0, y: CGFloat = 1.0) -> any Shape</code></li>
               </ul>
-          </details>      
+          </details>
        </td>
     </tr>
     <tr>
@@ -1928,16 +2019,16 @@ Support levels:
        </td>
     </tr>
     <tr>
-      <td>🟡</td>
+      <td>✅</td>
       <td>
           <details>
               <summary><code>.scaleEffect</code></summary>
               <ul>
-                  <li><code>func scaleEffect(_ scale: CGSize) -> some View</code></li>
-                  <li><code>func scaleEffect(_ s: CGFloat) -> some View</code></li>
-                  <li><code>func scaleEffect(x: CGFloat = 1.0, y: CGFloat = 1.0) -> some View</code></li>
+                  <li><code>func scaleEffect(_ scale: CGSize, anchor: UnitPoint = .center) -> some View</code></li>
+                  <li><code>func scaleEffect(_ s: CGFloat, anchor: UnitPoint = .center) -> some View</code></li>
+                  <li><code>func scaleEffect(x: CGFloat = 1.0, y: CGFloat = 1.0, anchor: UnitPoint = .center) -> some View</code></li>
               </ul>
-          </details>      
+          </details>
        </td>
     </tr>
     <tr>
@@ -2036,6 +2127,10 @@ Support levels:
     <tr>
       <td>✅</td>
       <td><code>.submitLabel</code></td>
+    </tr>
+    <tr>
+      <td>✅</td>
+      <td><code>.symbolVariant</code></td>
     </tr>
     <tr>
       <td>✅</td>
@@ -2452,15 +2547,15 @@ Once an asset catalog is added to your `Resources` folder, any named colors can 
 Color("WarningYellow", bundle: .module)
 ```
 
-:::caution
+:::tip
 Your named colors must use Xcode's "Floating point (0.0-1.0)" input method. You can convert named colors using other methods by selecting them in Xcode and using the UI picker to update the input method. The values will be preserved.
 :::
 
-See the [Skip Showcase app](/docs/samples/skipapp-showcase) `ColorPlayground` for a concrete example of using a named color in an asset catalog, and see that project's Xcode project file ([screenshot](https://assets.skip.dev/screens/SkipUI_Asset_Image.png)) to see the configuration of the `.xcassets` file for the app module.
+See the [Skip Showcase app](https://source.skip.dev/skipapp-showcase) `ColorPlayground` for a concrete example of using a named color in an asset catalog, and see that project's Xcode project file ([screenshot](https://assets.skip.dev/screens/SkipUI_Asset_Image.png)) to see the configuration of the `.xcassets` file for the app module.
 
-:::note
 When an app project is first created with `skip init`, it will contain two separate asset catalogs: a project-level `Assets.xcassets` catalog that contains the app's icons, and an empty module-level `Module.xcassets` catalog. **Add your assets to `Module.xcassets`.** Only the module-level catalog will be transpiled, since the project-level catalog is not processed by the skip transpiler.
 
+:::note
 Note that you also **must** specify the `bundle` parameter for colors explicitly, since a Skip project uses per-module resources, rather than the default `Bundle.main` bundle that would be assumed of the parameter were omitted.
 :::
 
@@ -2468,7 +2563,7 @@ For Android, Skip only uses named colors that you've set for "Universal" devices
 
 ### ColorScheme
 
-SkipUI fully supports the `.preferredColorScheme` modifier. If you created your app with the `skip` tool prior to v0.8.26, however, you will have to update the included `Android/app/src/main/kotlin/.../Main.kt` file in order for the modifier to work correctly. Using the latest [`Main.kt`](https://source.skip.tools/skipapp-hello/blob/main/Android/app/src/main/kotlin/hello/skip/Main.kt) as your template, please do the following:
+SkipUI fully supports the `.preferredColorScheme` modifier. If you created your app with the `skip` tool prior to v0.8.26, however, you will have to update the included `Android/app/src/main/kotlin/.../Main.kt` file in order for the modifier to work correctly. Using the latest [`Main.kt`](https://source.skip.dev/skipapp-hello/blob/main/Android/app/src/main/kotlin/hello/skip/Main.kt) as your template, please do the following:
 
 1. Replace the all of the import statements with ones from latest `Main.kt`
 1. Replace the contents of the `setContent { ... }` block with the content from the latest `Main.kt`
@@ -2491,7 +2586,7 @@ Custom fonts are embedded differently for each platform. On Android you should c
 
 For iOS, you must add the font by adding to the Xcode project's app target and ensure the font file is included in the file list in the app target's "Build Phases" tab's "Copy Bundle Resources" phase. In addition, iOS needs to have the font explicitly listed in the Xcode project target's "Info" tab under "Custom Application Target Properties" by adding a new key for the "Fonts provided by application" (whose raw name is "UIAppFonts") and adding each font's file name to the string array.
 
-See the [Skip Showcase app](/docs/samples/skipapp-showcase) `TextPlayground` for a concrete example of using a custom font, and see that project's Xcode project file ([screenshot](https://assets.skip.dev/screens/SkipUI_Custom_Font.png)) to see how the font is included on both the iOS and Android sides of the app.
+See the [Skip Showcase app](https://source.skip.dev/skipapp-showcase) `TextPlayground` for a concrete example of using a custom font, and see that project's Xcode project file ([screenshot](https://assets.skip.dev/screens/SkipUI_Custom_Font.png)) to see how the font is included on both the iOS and Android sides of the app.
 
 ### Environment Keys
 
@@ -2579,7 +2674,7 @@ UINotificationFeedbackGenerator().notificationOccurred(.error)
 UISelectionFeedbackGenerator().selectionChanged()
 ```
 
-:::caution
+:::tip
 Android requires adding a permission in order to be able to utilize the device's haptic feedback service (`android.content.Context.VIBRATOR_MANAGER_SERVICE`) by adding to the `Android/app/src/main/AndroidMetadata.xml` file's manifest section: `<uses-permission android:name="android.permission.VIBRATE"/>`
 :::
 
@@ -2612,11 +2707,11 @@ Once an asset catalog is added to your `Resources` folder, any bundled images ca
 Image("Cat", bundle: .module, label: Text("Cat JPEG image"))
 ```
 
-:::caution
+:::warning
 When an app project is first created with `skip init`, it will contain two separate asset catalogs: a project-level `Assets.xcassets` catalog that contains the app's icons, and an empty module-level `Module.xcassets` catalog. **Add your assets to `Module.xcassets`.** Only the module-level catalog will be transpiled, since the project-level catalog is not processed by the skip transpiler.
 :::
 
-See the [Skip Showcase app](/docs/samples/skipapp-showcase) `ImagePlayground` for a concrete example of using a bundled image in an asset catalog, and see that project's Xcode project file ([screenshot](https://assets.skip.dev/screens/SkipUI_Asset_Image.png)) to see the configuration of the `.xcassets` file for the app module.
+See the [Skip Showcase app](https://source.skip.dev/skipapp-showcase) `ImagePlayground` for a concrete example of using a bundled image in an asset catalog, and see that project's Xcode project file ([screenshot](https://assets.skip.dev/screens/SkipUI_Asset_Image.png)) to see the configuration of the `.xcassets` file for the app module.
 
 :::note
 Note that you **must** specify the `bundle` parameter for images explicitly, since a Skip project uses per-module resources, rather than the default `Bundle.main` bundle that would be assumed of the parameter were omitted.
@@ -2632,7 +2727,7 @@ Image("baseball-icon", bundle: .module, label: Text("Baseball Icon"))
     .frame(width: 30, height: 30)
 ```
 
-:::caution
+:::note
 Skip currently supports Light and Dark variants of images in an asset catalog, and will display the appropriate image depending on the active color scheme. Other image asset variants like size classes are currently unsupported.
 :::
 
@@ -2655,13 +2750,13 @@ The `Image(systemName:)` constructor is used to display a standard system symbol
 1. Drag the file to your `Module.xcassets` asset catalog.
 
 :::note
-When exporting from the SF Symbols app, selecting "Export for: Xcode 12" may result in sharper rendering on Android.  
+When exporting from the SF Symbols app, selecting "Export for: Xcode 12" may result in sharper rendering on Android.
 :::
 
-See the [Skip Showcase app](/docs/samples/skipapp-showcase) `ImagePlayground` for a concrete example of using a system symbol with an exported symbol image, and see that project's Xcode project file ([screenshot](https://assets.skip.dev/screens/SkipUI_Custom_Symbol.png)) to see how the symbol is included in the `.xcassets` file for the app module.
+See the [Skip Showcase app](https://source.skip.dev/skipapp-showcase) `ImagePlayground` for a concrete example of using a system symbol with an exported symbol image, and see that project's Xcode project file ([screenshot](https://assets.skip.dev/screens/SkipUI_Custom_Symbol.png)) to see how the symbol is included in the `.xcassets` file for the app module.
 
-:::caution
-SkipUI currently supports using the view's `foregroundStyle` and `fontWeight` to customize the color and weight of the symbol, but other symbol modifiers such as `symbolVariant` and `symbolRenderingMode` are currently unsupported. 
+:::warning
+SkipUI currently supports using the view's `foregroundStyle` and `fontWeight` to customize the color and weight of the symbol, but other symbol modifiers such as `symbolVariant` and `symbolRenderingMode` are currently unsupported.
 :::
 
 Downloaded symbols can be used directly, or they can be edited using an SVG editor to provide custom vector symbols for you app, as described at [Creating custom symbol images for your app](https://developer.apple.com/documentation/uikit/uiimage/creating_custom_symbol_images_for_your_app). You use `Image(systemName:)` to load a system symbol image and `Image(_:bundle)` to load your custom symbol, as the following code shows:
@@ -2893,7 +2988,7 @@ SomeContentView()
     }
 ```
 
-:::caution
+:::warning
 Due to Compose limitations, changing the value passed to `.backDismissDisabled(_: Bool = true)` while the modal is presented has no effect. Only the value at the time of presentation is considered.
 :::
 
@@ -2925,7 +3020,7 @@ Remember that you can use `#if SKIP` blocks to confine your `.ignoresSafeArea` c
 
 #### Enabling or Disabling Edge-to-Edge
 
-Modern SkipUI versions enable Jetpack Compose's "edgeToEdge" mode by default. If you created your app with the `skip` tool prior to v0.8.32, however, you will have to update the included `Android/app/src/main/kotlin/.../Main.kt` file to render content behind system bars. Using the latest [`Main.kt`](https://source.skip.tools/skipapp-hello/blob/main/Android/app/src/main/kotlin/hello/skip/Main.kt) as your template, please do the following:
+Modern SkipUI versions enable Jetpack Compose's "edgeToEdge" mode by default. If you created your app with the `skip` tool prior to v0.8.32, however, you will have to update the included `Android/app/src/main/kotlin/.../Main.kt` file to render content behind system bars. Using the latest [`Main.kt`](https://source.skip.dev/skipapp-hello/blob/main/Android/app/src/main/kotlin/hello/skip/Main.kt) as your template, please do the following:
 
 1. Add the following import: `import androidx.activity.enableEdgeToEdge`
 1. Add the following line to the `MainActivity.onCreate(savedInstanceState:)` function:
@@ -2996,19 +3091,19 @@ To help fill in unimplemented API in SkipUI:
 1. Write an appropriate Compose implementation. See [Implementation Strategy](#implementation-strategy) below.
 1. Add a compiled Swift wrapper to SkipFuseUI.
 1. Write Showcase code to exercise your component. See [Tests](#tests).
-1. [Submit a PR](https://source.skip.tools/skip-ui/pulls).
+1. [Submit a PR](https://source.skip.dev/skip-ui/pulls).
 
 Other forms of contributions such as test cases, comments, and documentation are also welcome!
 
 ## Tests
 
-The most common way to test SkipUI's support for a SwiftUI component is through the [Skip Showcase](/docs/samples/skipapp-showcase) and [Skip Showcase Fuse](/docs/samples/skipapp-showcase-fuse) apps. Whenever you add or update support for a visible element of SwiftUI, make sure there is a showcase view that exercises the element. This not only gives us a mechanism to test appearance and behavior, but the showcase app becomes a demonstration of supported SwiftUI components on Android over time.
+The most common way to test SkipUI's support for a SwiftUI component is through the [Skip Showcase](https://source.skip.dev/skipapp-showcase) and [Skip Showcase Fuse](https://source.skip.dev/skipapp-showcase-fuse) apps. Whenever you add or update support for a visible element of SwiftUI, make sure there is a showcase view that exercises the element. This not only gives us a mechanism to test appearance and behavior, but the showcase app becomes a demonstration of supported SwiftUI components on Android over time.
 
 ## Implementation Strategy
 
 ### SkipLite Code Transformations
 
-SkipUI does not work in isolation. When used from Skip Lite transpiled Swift, it depends on transformations the [skip](https://source.skip.tools/skip) plugin makes to SwiftUI code. And while Skip generally strives to write Kotlin that is similar to hand-crafted code, these SwiftUI transformations are not something you'd want to write yourself. Before discussing SkipUI's implementation, let's explore them.
+SkipUI does not work in isolation. When used from Skip Lite transpiled Swift, it depends on transformations the [skip](https://source.skip.dev/skip) plugin makes to SwiftUI code. And while Skip generally strives to write Kotlin that is similar to hand-crafted code, these SwiftUI transformations are not something you'd want to write yourself. Before discussing SkipUI's implementation, let's explore them.
 
 Both SwiftUI and Compose are declarative UI frameworks. Both have mechanisms to track state and automatically re-render when state changes. SwiftUI models user interface elements with `View` objects, however, while Compose models them with `@Composable` functions. The Skip transpiler must therefore translate your code defining a `View` graph into `@Composable` function calls. This involves two primary transformations:
 

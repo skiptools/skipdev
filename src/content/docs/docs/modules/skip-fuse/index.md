@@ -1,11 +1,14 @@
 ---
 title: SkipFuse
-note: This documentation section is derived from https://raw.githubusercontent.com/skiptools/skip-fuse/main/README.md using the scripts/syncdocs.sh script. Do not change the file here, change it there.
+description: Documentation for SkipFuse fetched from GitHub.
+note: This documentation section is derived from the GitHub README.md source using the scripts/sync-modules.mjs script. Do not make edits to the file here, change it there.
+editUrl: https://github.com/skiptools/skip-fuse/edit/main/README.md
 ---
 
 :::note[Source Repository]{icon="github"}
-The skip-fuse framework is available at [https://github.com/skiptools/skip-fuse.git](https://source.skip.tools/skip-fuse.git), which can be checked out and tested with `skip test` once Skip is [installed](/docs/gettingstarted/).
+This framework is available at [github.com/skiptools/skip-fuse](https://github.com/skiptools/skip-fuse) and can be checked out and improved locally as described in the [Contribution Guide](/docs/contributing/#local-libraries).
 :::
+# SkipFuse
 
 SkipFuse helps fuse the Swift and Android worlds for [Skip Fuse](/docs/modes/#native) modules and apps. It is an umbrella framework that vends cross-platform functionality. For example, SkipFuse:
 
@@ -29,7 +32,7 @@ let package = Package(
         .library(name: "MyProduct", targets: ["MyTarget"]),
     ],
     dependencies: [
-        .package(url: "https://source.skip.tools/skip-fuse.git", from: "1.0.0"),
+        .package(url: "https://source.skip.dev/skip-fuse.git", from: "1.0.0"),
     ],
     targets: [
         .target(name: "MyTarget", dependencies: [
