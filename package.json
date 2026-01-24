@@ -3,9 +3,10 @@
   "type": "module",
   "version": "0.8.0",
   "scripts": {
-    "dev": "astro dev",
+    "sync-docs": "node ./scripts/sync-modules.js",
+    "dev": "npm run sync-docs && astro dev",
     "start": "astro dev",
-    "build": "astro build",
+    "build": "npm run sync-docs && astro build",
     "preview": "astro preview",
     "astro": "astro"
   },

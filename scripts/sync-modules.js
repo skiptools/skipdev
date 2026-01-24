@@ -78,7 +78,7 @@ async function processRepositories() {
     const rawBaseUrl = `https://raw.githubusercontent.com/${owner}/${mod.repo}/${branch}`;
     const url = rawBaseUrl + '/README.md';
 
-    console.log(`Fetching ${mod.name}...`);
+    console.log(`Fetching ${mod.name} from ${url}...`);
 
     try {
       const response = await fetch(url);
