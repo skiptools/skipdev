@@ -1,6 +1,6 @@
 ---
-title: SkipSentry
-description: Documentation for SkipSentry fetched from GitHub.
+title: Sentry
+description: Documentation for Sentry fetched from GitHub.
 note: This documentation section is derived from the GitHub README.md source using the scripts/sync-modules.mjs script. Do not make edits to the file here, change it there.
 editUrl: https://github.com/skiptools/skip-sentry/edit/main/README.md
 ---

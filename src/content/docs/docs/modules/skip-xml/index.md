@@ -1,6 +1,6 @@
 ---
-title: SkipXML
-description: Documentation for SkipXML fetched from GitHub.
+title: XML
+description: Documentation for XML fetched from GitHub.
 note: This documentation section is derived from the GitHub README.md source using the scripts/sync-modules.mjs script. Do not make edits to the file here, change it there.
 editUrl: https://github.com/skiptools/skip-xml/edit/main/README.md
 ---

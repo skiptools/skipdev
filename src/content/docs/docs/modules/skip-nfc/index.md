@@ -1,6 +1,6 @@
 ---
-title: SkipNFC
-description: Documentation for SkipNFC fetched from GitHub.
+title: NFC
+description: Documentation for NFC fetched from GitHub.
 note: This documentation section is derived from the GitHub README.md source using the scripts/sync-modules.mjs script. Do not make edits to the file here, change it there.
 editUrl: https://github.com/skiptools/skip-nfc/edit/main/README.md
 ---

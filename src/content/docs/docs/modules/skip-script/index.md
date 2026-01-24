@@ -1,6 +1,6 @@
 ---
-title: SkipScript
-description: Documentation for SkipScript fetched from GitHub.
+title: JavaScriptCore
+description: Documentation for JavaScriptCore fetched from GitHub.
 note: This documentation section is derived from the GitHub README.md source using the scripts/sync-modules.mjs script. Do not make edits to the file here, change it there.
 editUrl: https://github.com/skiptools/skip-script/edit/main/README.md
 ---

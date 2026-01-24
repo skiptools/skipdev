@@ -1,6 +1,6 @@
 ---
-title: SkipDevice
-description: Documentation for SkipDevice fetched from GitHub.
+title: Device Hardware
+description: Documentation for Device Hardware fetched from GitHub.
 note: This documentation section is derived from the GitHub README.md source using the scripts/sync-modules.mjs script. Do not make edits to the file here, change it there.
 editUrl: https://github.com/skiptools/skip-device/edit/main/README.md
 ---

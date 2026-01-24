@@ -1,6 +1,6 @@
 ---
-title: SkipSocketIO
-description: Documentation for SkipSocketIO fetched from GitHub.
+title: Socket.IO
+description: Documentation for Socket.IO fetched from GitHub.
 note: This documentation section is derived from the GitHub README.md source using the scripts/sync-modules.mjs script. Do not make edits to the file here, change it there.
 editUrl: https://github.com/skiptools/skip-socketio/edit/main/README.md
 ---

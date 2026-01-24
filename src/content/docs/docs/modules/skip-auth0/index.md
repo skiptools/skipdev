@@ -1,6 +1,6 @@
 ---
-title: SkipAuth0
-description: Documentation for SkipAuth0 fetched from GitHub.
+title: Auth0
+description: Documentation for Auth0 fetched from GitHub.
 note: This documentation section is derived from the GitHub README.md source using the scripts/sync-modules.mjs script. Do not make edits to the file here, change it there.
 editUrl: https://github.com/skiptools/skip-auth0/edit/main/README.md
 ---

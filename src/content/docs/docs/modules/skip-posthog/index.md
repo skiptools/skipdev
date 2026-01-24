@@ -1,6 +1,6 @@
 ---
-title: SkipPostHog
-description: Documentation for SkipPostHog fetched from GitHub.
+title: PostHog
+description: Documentation for PostHog fetched from GitHub.
 note: This documentation section is derived from the GitHub README.md source using the scripts/sync-modules.mjs script. Do not make edits to the file here, change it there.
 editUrl: https://github.com/skiptools/skip-posthog/edit/main/README.md
 ---

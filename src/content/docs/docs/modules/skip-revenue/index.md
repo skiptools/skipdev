@@ -1,6 +1,6 @@
 ---
-title: SkipRevenue
-description: Documentation for SkipRevenue fetched from GitHub.
+title: RevenueCat
+description: Documentation for RevenueCat fetched from GitHub.
 note: This documentation section is derived from the GitHub README.md source using the scripts/sync-modules.mjs script. Do not make edits to the file here, change it there.
 editUrl: https://github.com/skiptools/skip-revenue/edit/main/README.md
 ---

@@ -1,6 +1,6 @@
 ---
-title: SkipWeb
-description: Documentation for SkipWeb fetched from GitHub.
+title: WebView
+description: Documentation for WebView fetched from GitHub.
 note: This documentation section is derived from the GitHub README.md source using the scripts/sync-modules.mjs script. Do not make edits to the file here, change it there.
 editUrl: https://github.com/skiptools/skip-web/edit/main/README.md
 ---

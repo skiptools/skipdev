@@ -1,6 +1,6 @@
 ---
-title: SkipSupabase
-description: Documentation for SkipSupabase fetched from GitHub.
+title: Supabase
+description: Documentation for Supabase fetched from GitHub.
 note: This documentation section is derived from the GitHub README.md source using the scripts/sync-modules.mjs script. Do not make edits to the file here, change it there.
 editUrl: https://github.com/skiptools/skip-supabase/edit/main/README.md
 ---

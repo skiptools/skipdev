@@ -1,6 +1,6 @@
 ---
-title: SkipBluetooth
-description: Documentation for SkipBluetooth fetched from GitHub.
+title: Bluetooth
+description: Documentation for Bluetooth fetched from GitHub.
 note: This documentation section is derived from the GitHub README.md source using the scripts/sync-modules.mjs script. Do not make edits to the file here, change it there.
 editUrl: https://github.com/skiptools/skip-bluetooth/edit/main/README.md
 ---

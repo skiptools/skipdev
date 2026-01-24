@@ -1,6 +1,6 @@
 ---
-title: SkipQRCode
-description: Documentation for SkipQRCode fetched from GitHub.
+title: QR Codes
+description: Documentation for QR Codes fetched from GitHub.
 note: This documentation section is derived from the GitHub README.md source using the scripts/sync-modules.mjs script. Do not make edits to the file here, change it there.
 editUrl: https://github.com/skiptools/skip-qrcode/edit/main/README.md
 ---

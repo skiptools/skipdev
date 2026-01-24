@@ -1,6 +1,6 @@
 ---
-title: SkipMarketplace
-description: Documentation for SkipMarketplace fetched from GitHub.
+title: Marketplace
+description: Documentation for Marketplace fetched from GitHub.
 note: This documentation section is derived from the GitHub README.md source using the scripts/sync-modules.mjs script. Do not make edits to the file here, change it there.
 editUrl: https://github.com/skiptools/skip-marketplace/edit/main/README.md
 ---

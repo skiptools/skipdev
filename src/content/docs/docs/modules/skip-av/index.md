@@ -1,6 +1,6 @@
 ---
-title: SkipAV
-description: Documentation for SkipAV fetched from GitHub.
+title: AVKit
+description: Documentation for AVKit fetched from GitHub.
 note: This documentation section is derived from the GitHub README.md source using the scripts/sync-modules.mjs script. Do not make edits to the file here, change it there.
 editUrl: https://github.com/skiptools/skip-av/edit/main/README.md
 ---
