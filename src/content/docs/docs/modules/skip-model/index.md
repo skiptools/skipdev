@@ -56,7 +56,7 @@ Much of Skip's model support is implemented directly in the Skip transpiler. The
 
 ## Contributing
 
-We welcome contributions to SkipModel. The Skip product [documentation](/docs/contributing/) includes helpful instructions and tips on local Skip library development. When submitting code, please include unit tests in your [PR](/docs/modules/skip-model/pulls).
+We welcome contributions to SkipModel. The Skip product [documentation](/docs/contributing/) includes helpful instructions and tips on local Skip library development. When submitting code, please include unit tests in your [PR](https://source.skip.dev/skip-model/pulls).
 
 ## Model Objects
 

@@ -40,7 +40,7 @@ $ brew install skiptools/skip/skip
 ```
 $ ~/Library/Android/sdk/emulator/emulator @Pixel_6_API_30
 ```
-3. Download this [repository as a zip file](/docs/samples/skipapp-fireside/archive/main.zip) and unzip it, or clone the repository:
+3. Download this [repository as a zip file](https://source.skip.dev/skipapp-fireside/archive/main.zip) and unzip it, or clone the repository:
 ```
 $ git clone https://source.skip.dev/skipapp-fireside.git
 ```

@@ -45,7 +45,7 @@ as a dependency and a Swift source file imports the `JavaScriptCore` framework.
 
 In this case, a subset of the the Objective-C JavaScriptAPI is mimicked on the
 Kotlin side, passing the calls through to the underlying C interface to the 
-JavaScriptCore API using JNA and [SkipFFI](/docs/modules/skip-ffi/).
+JavaScriptCore API using JNA and [SkipFFI](/docs/modules/skip-ffi).
 
 
 An example of evaluating some JavaScript:

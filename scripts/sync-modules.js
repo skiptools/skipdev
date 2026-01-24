@@ -11,8 +11,6 @@ const replacements = [
     { search: 'https://github.com/skiptools', replace: 'https://source.skip.dev' },
     { search: '](https://skip.dev/', replace: '](/' },
     { search: '](https://skip.tools/', replace: '](/' },
-    { search: '](https://source.skip.dev/skip-', replace: '](/docs/modules/skip-' },
-    { search: '](https://source.skip.dev/skipapp-', replace: '](/docs/samples/skipapp-' },
     { search: 'href="https://skip.dev/docs/', replace: 'href="/docs/' },
     { search: '[Skip](https://skip.dev)', replace: 'Skip' }, // strip out bare links to the skip.dev root page
     { search: '[Skip Lite](https://skip.dev)', replace: 'Skip Lite' },
@@ -53,6 +51,10 @@ async function processRepositories() {
       // fix local image refs
       content = content.replaceAll('src="Android/fastlane', `src="${rawBaseUrl}/Android/fastlane`);
       content = content.replaceAll('src="Darwin/fastlane', `src="${rawBaseUrl}/Darwin/fastlane`);
+
+      // replace external links to module and sample roots with the local doc
+      content = content.replace(/\]\(https:\/\/source\.skip\.dev\/(skip-[^\/]+)[\/]?\)/g, "](/docs/modules/$1)");
+      content = content.replace(/\]\(https:\/\/source\.skip\.dev\/(skipapp-[^\/]+)[\/]?\)/g, "](/docs/samples/$1)");
 
       // trim everything after the repo license
       content = content.replace(/## License[\s\S]*/i, '');

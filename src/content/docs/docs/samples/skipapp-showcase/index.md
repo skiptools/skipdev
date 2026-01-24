@@ -37,7 +37,7 @@ To get started:
 $ brew install skiptools/skip/skip
 ```
 2. Configure and launch an Android emulator from the [Android Studio device manager](https://developer.android.com/studio/run/emulator-launch-without-app).
-3. Download this [repository as a zip file](/docs/samples/skipapp-showcase/archive/main.zip) and unzip it, or clone the repository:
+3. Download this [repository as a zip file](https://source.skip.dev/skipapp-showcase/archive/main.zip) and unzip it, or clone the repository:
 ```
 $ git clone https://source.skip.dev/skipapp-showcase.git
 ```

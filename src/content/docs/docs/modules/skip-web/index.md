@@ -32,9 +32,9 @@ struct EmbeddedWebView : View {
 
 ## Customization
 
-The [`WebView`](/docs/modules/skip-web/blob/main/Sources/SkipWeb/WebView.swift) is backed by a
-[`WebEngine`](/docs/modules/skip-web/blob/main/Sources/SkipWeb/WebEngine.swift).
-It can be configured with a [`WebEngineConfiguration`](/docs/modules/skip-web/blob/main/Sources/SkipWeb/WebEngine.swift) instance. For example:
+The [`WebView`](https://source.skip.dev/skip-web/blob/main/Sources/SkipWeb/WebView.swift) is backed by a
+[`WebEngine`](https://source.skip.dev/skip-web/blob/main/Sources/SkipWeb/WebEngine.swift).
+It can be configured with a [`WebEngineConfiguration`](https://source.skip.dev/skip-web/blob/main/Sources/SkipWeb/WebEngine.swift) instance. For example:
 
 ```swift
 import Foundation
@@ -189,7 +189,7 @@ Many delegates that are provided by `WKWebView` are not yet implemented in this 
 and so deeper customization may require custom implementation work.
 To implement these, you may need to fork the repository and add it to your workspace,
 as described in the [Contributing guide](/docs/contributing/).
-Please consider creating a [Pull Request](/docs/modules/skip-web/pulls)
+Please consider creating a [Pull Request](https://source.skip.dev/skip-web/pulls)
 with features and fixes that you create, as this benefits the entire Skip community.
 
 ## Building

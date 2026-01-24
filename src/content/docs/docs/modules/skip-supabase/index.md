@@ -44,7 +44,7 @@ The current Supabase API coverage is currently very limited, and mostly used as 
 :::
 
 Browse the test cases at
-[SkipSupabaseTests.swift](/docs/modules/skip-supabase/blob/main/Tests/SkipSupabaseTests/SkipSupabaseTests.swift)
+[SkipSupabaseTests.swift](https://source.skip.dev/skip-supabase/blob/main/Tests/SkipSupabaseTests/SkipSupabaseTests.swift)
 to see what API is supported.
 
 :::note
@@ -60,13 +60,13 @@ which is generally mirrored in the division of the Supabase Kotlin Android gradl
 ## Status
 
 This project is in a very early stage, but some amount of Auth and Database API is implemented.
-For examples of what is working, see the [SkipSupabaseTests.swift](/docs/modules/skip-supabase/blob/main/Tests/SkipSupabaseTests/SkipSupabaseTests.swift)
+For examples of what is working, see the [SkipSupabaseTests.swift](https://source.skip.dev/skip-supabase/blob/main/Tests/SkipSupabaseTests/SkipSupabaseTests.swift)
 test case, which also shows how setup can be performed.
 
-Please file an [issue](/docs/modules/skip-supabase/issues)
+Please file an [issue](https://source.skip.dev/skip-supabase/issues)
 if there is a particular API that you need for you project, or if something isn't working right.
 And please consider contributing to this project by filing
-[pull requests](/docs/modules/skip-supabase/pulls).
+[pull requests](https://source.skip.dev/skip-supabase/pulls).
 
 ### Implementation Details
 
@@ -80,6 +80,6 @@ were designed and implemented separately, and so their API shapes differ drastic
 
 For an example of some of the gymnastics that are required to achieve the goal is a single unified API,
 see the implementation of
-[SkipSupabase.swift](/docs/modules/skip-supabase/blob/main/Sources/SkipSupabase/SkipSupabase.swift).
+[SkipSupabase.swift](https://source.skip.dev/skip-supabase/blob/main/Sources/SkipSupabase/SkipSupabase.swift).
 
 

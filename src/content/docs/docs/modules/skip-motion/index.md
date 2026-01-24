@@ -76,7 +76,7 @@ SkipMotion is in a very early stage, and lack any playback
 controls or other customization of the animations.
 
 You are encouraged to contribute to the project or
-file an [issue](/docs/modules/skip-motion/issues)
+file an [issue](https://source.skip.dev/skip-motion/issues)
 with needs and requests.
 
 ## Size
@@ -86,7 +86,7 @@ size of the release `.ipa` and `.apk` artifacts for your project.
 
 ## Example
 
-See the [LottieDemo](/docs/samples/skipapp-lottiedemo/releases)
+See the [LottieDemo](https://source.skip.dev/skipapp-lottiedemo/releases)
 project for an example of using `SkipMotion` in a Skip App project.
 
 ## Building

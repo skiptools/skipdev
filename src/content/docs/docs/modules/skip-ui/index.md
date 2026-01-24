@@ -2563,7 +2563,7 @@ For Android, Skip only uses named colors that you've set for "Universal" devices
 
 ### ColorScheme
 
-SkipUI fully supports the `.preferredColorScheme` modifier. If you created your app with the `skip` tool prior to v0.8.26, however, you will have to update the included `Android/app/src/main/kotlin/.../Main.kt` file in order for the modifier to work correctly. Using the latest [`Main.kt`](/docs/samples/skipapp-hello/blob/main/Android/app/src/main/kotlin/hello/skip/Main.kt) as your template, please do the following:
+SkipUI fully supports the `.preferredColorScheme` modifier. If you created your app with the `skip` tool prior to v0.8.26, however, you will have to update the included `Android/app/src/main/kotlin/.../Main.kt` file in order for the modifier to work correctly. Using the latest [`Main.kt`](https://source.skip.dev/skipapp-hello/blob/main/Android/app/src/main/kotlin/hello/skip/Main.kt) as your template, please do the following:
 
 1. Replace the all of the import statements with ones from latest `Main.kt`
 1. Replace the contents of the `setContent { ... }` block with the content from the latest `Main.kt`
@@ -3020,7 +3020,7 @@ Remember that you can use `#if SKIP` blocks to confine your `.ignoresSafeArea` c
 
 #### Enabling or Disabling Edge-to-Edge
 
-Modern SkipUI versions enable Jetpack Compose's "edgeToEdge" mode by default. If you created your app with the `skip` tool prior to v0.8.32, however, you will have to update the included `Android/app/src/main/kotlin/.../Main.kt` file to render content behind system bars. Using the latest [`Main.kt`](/docs/samples/skipapp-hello/blob/main/Android/app/src/main/kotlin/hello/skip/Main.kt) as your template, please do the following:
+Modern SkipUI versions enable Jetpack Compose's "edgeToEdge" mode by default. If you created your app with the `skip` tool prior to v0.8.32, however, you will have to update the included `Android/app/src/main/kotlin/.../Main.kt` file to render content behind system bars. Using the latest [`Main.kt`](https://source.skip.dev/skipapp-hello/blob/main/Android/app/src/main/kotlin/hello/skip/Main.kt) as your template, please do the following:
 
 1. Add the following import: `import androidx.activity.enableEdgeToEdge`
 1. Add the following line to the `MainActivity.onCreate(savedInstanceState:)` function:
@@ -3091,7 +3091,7 @@ To help fill in unimplemented API in SkipUI:
 1. Write an appropriate Compose implementation. See [Implementation Strategy](#implementation-strategy) below.
 1. Add a compiled Swift wrapper to SkipFuseUI.
 1. Write Showcase code to exercise your component. See [Tests](#tests).
-1. [Submit a PR](/docs/modules/skip-ui/pulls).
+1. [Submit a PR](https://source.skip.dev/skip-ui/pulls).
 
 Other forms of contributions such as test cases, comments, and documentation are also welcome!
 

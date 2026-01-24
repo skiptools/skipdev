@@ -30,7 +30,7 @@ The module is transparently adopted through the automatic addition of `import sk
 
 ## Status
 
-- SkipLib's Swift symbol files (see [Implementation Strategy](#implementation-strategy)) are nominally complete. They should declare all Swift standard library API. This is difficult to validate, however, so if you find anything missing, please [report it](/docs/modules/skip-lib/issues) to us.
+- SkipLib's Swift symbol files (see [Implementation Strategy](#implementation-strategy)) are nominally complete. They should declare all Swift standard library API. This is difficult to validate, however, so if you find anything missing, please [report it](https://source.skip.dev/skip-lib/issues) to us.
 - Unimplemented API is appropriately marked with `@available(*, unavailable)` annotations. Skip will generate an error when you attempt to use an unimplemented API.
 - In particular, a significant portion of the [collections](#collections) API is not yet implemented.
 - Unit testing is not comprehensive.
@@ -46,7 +46,7 @@ The most pressing need is to reduce the amount of unimplemented API. To help fil
 1. Find unimplemented API. Unimplemented API should be marked with `@available(*, unavailable)` in the Swift symbol files.
 1. Write an appropriate Kotlin implementation. See [Implementation Strategy](#implementation-strategy) below. For [collections](#collections) API, make sure your implementation is duplicated for `String` as well.
 1. Write unit tests.
-1. [Submit a PR.](/docs/modules/skip-lib/pulls)
+1. [Submit a PR.](https://source.skip.dev/skip-lib/pulls)
 
 Other forms of contributions such as test cases, comments, and documentation are also welcome!
 

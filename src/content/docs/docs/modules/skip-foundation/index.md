@@ -47,7 +47,7 @@ To help fill in unimplemented API in SkipFoundation:
 1. Find unimplemented API.
 1. Write an appropriate Kotlin implementation. See [Implementation Strategy](#implementation-strategy) below.
 1. Edit the corresponding tests to make sure they are no longer skipped, and that they pass. If there aren't existing tests, write some. See [Tests](#tests).
-1. [Submit a PR.](/docs/modules/skip-foundation/pulls)
+1. [Submit a PR.](https://source.skip.dev/skip-foundation/pulls)
 
 Other forms of contributions such as test cases, comments, and documentation are also welcome!
 
