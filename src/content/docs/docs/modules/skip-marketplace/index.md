@@ -58,6 +58,23 @@ relevant documentation for the
 and
 [Google PlayStore](https://developer.apple.com/design/human-interface-guidelines/ratings-and-reviews#Best-practices).
 
+## Prompting for updates
+
+```swift
+import SkipMarketplace
+
+struct ContentView: View {
+    var body: some View {
+        YourViewCode()
+            .appUpdatePrompt()
+    }
+}
+```
+
+On iOS, we'll query `https://itunes.apple.com/lookup?bundleId=\(bundleId)` for the current latest version, presenting an [`.appStoreOverlay()`](https://developer.apple.com/documentation/swiftui/view/appstoreoverlay%28ispresented%3Aconfiguration%3A%29) for the current app when a newer version is available to install. The overlay will include an "Update" button which will initiate an update, forcing your app to quit.
+
+On Android, we'll use the [Google Play In-App Updates Library](https://developer.android.com/guide/playcore/in-app-updates), displaying a dismissable fullscreen "immediate" update. Google provides instructions to [test in-app updates](https://developer.android.com/guide/playcore/in-app-updates/test) using internal app sharing.
+
 ## Querying App Installation Source
 
 Determining which source was used to install the app (Apple App store, Google Play Store, AltStore, F-Droid, etc.) can be useful for determining what billing mechanism to use. This can be done by querying the `Marketplace.current.installationSource` property like:
