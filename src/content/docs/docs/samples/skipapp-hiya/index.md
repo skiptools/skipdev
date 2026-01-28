@@ -1,6 +1,6 @@
 ---
-title: Hiya Skip (Mixed)
-description: Documentation for Hiya Skip (Mixed) fetched from GitHub.
+title: Hiya Skip (Split Mixed)
+description: Documentation for Hiya Skip (Split Mixed) fetched from GitHub.
 note: This documentation section is derived from the GitHub README.md source using the scripts/sync-modules.mjs script. Do not make edits to the file here, change it there.
 editUrl: https://github.com/skiptools/skipapp-hiya/edit/main/README.md
 ---

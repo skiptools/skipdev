@@ -18,13 +18,14 @@ A Skip project can be built locally with `swift build` and tested with `swift te
 
 ### Samples
 
-There are three standard examples that can be perused that illustrate the makeup of a conventional Skip project:
+There are four standard examples that can be perused that illustrate the structure of a conventional Skip project:
 
-1. [HelloSkip](/docs/samples/skipapp-hello/): A basic example of a transpiled Skip Lite project.
-2. [HowdySkip](/docs/samples/skipapp-howdy/): A basic example of a compiled Skip Fuse project.
-3. [HiyaSkip](/docs/samples/skipapp-hiya/): An example of a Skip project that uses a compiled (Skip Fuse) UI module bridging to a transpiled (Skip Lite) model layer module.
+1. [HelloSkip](/docs/samples/skipapp-hello/): A basic example of a transpiled Skip Lite app project.
+2. [HowdySkip](/docs/samples/skipapp-howdy/): A basic example of a compiled Skip Fuse app project.
+2. [AhoySkipper](/docs/samples/skipapp-ahoy/): A multi-module Skip Fuse app project.
+3. [HiyaSkip](/docs/samples/skipapp-hiya/): An example of a Skip app project that uses a compiled (Skip Fuse) UI module bridging to a transpiled (Skip Lite) model layer module.
 
-## Filesystem Layout
+### Filesystem Layout
 
 Consider an "Ahoy Skipper" Skip Fuse app with two modules and test cases that can be generated with the following `skip init` command (or the equivalent `skip create` interactive command):
 
@@ -112,14 +113,14 @@ An abridged view of the filesystem layout of the app will look like this:
              - …
 </FileTree>
 
-### `Package.swift` {#Package.swift}
+#### `Package.swift` {#Package.swift}
 
 This file is the manifest for the Swift Package Manager (SwiftPM). It defines the project's name, products (libraries or executables), dependencies, and targets. In a Skip project, it also declares the `skipstone` plugin, which handles the translation of the iOS project into an equivalent Android project.
 
 - Example: [https://github.com/skiptools/skipapp-ahoy/blob/main/Package.swift](https://github.com/skiptools/skipapp-ahoy/blob/main/Package.swift)
 - Reference: [Swift Package Manager - Package.swift Manifest](https://docs.swift.org/swiftpm/documentation/packagemanagerdocs/introducingpackages)
 
-### `Project.xcworkspace` {#Project.xcworkspace}
+#### `Project.xcworkspace` {#Project.xcworkspace}
 
 This file is an Xcode Workspace, a container used to group multiple Xcode projects and Swift packages together. In Skip, it allows you to manage the primary Darwin app project alongside the shared Swift modules in a single interface, ensuring that shared code changes are immediately reflected in the app build.
 
@@ -128,59 +129,59 @@ The generated `Project.xcworkspace` will contain only the [`Darwin/ProjectName.x
 - Example: [https://github.com/skiptools/skipapp-ahoy/blob/main/Project.xcworkspace/contents.xcworkspacedata](https://github.com/skiptools/skipapp-ahoy/blob/main/Project.xcworkspace/contents.xcworkspacedata)
 - Reference: [Xcode Help - Workspace Concepts](https://developer.apple.com/documentation/xcode/managing-multiple-projects-and-their-dependencies)
 
-### `Skip.env` {#Skip.env}
+#### `Skip.env` {#Skip.env}
 
 This is a shared configuration environment file for Skip projects. It contains key-value pairs for project-wide metadata, such as the `PRODUCT_NAME`, `MARKETING_VERSION`, and `PRODUCT_BUNDLE_IDENTIFIER`. These variables are used by both the Xcode build process and the Gradle build process to ensure consistency between the iOS and Android binaries. It is included by both the [`Darwin/ProjectName.xcconfig`](#ProjectName.xcconfig) and [`Android/settings.gradle.kts`](#settings.gradle.kts) files.
 
 - Example: [https://github.com/skiptools/skipapp-ahoy/blob/main/Skip.env](https://github.com/skiptools/skipapp-ahoy/blob/main/Skip.env)
 - See also: [Configuration Metadata](/docs/development-topics/#configuration-with-skipenv)
 
-### `Sources/<Module>/<Module>App.swift` {#App.swift}
+#### `Sources/<Module>/<Module>App.swift` {#App.swift}
 
 The shared app entry point, which launches and configures the app and holds the primary [`ContentView.swift`](#ContentView.swift) and contains app lifecycle callbacks. This will be the common app logic that is invoked from the Darwin [Main.swift](#Main.swift) and Android [Main.kt](#Main.kt).
 
 - Example: [https://github.com/skiptools/skipapp-ahoy/blob/main/Sources/AhoySkipper/AhoySkipperApp.swift](https://github.com/skiptools/skipapp-ahoy/blob/main/Sources/AhoySkipper/AhoySkipperApp.swift)
 
-### `Sources/<Module>/ContentView.swift` {#ContentView.swift}
+#### `Sources/<Module>/ContentView.swift` {#ContentView.swift}
 
 This file is a SwiftUI View file representing the main user interface of the application. In a Skip project, the SwiftUI code in this file will be translated into Jetpack Compose for Android, allowing a single declarative UI definition to drive both platforms.
 
 - Example: [https://github.com/skiptools/skipapp-ahoy/blob/main/Sources/AhoySkipper/ContentView.swift](https://github.com/skiptools/skipapp-ahoy/blob/main/Sources/AhoySkipper/ContentView.swift)
 - Reference: [SwiftUI Views](https://developer.apple.com/documentation/swiftui/view-fundamentals)
 
-### `Sources/<Module>/Skip/skip.yml` {#skip.yml}
+#### `Sources/<Module>/Skip/skip.yml` {#skip.yml}
 
 This is a YAML Configuration file specific to Skip. It controls module-level settings, such as [Skip mode](/docs/modes/#configuration), bridging configurations, and [Android-specific dependencies](/docs/dependencies/#android).
 
 - Example: [https://github.com/skiptools/skipapp-ahoy/blob/main/Sources/AhoySkipper/Skip/skip.yml](https://github.com/skiptools/skipapp-ahoy/blob/main/Sources/AhoySkipper/Skip/skip.yml)
 
-### `Sources/<Module>/Resources/Module.xcassets` {#Module.xcassets}
+#### `Sources/<Module>/Resources/Module.xcassets` {#Module.xcassets}
 
 This is an Asset Catalog located within a specific Swift module. It holds resources like images, data, and localized strings that are scoped to that module. Skip ensures these assets are processed and made available to both the iOS bundle and the Android res directory.
 
 - Example: [https://github.com/skiptools/skipapp-ahoy/tree/main/Sources/AhoySkipper/Resources/Module.xcassets](https://github.com/skiptools/skipapp-ahoy/tree/main/Sources/AhoySkipper/Resources/Module.xcassets)
 - Reference: [Apple Developer - Asset Catalogs](https://developer.apple.com/documentation/xcode/managing-assets-with-asset-catalogs)
 
-### `Sources/<Module>/Resources/Localizable.xcstrings` {#Localizable.xcstrings}
+#### `Sources/<Module>/Resources/Localizable.xcstrings` {#Localizable.xcstrings}
 
 This is a String Catalog file used for managing translations. It is the modern format for Darwin localization. Skip converts these strings into Android asserts during the build process which will be used to provide translation parity on both platforms.
 
 - Example: [https://github.com/skiptools/skipapp-ahoy/blob/main/Sources/AhoySkipper/Resources/Localizable.xcstrings](https://github.com/skiptools/skipapp-ahoy/blob/main/Sources/AhoySkipper/Resources/Localizable.xcstrings)
 - Reference: [Apple Developer - Localizing UI Strings](https://developer.apple.com/documentation/xcode/localizing-and-varying-text-with-a-string-catalog)
 
-### `Sources/<Module>/ViewModel.swift` {#ViewModel.swift}
+#### `Sources/<Module>/ViewModel.swift` {#ViewModel.swift}
 
 This file contains the business logic and state for the app, typically utilizing the `@Observable` macro.
 
 - Example: [https://github.com/skiptools/skipapp-ahoy/blob/main/Sources/SkipperModel/ViewModel.swift](https://github.com/skiptools/skipapp-ahoy/blob/main/Sources/SkipperModel/ViewModel.swift)
 
-### `Tests/<Module>/SkipperModelTests.swift` {#SkipperModelTests.swift}
+#### `Tests/<Module>/SkipperModelTests.swift` {#SkipperModelTests.swift}
 
 This file contains test cases used to verify the logic of your modules. For a Skip Fuse project, these tests can be run directly with `skip android test`, and for a Skip Lite project, tests will be transpiled into Kotlin and can be run with `skip test`.
 
 - Example: [https://github.com/skiptools/skipapp-ahoy/blob/main/Tests/SkipperModelTests/SkipperModelTests.swift](https://github.com/skiptools/skipapp-ahoy/blob/main/Tests/SkipperModelTests/SkipperModelTests.swift)
 
-### `Darwin/ProjectName.xcconfig` {#ProjectName.xcconfig}
+#### `Darwin/ProjectName.xcconfig` {#ProjectName.xcconfig}
 
 This is an Xcode Build Configuration file. It provides a way to define build settings (such as compiler flags or search paths) in a plain-text format rather than within the opaque .xcodeproj file, making it easier to manage environment-specific settings.
 
@@ -189,7 +190,7 @@ This configuration file automatically includes the root-level [`Skip.env`](#Skip
 - Example: [https://github.com/skiptools/skipapp-ahoy/blob/main/Darwin/AhoySkipper.xcconfig](https://github.com/skiptools/skipapp-ahoy/blob/main/Darwin/AhoySkipper.xcconfig)
 - Reference: [Apple Developer - Configuration Settings File (xcconfig) format](https://help.apple.com/xcode/mac/current/#/dev745c5c974)
 
-### `Darwin/ProjectName.xcodeproj` {#ProjectName.xcodeproj}
+#### `Darwin/ProjectName.xcodeproj` {#ProjectName.xcodeproj}
 
 This is the Xcode Project file, a bundle containing the configuration, build targets, and file references for the Darwin (iOS/macOS) version of the app. It is the primary entry point for developers focused on the Apple ecosystem.
 
@@ -202,7 +203,7 @@ Many of the project configuration options are specified in the [`Darwin/ProjectN
 - Example: [https://github.com/skiptools/skipapp-ahoy/tree/main/Darwin/AhoySkipper.xcodeproj](https://github.com/skiptools/skipapp-ahoy/tree/main/Darwin/AhoySkipper.xcodeproj)
 - Reference: [Apple Developer - Xcode Project Structure](https://developer.apple.com/documentation/xcode/creating-an-xcode-project-for-an-app)
 
-### `Darwin/Assets.xcassets` {#Assets.xcassets}
+#### `Darwin/Assets.xcassets` {#Assets.xcassets}
 
 This is the Primary Asset Catalog for the Darwin application. It typically contains the application’s icon sets, launch images, and global color assets required for the iOS target.
 
@@ -212,90 +213,91 @@ Because it is located in the `Darwin/` folder, this asset catalog is _not_ share
 
 - Example: [https://github.com/skiptools/skipapp-ahoy/tree/main/Darwin/Assets.xcassets](https://github.com/skiptools/skipapp-ahoy/tree/main/Darwin/Assets.xcassets)
 
-### `Dawin/Assets.xcassets/AppIcon.appiconset/AppIcon.png` {#AppIcon.png}
+#### `Dawin/Assets.xcassets/AppIcon.appiconset/AppIcon.png` {#AppIcon.png}
 
 This is the Source Image file for the Darwin application icon. 
 
 - Example: [https://github.com/skiptools/skipapp-ahoy/tree/main/Darwin/Assets.xcassets/AppIcon.appiconset](https://github.com/skiptools/skipapp-ahoy/tree/main/Darwin/Assets.xcassets/AppIcon.appiconset)
 - Reference: [Apple Developer - App icons](https://developer.apple.com/design/human-interface-guidelines/app-icons)
 
-### `Darwin/Entitlements.plist` {#Entitlements.plist}
+#### `Darwin/Entitlements.plist` {#Entitlements.plist}
 
 This is an XML Property List that defines the capabilities and permissions of the iOS app, such as Push Notifications or application permissions.
 
 - Example: [https://github.com/skiptools/skipapp-ahoy/blob/main/Darwin/Entitlements.plist](https://github.com/skiptools/skipapp-ahoy/blob/main/Darwin/Entitlements.plist)
 - Reference: [Apple Developer - Entitlements](https://developer.apple.com/documentation/bundleresources/entitlements)
 
-### `Darwin/Info.plist` {#Info.plist}
+#### `Darwin/Info.plist` {#Info.plist}
 
 This file is the Information Property List for the iOS application. It contains essential configuration data, such as the bundle identifier, supported orientations, and required hardware capabilities.
 
+- Example: [https://github.com/skiptools/skipapp-ahoy/blob/main/Darwin/Info.plist](https://github.com/skiptools/skipapp-ahoy/blob/main/Darwin/Info.plist)
 - Reference: [Apple Developer - Info.plist Keys](https://developer.apple.com/documentation/bundleresources/information-property-list)
 
-### `Darwin/Sources/Main.swift` {#Main.swift}
+#### `Darwin/Sources/Main.swift` {#Main.swift}
 
 This file serves as the Darwin Entry Point. It contains the @main attribute which initializes the SwiftUI App lifecycle for the iOS/macOS version of the project.
 
 The contents of this file will be quite minimal. Like its Kotlin [Main.kt](#Main.kt) counterpart, it mostly calls into the shared [`<Module>App.swift`](#App.swift).
 
-- Example: [https://github.com/skiptools/skipapp-ahoy/blob/main/Darwin/Info.plist](https://github.com/skiptools/skipapp-ahoy/blob/main/Darwin/Info.plist)
+- Example: [https://github.com/skiptools/skipapp-ahoy/blob/main/Darwin/Main.swift](https://github.com/skiptools/skipapp-ahoy/blob/main/Darwin/Main.swift)
 - Reference: [Apple Developer - App Structure](https://developer.apple.com/documentation/swiftui/app)
 
-### `Darwin/fastlane/` {#Darwin/fastlane}
+#### `Darwin/fastlane/` {#Darwin/fastlane}
 
 This directory contains Fastlane configuration files (`Deliverfile`, `Fastfile`, `Appfile`) used to automate the deployment process for the iOS app, specifically for uploading to the Apple App Store and TestFlight.
 
 - Example: [https://github.com/skiptools/skipapp-ahoy/tree/main/Darwin/fastlane](https://github.com/skiptools/skipapp-ahoy/tree/main/Darwin/fastlane)
-- Reference: [Fastlane - iOS Documentation](https://docs.fastlane.tools/getting-started/ios/setup/)
+- Reference: [Fastlane - Upload metadata and binary to App Store Connect](https://docs.fastlane.tools/actions/upload_to_app_store/)
 
-### `Android/app/src/main/kotlin/Main.kt` {#Main.kt}
+#### `Android/app/src/main/kotlin/Main.kt` {#Main.kt}
 
 This is the Android Entry Point. It contains the MainActivity class, which serves as the primary Activity for the Android app. The contents of this file will be quite minimal. Like its Swift [Main.swift](#Main.swift) counterpart, it mostly calls into the shared [`<Module>App.swift`](#App.swift).
 
 - Example: [https://github.com/skiptools/skipapp-ahoy/blob/main/Android/app/src/main/kotlin/Main.kt](https://github.com/skiptools/skipapp-ahoy/blob/main/Android/app/src/main/kotlin/Main.kt)
 - Reference: [Android Developers - Activities](https://developer.android.com/guide/components/activities/intro-activities)
 
-### `Android/settings.gradle.kts` {#settings.gradle.kts}
+#### `Android/settings.gradle.kts` {#settings.gradle.kts}
 
 This is a Gradle Settings file written in Kotlin DSL. It defines the project-level settings and includes the sub-modules (like :app) that make up the Android build.
 
 - Example: [https://github.com/skiptools/skipapp-ahoy/blob/main/Android/settings.gradle.kts](https://github.com/skiptools/skipapp-ahoy/blob/main/Android/settings.gradle.kts)
 - Reference: [Gradle - Settings File](https://developer.android.com/build#settings-file)
 
-### `Android/app/build.gradle.kts` {#build.gradle.kts}
+#### `Android/app/build.gradle.kts` {#build.gradle.kts}
 
 This is the Module-level Gradle Build file. It defines the Android-specific build configuration, including SDK versions, signing configurations, and dependencies (including the transpiled Swift modules).
 
 - Example: [https://github.com/skiptools/skipapp-ahoy/blob/main/Android/app/build.gradle.kts](https://github.com/skiptools/skipapp-ahoy/blob/main/Android/app/build.gradle.kts)
 - Reference: [Android Developers - Configure Your Build](https://developer.android.com/build#top-level)
 
-### `Android/app/proguard-rules.pro` {#proguard-rules.pro}
+#### `Android/app/proguard-rules.pro` {#proguard-rules.pro}
 
 This file contains R8/ProGuard rules for code shrinking and optimization. It ensures that the Kotlin code and its dependencies are properly minified for production.
 
 - Example: [https://github.com/skiptools/skipapp-ahoy/blob/main/Android/app/proguard-rules.pro](https://github.com/skiptools/skipapp-ahoy/blob/main/Android/app/proguard-rules.pro)
 - Reference: [Enable app optimization](https://developer.android.com/topic/performance/app-optimization/enable-app-optimization)
 
-### `Android/src/main/AndroidManifest.xml` {#AndroidManifest.xml}
+#### `Android/src/main/AndroidManifest.xml` {#AndroidManifest.xml}
 
 This is the Android Manifest file. It describes essential information about the app to the Android build tools, the Android OS, and Google Play, including permissions and the entry point Activity.
 
 - Example: [https://github.com/skiptools/skipapp-ahoy/blob/main/Android/app/src/main/AndroidManifest.xml](https://github.com/skiptools/skipapp-ahoy/blob/main/Android/app/src/main/AndroidManifest.xml)
 - Reference: [Android Developers - App Manifest Overview](https://developer.android.com/guide/topics/manifest/manifest-intro)
 
-### `Android/src/main/kotlin/res/` {#Android/src/main/kotlin/res}
+#### `Android/src/main/kotlin/res/` {#Android/src/main/kotlin/res}
 
 This is a folder that contains app icon for various density Android screens.
 
 - Example: [https://github.com/skiptools/skipapp-ahoy/tree/main/Android/app/src/main/res](https://github.com/skiptools/skipapp-ahoy/tree/main/Android/app/src/main/res)
-- Reference: [Android Developers - App Icons](https://developer.android.com/studio/write/create-app-icons)
+- Reference: [Android Developers - App Icons](https://developer.android.com/develop/ui/views/launch/icon_design_adaptive)
 
-### `Android/fastlane/` {#Android/fastlane}
+#### `Android/fastlane/` {#Android/fastlane}
 
 This directory contains Fastlane configuration files (`Appfile`, `Fastfile`) used to automate the deployment process for the Android app, specifically for uploading to the Google Play Store.
 
 - Example: [https://github.com/skiptools/skipapp-ahoy/tree/main/Android/fastlane](https://github.com/skiptools/skipapp-ahoy/tree/main/Android/fastlane)
-- Reference: [Fastlane - Android Documentation](https://docs.fastlane.tools/getting-started/android/setup/)
+- Reference: [Fastlane - Upload metadata, screenshots and binaries to Google Play](https://docs.fastlane.tools/actions/upload_to_play_store/)
 
 ## Project Types
 
