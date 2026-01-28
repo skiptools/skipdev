@@ -67,7 +67,7 @@ An abridged view of the filesystem layout of the app will look like this:
     - [settings.gradle.kts](#settings.gradle.kts) Top-level Gradle configuration
     - app
        - [build.gradle.kts](#build.gradle.kts) Gradle build file
-       - [proguard-rules.pro](#proguard-rules.pro) [R8 configuration](https://developer.android.com/topic/performance/app-optimization/enable-app-optimization)
+       - [proguard-rules.pro](#proguard-rules.pro) Proguard/R8 optimization configuration
        - src
           - main
              - [AndroidManifest.xml](#AndroidManifest.xml) Android app metadata
@@ -78,7 +78,7 @@ An abridged view of the filesystem layout of the app will look like this:
                    - [ic_launcher.png](#Android/src/main/kotlin/res)
                    - …
                 - …
-    - fastlane configuration for [upload_to_app_store](https://docs.fastlane.tools/actions/upload_to_app_store/)
+    - fastlane configuration for App Store
        - [Appfile](#Android/fastlane)
        - Fastfile
        - metadata
@@ -99,7 +99,7 @@ An abridged view of the filesystem layout of the app will look like this:
           - …
     - Sources
        - [Main.swift](#Main.swift) Entry point for Darwin app
-    - fastlane configuration for [upload_to_play_store](https://docs.fastlane.tools/actions/upload_to_play_store/)
+    - fastlane configuration for Play Store
        - [Appfile](#Darwin/fastlane)
        - Deliverfile
        - Fastfile
