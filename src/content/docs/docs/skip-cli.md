@@ -236,7 +236,7 @@ CREATE OPTIONS:
   -c, --configuration <c> Configuration debug/release (default: debug)
   --resource-path <resource-path>
                           Resource folder name (default: Resources)
-  --swift-version <swift-version>
+  --swift-package-version <swift-version>
                           Swift version for project (default: 6.1)
   --ios-min-version <ios-min-version>
                           Minimum iOS version to target (default: 17.0)
@@ -318,7 +318,7 @@ CREATE OPTIONS:
   -c, --configuration <c> Configuration debug/release (default: debug)
   --resource-path <resource-path>
                           Resource folder name (default: Resources)
-  --swift-version <swift-version>
+  --swift-package-version <swift-version>
                           Swift version for project (default: 6.1)
   --ios-min-version <ios-min-version>
                           Minimum iOS version to target (default: 17.0)

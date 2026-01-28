@@ -92,7 +92,7 @@ documentation folders and files:
 │   │       ├── introduction.mdx
 │   │       ├── skip-showreel.mdx
 │   │       └── teaser.mdx
-│   ├── content.config.ts
+│   ├── content.config.mjs
 │   ├── pages
 │   │   └── example.astro
 │   ├── routeData.ts

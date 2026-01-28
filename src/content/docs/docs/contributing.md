@@ -5,14 +5,10 @@ permalink: /docs/contributing/
 
 Skip welcomes community contributions in all forms. There are many ways to contribute:
 
-- Help improve the docs. Every documentation page contains an "Edit page" link at the bottom which takes you to the [github.com/skiptools/skip.dev/](https://github.com/skiptools/skip.dev/) documentation site where you can fork a page, make improvements, and submit it as a pull reqiest.
+- Help improve the docs. Every documentation page contains an "Edit page" link at the bottom which takes you to the [github.com/skiptools/skip.dev/](https://github.com/skiptools/skip.dev/) documentation site where you can fork a page, make improvements, and submit it as a pull request.
 - Improve the Skip [Core Frameworks](/docs/modules/), Skip's open source re-implementations of fundamental Swift frameworks like Foundation for [Skip Lite](/docs/status/#skip_fuse). Each library's README includes background information such as its current status, any important implementation strategies employed, etc. Please review the README before contributing. When you are ready to submit an update, create a standard GitHub [pull request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request). Skip's development team will attempt to address PRs as quickly as possible.
-- Contribute to [SkipUI](/docs/modules/skip-ui/) and [SkipFuseUI](/docs/modules/skip-fuse-ui/) to help expand and improve SwiftUI support on Android. As with other Skip modules, please review the README, and submit a standard GitHub [pull request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request).
+- Contribute to [SkipUI](/docs/modules/skip-ui/) and [SkipFuseUI](/docs/modules/skip-fuse-ui/) to help expand and improve SwiftUI support on Android. As with other Skip modules, please review the README, and submit a standard pull request. `SkipFuse` and `SkipFuseUI` libraries have [special considerations](#skipui-and-skipfuseui) for contribution.
 - Submit pull requests to third-party Swift libraries so that they can build for Android and show up as Android compatible on the [Swift Package Index](https://swiftpackageindex.com/search?query=platform%3Aios%2Candroid). See the [porting guide](/docs/porting/) for helpful tips.
-
-:::tip
-You can build and deploy apps using local modifications to any of the Skip Core Frameworks or Integration Frameworks. Contributing these improvements to the Swift ecosystem and to Skip's open source libraries will benefit all Swift-for-Android developers, and by extension all users of Swift-on-Android apps.
-:::
 
 ## Local Skip Libraries {#local-libraries}
 
@@ -31,6 +27,10 @@ If you'd like to make local changes to Skip's libraries while working on an app 
 1. Use the Workspace to iterate on your app and the libraries in tandem.
 
 You are now set up to work on Skip libraries! This is a great way to fix any issues or add any missing functionality that is affecting your app, while potentially helping the entire Skip community.
+
+:::tip
+You can build and deploy apps using local modifications to any of the Skip Core Frameworks or Integration Frameworks. Contributing these improvements to the Swift ecosystem and to Skip's open source libraries will benefit all Swift-for-Android developers, and by extension all users of Swift-on-Android apps.
+:::
 
 ### Working in Android Studio
 

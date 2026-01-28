@@ -6,7 +6,7 @@ tableOfContents: false
 import { Steps } from '@astrojs/starlight/components';
 
 :::note[System Requirements]
-Skip requires a macOS 15+ development machine with [Xcode 16.4](https://developer.apple.com/xcode) or later installed.<br/>At least 32GB of memory is recommended for development with Skip.
+Skip requires a macOS 15+ development host with [Xcode 16](https://developer.apple.com/xcode) or later installed.
 :::
 
 <Steps>
@@ -60,8 +60,8 @@ Skip requires a macOS 15+ development machine with [Xcode 16.4](https://develope
     
     You will be guided through a series of questions about the app you want to create. The first two are especially important:
 
-    1. App or Library? The App option creates a single Swift and SwiftUI app that uses Skip's Xcode plugin to automatically build for Android. The Library option creates a Swift library that you can use in a unified Skip app, or use as shared business logic in [separate iOS and Android apps](/docs/project-types/#separate-apps). Neither option prevents you from using a combination of Swift and Kotlin, SwiftUI and Compose in your final application.
-    2. Skip Fuse or Skip Lite? Information about the different modes can be found in the [Native and Transpiled Modes](/docs/modes/) documentation. In this example, we create a Skip Fuse app, which uses the official [Swift SDK for Android](https://www.swift.org/documentation/articles/swift-sdk-for-android-getting-started.html).
+    1. **App or Library?** The App option creates a single Swift and SwiftUI app that uses Skip's Xcode plugin to automatically build for Android. The Library option creates a Swift library that you can use in a unified Skip app, or use as shared business logic in [separate iOS and Android apps](/docs/project-types/#separate-apps). Neither option prevents you from using a combination of Swift and Kotlin, SwiftUI and Compose in your final application.
+    2. **Skip Fuse or Skip Lite?** Information about the different modes can be found in the [Native and Transpiled Modes](/docs/modes/) documentation. In this example, we create a Skip Fuse app, which uses the official [Swift SDK for Android](https://www.swift.org/documentation/articles/swift-sdk-for-android-getting-started.html).
 
     If you're new to Skip, we recommend starting your exploration with an App project. An example session for creating a `hello-skip/HelloSkip` project (which generates a project identical to the minimal [Skip Fuse sample app](https://github.com/skiptools/skipapp-howdy) or [Skip Lite sample app](https://github.com/skiptools/skipapp-hello)) might look like:
     
@@ -148,7 +148,7 @@ Skip requires a macOS 15+ development machine with [Xcode 16.4](https://develope
 
 ## Next Steps
 
-Congratulations! You have created and launched you first dual-platform app. At this point, you should tinker with the project, making changes and re-launching the app to get a feel for how Skip compliments your normal edit-build-run cycle for app development.
+Congratulations! You have created and launched your first dual-platform app. At this point, you should tinker with the project, making changes and re-launching the app to get a feel for how Skip compliments your normal edit-build-run cycle for app development.
 
 From here you should proceed to:
 
@@ -172,7 +172,7 @@ skip upgrade
 
 To update your Xcode project to use the latest version of the Skip plugin and libraries allowed by your `Package.swift` configuration, use the `File -> Packages -> Update to Latest Package Versions` Xcode menu option.
 
-:::caution
+:::caution[Skip Plugin Updates and Xcode]
 When the Skip plugin is updated, you may be prompted to trust the new version with an Xcode warning and confirmation dialog.
 :::
 
