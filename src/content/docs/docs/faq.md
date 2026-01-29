@@ -144,7 +144,7 @@ For examples of the Swift to Kotlin transpilation, see the examples in the [Tran
 
 ### How much runtime overhead does SkipUI add to the Compose side of the app? {#overhead}
 
-Very little. Many of SkipUI's views are very simple shims that bridge from their SwiftUI equivalents into Compose, such as [Divider.swift](https://source.skip.tools/skip-ui/blob/main/Sources/SkipUI/SkipUI/Components/Divider.swift) simply invoking `androidx.compose.material3.Divider`. To support `@Environment` and `@State`, Skip needs to perform some additional book-keeping that may have some runtime cost.
+Very little. Many of SkipUI's views are very simple shims that bridge from their SwiftUI equivalents into Compose, such as [Divider.swift](https://source.skip.dev/skip-ui/blob/main/Sources/SkipUI/SkipUI/Components/Divider.swift) simply invoking `androidx.compose.material3.Divider`. To support `@Environment` and `@State`, Skip needs to perform some additional book-keeping that may have some runtime cost.
 
 ### Why does my Android app feel slow? {#slow_android_app}
 
@@ -152,7 +152,7 @@ There is often a significant difference between Debug and Release build performa
 
 ### What pure Swift libraries can be used by a Skip App? {#compat}
 
-Skip uses Swift Package Manager to handle source code dependency resolution. The [Swift Package Index](https://swiftpackageindex.com/search?query=platform%3Aios%2Candroid) site tracks the thousands of Swift packages that compile for Android and are available to apps using Skip's native mode. If a dependent module has a `Skip/skip.yml` file and is **not** in native mode, it will be transpiled into Kotlin. You can also use native Swift dependencies from the Swift side of your app only (and seek alternative implementations through the use of `#if os(Android)` blocks or custom Kotlin files; for an example, see the <a href="https://source.skip.tools/skip-motion/blob/main/Sources/SkipMotion/SkipMotion.swift">LottieMotionView</a> implementation). Skip's constellation of [frameworks](/docs/modules/) are expected to provide most functionality that is commonly needed by modern apps, but you are free to develop your own libraries and frameworks, either from scratch, or by forking an existing repository to add Skip support for the library.
+Skip uses Swift Package Manager to handle source code dependency resolution. The [Swift Package Index](https://swiftpackageindex.com/search?query=platform%3Aios%2Candroid) site tracks the thousands of Swift packages that compile for Android and are available to apps using Skip's native mode. If a dependent module has a `Skip/skip.yml` file and is **not** in native mode, it will be transpiled into Kotlin. You can also use native Swift dependencies from the Swift side of your app only (and seek alternative implementations through the use of `#if os(Android)` blocks or custom Kotlin files; for an example, see the <a href="https://source.skip.dev/skip-motion/blob/main/Sources/SkipMotion/SkipMotion.swift">LottieMotionView</a> implementation). Skip's constellation of [frameworks](/docs/modules/) are expected to provide most functionality that is commonly needed by modern apps, but you are free to develop your own libraries and frameworks, either from scratch, or by forking an existing repository to add Skip support for the library.
 
 ### How do I add dependencies to my Skip app? {#adddeps}
 

@@ -4,7 +4,7 @@ note: This documentation section is derived from https://raw.githubusercontent.c
 ---
 
 :::note[Source Repository]{icon="github"}
-The skip-stripe framework is available at [https://github.com/skiptools/skip-stripe.git](https://source.skip.tools/skip-stripe.git), which can be checked out and tested with `skip test` once Skip is [installed](/docs/gettingstarted/).
+The skip-stripe framework is available at [https://github.com/skiptools/skip-stripe.git](https://source.skip.dev/skip-stripe.git), which can be checked out and tested with `skip test` once Skip is [installed](/docs/gettingstarted/).
 :::
 
 This is a free Skip Swift/Kotlin framework that 

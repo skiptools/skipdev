@@ -27,7 +27,7 @@ The `skip-build-plugin`, which is included in all Skip app projects created with
 
 ## Required Changes to Android/app/build.gradle.kts
 
-A condensed comparison of the changes needed to be made to the `Android/app/build.gradle.kts` follows. For a complete example, you can reference the build file for the `skip-hello` app: [https://source.skip.tools/skipapp-hello/blob/main/Android/app/build.gradle.kts](https://source.skip.tools/skipapp-hello/blob/main/Android/app/build.gradle.kts).
+A condensed comparison of the changes needed to be made to the `Android/app/build.gradle.kts` follows. For a complete example, you can reference the build file for the `skip-hello` app: [https://source.skip.dev/skipapp-hello/blob/main/Android/app/build.gradle.kts](https://source.skip.dev/skipapp-hello/blob/main/Android/app/build.gradle.kts).
 
 Before:
 

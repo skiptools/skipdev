@@ -10,7 +10,7 @@ note: This documentation section is derived from https://raw.githubusercontent.c
 </style>
 
 :::note[Source Repository]{icon="github"}
-This sample app is available at [https://github.com/skiptools/skipapp-travelposters.git](https://source.skip.tools/skipapp-travelposters.git), which can be checked out and run once Skip is [installed](/docs/gettingstarted/).
+This sample app is available at [https://github.com/skiptools/skipapp-travelposters.git](https://source.skip.dev/skipapp-travelposters.git), which can be checked out and run once Skip is [installed](/docs/gettingstarted/).
 :::
 
 

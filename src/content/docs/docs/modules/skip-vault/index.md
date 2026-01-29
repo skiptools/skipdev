@@ -4,7 +4,7 @@ note: This documentation section is derived from https://raw.githubusercontent.c
 ---
 
 :::note[Source Repository]{icon="github"}
-This Skip framework is available at [https://source.skip.tools/skip-vault.git](https://source.skip.tools/skip-vault.git), which can be checked out and tested with `skip test` once Skip is [installed](/docs/gettingstarted/).
+This Skip framework is available at [https://source.skip.dev/skip-vault.git](https://source.skip.dev/skip-vault.git), which can be checked out and tested with `skip test` once Skip is [installed](/docs/gettingstarted/).
 :::
 
 # skip-vault

@@ -43,7 +43,7 @@ Please reach out to [support](/docs/help/) if you encounter any problems!
 
 ### Required Changes to Android/settings.gradle.kts
 
-The `commandLine` call in `Android/settings.gradle.kts` needs to invoke `xcrun swift build …`, rather than `swift build` as it had done previously. For a complete example, you can reference the build file for the `skip-hello` app: [https://source.skip.tools/skipapp-hello/blob/main/Android/settings.gradle.kts](https://source.skip.tools/skipapp-hello/blob/main/Android/settings.gradle.kts).
+The `commandLine` call in `Android/settings.gradle.kts` needs to invoke `xcrun swift build …`, rather than `swift build` as it had done previously. For a complete example, you can reference the build file for the `skip-hello` app: [https://source.skip.dev/skipapp-hello/blob/main/Android/settings.gradle.kts](https://source.skip.dev/skipapp-hello/blob/main/Android/settings.gradle.kts).
 
 ```kotlin
 // This gradle project is part of a conventional Skip app project.
@@ -115,7 +115,7 @@ The `skip-build-plugin`, which is included in all Skip app projects created with
 
 ### Required Changes to Android/app/build.gradle.kts
 
-A condensed comparison of the changes needed to be made to the `Android/app/build.gradle.kts` follows. For a complete example, you can reference the build file for the `skip-hello` app: [https://source.skip.tools/skipapp-hello/blob/main/Android/app/build.gradle.kts](https://source.skip.tools/skipapp-hello/blob/main/Android/app/build.gradle.kts).
+A condensed comparison of the changes needed to be made to the `Android/app/build.gradle.kts` follows. For a complete example, you can reference the build file for the `skip-hello` app: [https://source.skip.dev/skipapp-hello/blob/main/Android/app/build.gradle.kts](https://source.skip.dev/skipapp-hello/blob/main/Android/app/build.gradle.kts).
 
 Before:
 

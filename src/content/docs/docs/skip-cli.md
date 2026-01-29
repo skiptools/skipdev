@@ -20,7 +20,7 @@ Once Homebrew is set up, Skip can be installed (and updated) by running the Term
 ==> Tapping skiptools/skip
 Cloning into '/opt/homebrew/Library/Taps/skiptools/homebrew-skip'...
 Tapped 1 cask (15 files, 417KB).
-==> Downloading https://source.skip.tools/skip/releases/download/1.0.0/skip.zip
+==> Downloading https://source.skip.dev/skip/releases/download/1.0.0/skip.zip
 ==> Installing dependencies: android-platform-tools
 ==> Downloading https://dl.google.com/android/repository/platform-tools_r34.0.5-darwin.zip
 ==> Installing Cask android-platform-tools
@@ -53,7 +53,7 @@ Happy Skipping!
 This will download and install the `skip` tool itself, as well as the `gradle` and Android SDK dependencies that are necessary for building and testing the Kotlin/Android side of your apps.
 
 :::note
-The `skip` tool installed via Homebrew is the exact same binary that is used by the Skip Xcode plugin, but they are installed in separate locations and updated through different mechanisms (the Homebrew [Cask](https://source.skip.tools/homebrew-skip/blob/main/Casks/skip.rb) for the CLI and the [skip/Package.swift](https://source.skip.tools/skip/blob/main/Package.swift) for the SwiftPM plugin).
+The `skip` tool installed via Homebrew is the exact same binary that is used by the Skip Xcode plugin, but they are installed in separate locations and updated through different mechanisms (the Homebrew [Cask](https://source.skip.dev/homebrew-skip/blob/main/Casks/skip.rb) for the CLI and the [skip/Package.swift](https://source.skip.dev/skip/blob/main/Package.swift) for the SwiftPM plugin).
 :::
 
 :::caution
