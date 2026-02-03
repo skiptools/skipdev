@@ -16,8 +16,29 @@ Skip requires a macOS 15+ development host with [Xcode 16](https://developer.app
     brew install skiptools/skip/skip
     ```
   
-    This will download and install the `skip` tool itself, along with the Android SDK and `gradle` build tool that is necessary for building and running the Android side of your apps.
-  
+    This will download and install the `skip` tool itself, along with `swiftly`, the Android SDK, and the `gradle` build tool that is necessary for building and running the Android side of your apps.
+
+1. If you've never used `swiftly` before, you'll need to initialize it with `swiftly init`.
+
+1. You'll need to ensure that `xcodebuild -version` is working. When you try it, you may see this error:
+
+    ```console
+    xcodebuild -version
+    ```
+
+    ```plaintext
+    xcode-select: error: tool 'xcodebuild' requires Xcode, but active developer
+    directory '/Library/Developer/CommandLineTools' is a command line tools instance
+    ```
+
+    To resolve this error, run this:
+
+    ```console
+	sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer
+    ```
+
+    You'll need to enter your macOS password to update it. (If you prefer, you can open Xcode, navigate to Settings --> Locations, and update "Command Line Tools", changing it to your current version of Xcode.)
+
 1. You can ensure that the basic development prerequisites are satisfied by running:
   
     ```console
@@ -50,7 +71,7 @@ Skip requires a macOS 15+ development host with [Xcode 16](https://developer.app
     [✓] Skip checkup succeeded in 190.21s
     ```
   
-    If the installation or checkup fails, try running again with `skip checkup --verbose` to get more details, and check the [FAQ](/docs/faq/) for common solutions or reach out to the community on [Slack](/slack/) or the [Discussion Forums](https://forums.skip.dev).
+    If the installation or checkup fails, try running again with `skip checkup --verbose` to get more details, and check the [Getting Help](/docs/help/) for common solutions or reach out to the community on [Slack](/slack/) or the [Discussion Forums](https://forums.skip.dev).
     
 1. Create a new Skip app project with:
     
