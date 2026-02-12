@@ -49,8 +49,8 @@ For Skip itself, this development grants us an _enormous_ amount of confidence-b
 <div align="center">
   <a href="https://assets.skip.dev/screens/swift-sdk-for-android-in-action-showcase.png" target="_blank"><img alt="Screenshot of Skip Showcase native app" src="https://assets.skip.dev/screens/swift-sdk-for-android-in-action-showcase.png" style="width: 100%; max-width: 1200px;" /></a>
   <br />
-  <a href="https://play.google.com/store/apps/details?id=org.appfair.app.Showcase" style="display: inline-block;"><img src="https://appfair.org/assets/badges/google-play-store.svg" alt="Download on the Google Play Store" style="height: 60px; vertical-align: middle; object-fit: contain;" /></a>
-  <a href="https://apps.apple.com/us/app/skip-showcase/id6474885022" style="display: inline-block;"><img src="https://appfair.org/assets/badges/apple-app-store.svg" alt="Download on the Apple App Store" style="height: 60px; vertical-align: middle; object-fit: contain;" /></a>
+  <a href="https://play.google.com/store/apps/details?id=org.appfair.app.Showcase" style="display: inline-block;"><img src="https://assets.skip.dev/badges/google-play-store.svg" alt="Download on the Google Play Store" style="height: 60px; vertical-align: middle; object-fit: contain;" /></a>
+  <a href="https://apps.apple.com/us/app/skip-showcase/id6474885022" style="display: inline-block;"><img src="https://assets.skip.dev/badges/apple-app-store.svg" alt="Download on the Apple App Store" style="height: 60px; vertical-align: middle; object-fit: contain;" /></a>
 </div>
 
 

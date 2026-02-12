@@ -159,7 +159,7 @@ Skip's unique ability to directly call both Swift and Kotlin/Java APIs separates
 
 As a demonstration and validation of this technology, we have published one of our sample apps, [Skip Notes](https://github.com/skiptools/skipapp-notes), to both the Google Play Store and Apple App Store. This fully native Swift app integrates with the [swift-sqlcipher](https://github.com/skiptools/swift-sqlcipher.git) database library to provide persistence for a simple list of notes.
 
-[<img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Get it on the Google Play Store" height="80">](https://play.google.com/store/apps/details?id=org.appfair.app.SkipNotes) [<img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Get it on the Apple App Store" height="80">](https://apps.apple.com/us/app/skip-showcase/id6740916318)
+[<img src="https://assets.skip.dev/badges/google-play-store.svg" alt="Get it on the Google Play Store" height="80">](https://play.google.com/store/apps/details?id=org.appfair.app.SkipNotes) [<img src="https://assets.skip.dev/badges/apple-app-store.svg" alt="Get it on the Apple App Store" height="80">](https://apps.apple.com/us/app/skip-showcase/id6740916318)
 {: .centered }
 
 ### Status and Next Steps

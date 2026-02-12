@@ -22,10 +22,10 @@ const apps = showcaseData; // showcaseData will be the array of app objects
           <img src={app.screenshots.ios} alt={`${app.appName} iOS screenshot`} />
         )}
         {app.appStoreLinks.android && (
-        <a href={app.appStoreLinks.android} style="display: inline-block;"><img src="https://appfair.org/assets/badges/google-play-store.svg" alt="Download on the Google Play Store" style="height: 60px; vertical-align: middle; object-fit: contain;"></a>
+        <a href={app.appStoreLinks.android} style="display: inline-block;"><img src="https://assets.skip.dev/badges/google-play-store.svg" alt="Download on the Google Play Store" style="height: 60px; vertical-align: middle; object-fit: contain;"></a>
         )}
         {app.appStoreLinks.ios && (
-        <a href={app.appStoreLinks.ios} style="display: inline-block;"><img src="https://appfair.org/assets/badges/apple-app-store.svg" alt="Download on the Apple App Store" style="height: 60px; vertical-align: middle; object-fit: contain;"></a>
+        <a href={app.appStoreLinks.ios} style="display: inline-block;"><img src="https://assets.skip.dev/badges/apple-app-store.svg" alt="Download on the Apple App Store" style="height: 60px; vertical-align: middle; object-fit: contain;"></a>
         )}
       </div>
     ))}

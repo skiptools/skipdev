@@ -16,8 +16,8 @@ This first post in the "Exploring Showcase" series will discuss the [SkipKeychai
 As with many of Skip's features, we provide a demonstration in our eponymous "Showcase" app, which is available on both the Apple App Store and Google Play Store, and whose full source code is available in the [skipapp-showcase](https://github.com/skiptools/skipapp-showcase) repository.
 
 <div align="center">
-  <a href="https://play.google.com/store/apps/details?id=org.appfair.app.Showcase" style="display: inline-block;"><img src="https://appfair.org/assets/badges/google-play-store.svg" alt="Download on the Google Play Store" style="height: 60px; vertical-align: middle; object-fit: contain;" /></a>
-  <a href="https://apps.apple.com/us/app/skip-showcase/id6474885022" style="display: inline-block;"><img src="https://appfair.org/assets/badges/apple-app-store.svg" alt="Download on the Apple App Store" style="height: 60px; vertical-align: middle; object-fit: contain;" /></a>
+  <a href="https://play.google.com/store/apps/details?id=org.appfair.app.Showcase" style="display: inline-block;"><img src="https://assets.skip.dev/badges/google-play-store.svg" alt="Download on the Google Play Store" style="height: 60px; vertical-align: middle; object-fit: contain;" /></a>
+  <a href="https://apps.apple.com/us/app/skip-showcase/id6474885022" style="display: inline-block;"><img src="https://assets.skip.dev/badges/apple-app-store.svg" alt="Download on the Apple App Store" style="height: 60px; vertical-align: middle; object-fit: contain;" /></a>
 </div>
 
 ## What is SkipKeychain?
