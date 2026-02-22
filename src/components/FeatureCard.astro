@@ -1,0 +1,23 @@
+---
+interface Props {
+  title: string;
+  icon: string;
+  link: string;
+  color?: string;
+}
+
+const { title, icon, link, color } = Astro.props;
+---
+
+<a href={link} class="feature-card" data-color={color}>
+  <div class="feature-card-header">
+    <div class="feature-card-icon">
+      <span class="material-symbols-rounded">{icon}</span>
+    </div>
+    <h3 class="feature-card-title">{title}</h3>
+  </div>
+  <div class="feature-card-description">
+    <slot />
+  </div>
+  <span class="feature-card-link">Learn more <span aria-hidden="true">→</span></span>
+</a>

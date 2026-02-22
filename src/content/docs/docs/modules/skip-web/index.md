@@ -183,6 +183,49 @@ struct WebViewPlayground: View {
 }
 ```
 
+## Window Creation & Popups
+
+`SkipWeb` exposes popup/window creation through `SkipWebUIDelegate` on `WebEngineConfiguration`.
+This delegate API lets host apps decide whether a popup should open and which child `WebEngine` should back it.
+
+For full API details and usage examples, see [`SkipWebUIDelegate.md`](./SkipWebUIDelegate.md).
+
+The `createWebViewWith` callback returns a `WebEngine?`:
+
+- Return `nil` to deny child-window creation.
+- Return a child `WebEngine` to allow child-window creation.
+
+JavaScript popup behavior can be configured with:
+
+- `WebEngineConfiguration.javaScriptCanOpenWindowsAutomatically` (maps to both iOS and Android platform settings).
+
+### Platform callback semantics
+
+Callbacks are platform-agnostic, but invocation source differs:
+
+| Callback | iOS (WebKit) | Android |
+| --- | --- | --- |
+| `webView(_:createWebViewWith:platformContext:)` | Called from `WKUIDelegate.createWebViewWith` | Called from `WebChromeClient.onCreateWindow` |
+| `webViewDidClose(_:child:)` | Called from `WKUIDelegate.webViewDidClose` | Called from `WebChromeClient.onCloseWindow` |
+
+`WebWindowRequest.targetURL` may be `nil` on Android during `onCreateWindow`.
+`PlatformCreateWindowContext` aliases `WebKitCreateWindowParams` on iOS and `AndroidCreateWindowParams` on Android.
+
+### iOS WebKit popup contract
+
+When handling iOS popups through `WKUIDelegate.createWebViewWith`, WebKit requires that the returned child `WKWebView` be initialized with the exact `WKWebViewConfiguration` provided by WebKit for that callback.
+
+If this contract is violated, WebKit can raise `NSInternalInconsistencyException` with:
+`Returned WKWebView was not created with the given configuration.`
+
+SkipWeb validates this contract at popup creation time:
+- A warning is logged when verification cannot be performed.
+- An error is logged when a contract violation is detected.
+
+For iOS parity, return a child created with `platformContext.makeChildWebEngine(...)`.
+By default this mirrors the parent `WebEngineConfiguration` and inspectability on the popup child. Pass an explicit configuration only when you intentionally want the child to diverge.
+This default mirroring is configuration-level. Platform delegate assignments on the returned child (`WKUIDelegate`, `WKNavigationDelegate`) are not automatically copied from the parent, so assign them explicitly if your app depends on that behavior.
+
 ## Contribution
 
 Many delegates that are provided by `WKWebView` are not yet implemented in this project,

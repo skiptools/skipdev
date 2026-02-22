@@ -96,11 +96,131 @@ div.localization-screenshot-container img {
 	width: 90%;
 	padding: 15px;
 	background: white;
-	align-content: center;  
+	align-content: center;
 	margin: auto;
 	text-align: center;
 	border-radius: 10px;
 	margin: 0 auto;
+}
+
+/* ── Feature Cards Grid ── */
+
+.feature-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+	gap: 1.25rem;
+	margin-top: 1.5rem;
+}
+
+.feature-card {
+	display: flex;
+	flex-direction: column;
+	padding: 1.75rem;
+	border-radius: 1rem;
+	background: var(--sl-color-gray-6);
+	border: 1px solid var(--sl-color-gray-5);
+	text-decoration: none;
+	color: inherit;
+	transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.feature-card:hover {
+	transform: translateY(-3px);
+	box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+	border-color: var(--sl-color-accent);
+}
+
+:root[data-theme='light'] .feature-card:hover {
+	box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.feature-card-header {
+	display: flex;
+	align-items: center;
+	gap: 0.75rem;
+	margin-bottom: 0.75rem;
+}
+
+.feature-card-icon {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 2.5rem;
+	height: 2.5rem;
+	border-radius: 0.625rem;
+	flex-shrink: 0;
+}
+
+.feature-card-icon .material-symbols-rounded {
+	font-size: 1.25rem;
+}
+
+/* ── Per-card icon colors (dark mode) ── */
+.feature-card[data-color="blue"] .feature-card-icon   { background: #172554; }
+.feature-card[data-color="amber"] .feature-card-icon   { background: #451a03; }
+.feature-card[data-color="red"] .feature-card-icon     { background: #450a0a; }
+.feature-card[data-color="purple"] .feature-card-icon  { background: #3b0764; }
+.feature-card[data-color="green"] .feature-card-icon   { background: #052e16; }
+.feature-card[data-color="teal"] .feature-card-icon    { background: #042f2e; }
+
+.feature-card[data-color="blue"] .material-symbols-rounded   { color: #60a5fa; }
+.feature-card[data-color="amber"] .material-symbols-rounded  { color: #fbbf24; }
+.feature-card[data-color="red"] .material-symbols-rounded    { color: #f87171; }
+.feature-card[data-color="purple"] .material-symbols-rounded { color: #c084fc; }
+.feature-card[data-color="green"] .material-symbols-rounded  { color: #4ade80; }
+.feature-card[data-color="teal"] .material-symbols-rounded   { color: #2dd4bf; }
+
+/* ── Per-card icon colors (light mode) ── */
+:root[data-theme='light'] .feature-card[data-color="blue"] .feature-card-icon   { background: #dbeafe; }
+:root[data-theme='light'] .feature-card[data-color="amber"] .feature-card-icon  { background: #fef3c7; }
+:root[data-theme='light'] .feature-card[data-color="red"] .feature-card-icon    { background: #fee2e2; }
+:root[data-theme='light'] .feature-card[data-color="purple"] .feature-card-icon { background: #f3e8ff; }
+:root[data-theme='light'] .feature-card[data-color="green"] .feature-card-icon  { background: #dcfce7; }
+:root[data-theme='light'] .feature-card[data-color="teal"] .feature-card-icon   { background: #ccfbf1; }
+
+:root[data-theme='light'] .feature-card[data-color="blue"] .material-symbols-rounded   { color: #2563eb; }
+:root[data-theme='light'] .feature-card[data-color="amber"] .material-symbols-rounded  { color: #d97706; }
+:root[data-theme='light'] .feature-card[data-color="red"] .material-symbols-rounded    { color: #dc2626; }
+:root[data-theme='light'] .feature-card[data-color="purple"] .material-symbols-rounded { color: #9333ea; }
+:root[data-theme='light'] .feature-card[data-color="green"] .material-symbols-rounded  { color: #16a34a; }
+:root[data-theme='light'] .feature-card[data-color="teal"] .material-symbols-rounded   { color: #0d9488; }
+
+.feature-card-title {
+	font-size: 1.125rem;
+	font-weight: 600;
+	margin: 0;
+	color: var(--sl-color-white);
+}
+
+.feature-card-description {
+	font-size: 0.9375rem;
+	line-height: 1.6;
+	color: var(--sl-color-gray-2);
+	flex: 1;
+	margin: 0;
+}
+
+:root[data-theme='light'] .feature-card-description {
+	color: var(--sl-color-gray-3);
+}
+
+.feature-card-link {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.25rem;
+	margin-top: 1.25rem;
+	font-size: 0.875rem;
+	font-weight: 500;
+	color: var(--sl-color-accent-high);
+	transition: gap 0.2s ease;
+}
+
+:root[data-theme='light'] .feature-card-link {
+	color: var(--sl-color-accent);
+}
+
+.feature-card:hover .feature-card-link {
+	gap: 0.5rem;
 }
 
 
