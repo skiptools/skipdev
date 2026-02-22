@@ -8,6 +8,19 @@ sideBar: false
 head:
   - tag: title
     content: 'Skip: Crie aplicativos verdadeiramente nativos para iPhone e Android com o Skip'
+  - tag: link
+    attrs:
+      rel: preconnect
+      href: https://fonts.googleapis.com
+  - tag: link
+    attrs:
+      rel: preconnect
+      href: https://fonts.gstatic.com
+      crossorigin: true
+  - tag: link
+    attrs:
+      rel: stylesheet
+      href: https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0&display=swap
 hero:
   tagline: O Skip traz o desenvolvimento de aplicativos Swift para o Android. É uma ferramenta que permite aos desenvolvedores criar aplicativos genuinamente nativos para iOS e Android a partir de uma única base de código Swift e SwiftUI.
   #image:
@@ -27,15 +40,10 @@ hero:
       variant: secondary
 ---
 
-import { Card, CardGrid } from '@astrojs/starlight/components';
+import FeatureCard from '../../../components/FeatureCard.astro';
+import SplashVideo from '../../../components/SplashVideo.astro';
 
-<div>
-  <video width="100%" height="auto" autoplay loop muted playsinline preload="auto" style="background: transparent; width: 100%;" poster="https://assets.skip.dev/splash/skip-splash-poster.png">
-	<source src="https://assets.skip.dev/splash/skip-splash.mov">
-	Your browser does not support the video tag.
-	</source>
-  </video>
-</div>
+<SplashVideo />
 
 
 # Como o Skip Funciona
@@ -45,58 +53,42 @@ import { Card, CardGrid } from '@astrojs/starlight/components';
 
 ## Vantagens do Skip
 
+<div class="feature-grid">
 
+  <FeatureCard title="SwiftUI, do Início ao Fim" icon="widgets" color="blue" link="/docs/modules/skip-ui/#supported-swiftui">
+    Escreva SwiftUI real uma vez e obtenha uma interface de usuário nativa de primeira classe em ambas as plataformas.
+    O Skip traduz as visualizações do SwiftUI para o Jetpack Compose, preservando o layout,
+    a acessibilidade e as convenções da plataforma.
+  </FeatureCard>
 
-<CardGrid>
+  <FeatureCard title="Sem Runtime. Sem Inchaço." icon="bolt" color="amber" link="/docs/modes/">
+    O Skip faz seu trabalho em tempo de compilação. Você obtém código nativo do início ao fim,
+    sem um tempo de execução gerenciado ou um motor pesado.
+    Seu aplicativo Android depende apenas de bibliotecas de código aberto padrão.
+  </FeatureCard>
 
-  <Card title="SwiftUI, do Início ao Fim" icon="approve-check-circle">
-	Escreva SwiftUI real uma vez e obtenha uma interface de usuário nativa de primeira classe em ambas as plataformas.
-	O Skip traduz as visualizações do SwiftUI para o Jetpack Compose, preservando o layout,
-	a acessibilidade e as convenções da plataforma.
-	Sem instabilidade, sem convenções de interface desatualizadas, sem vale da estranheza.
+  <FeatureCard title="Desempenho Nativo por Design" icon="rocket_launch" color="red" link="/docs/project-types/">
+    Como os aplicativos Skip usam código nativo real, seus aplicativos têm uso de memória
+    previsível, tempos de inicialização rápidos e características de desempenho idênticas
+    ao Swift e Kotlin escritos à mão.
+  </FeatureCard>
 
-	[Saiba mais →](/docs/modules/skip-ui/#supported-swiftui)
-  </Card>
+  <FeatureCard title="IDEs de Primeira Linha" icon="code" color="purple" link="/docs/app-development/">
+    Continue usando o Xcode como seu principal ambiente de desenvolvimento Swift.
+    Construa, depure e refatore exatamente como sempre fez.
+    Use o Android Studio para personalização específica da plataforma.
+  </FeatureCard>
 
-  <Card title="Sem Runtime. Sem Inchaço." icon="cloud-download">
-	O Skip faz seu trabalho em tempo de compilação. Você obtém código nativo do início ao fim,
-      sem um tempo de execução gerenciado ou um motor pesado.
-	Seu aplicativo iOS pode ser enviado com zero dependências do Skip, e seu aplicativo Android
-	depende apenas de bibliotecas de código aberto padrão.
+  <FeatureCard title="Interoperabilidade Perfeita com Android" icon="sync_alt" color="green" link="/docs/platformcustomization/">
+    Precisa de um SDK ou biblioteca específica do Android?
+    O Skip interopera de forma limpa com o Kotlin e o Jetpack Compose, para que você possa
+    integrar APIs do Android sem lutar contra o framework.
+  </FeatureCard>
 
-	[Saiba mais →](/docs/modes/)
-  </Card>
+  <FeatureCard title="Código Aberto, Construído para o Longo Prazo" icon="lock_open" color="teal" link="/blog/skip-is-free/">
+    O Skip e seus frameworks principais são gratuitos e de código aberto.
+    Sem aprisionamento tecnológico, sem tempos de execução proprietários e sem esperar que os fornecedores
+    acompanhem os últimos lançamentos de plataformas.
+  </FeatureCard>
 
-  <Card title="Desempenho Nativo por Design" icon="magnifier">
-	Como os aplicativos Skip usam código nativo real, seus aplicativos têm uso de memória
-	previsível, tempos de inicialização rápidos e características de desempenho idênticas
-	ao Swift e Kotlin escritos à mão.
-
-	[Saiba mais →](/docs/project-types/)
-  </Card>
-
-  <Card title="IDEs de Primeira Linha" icon="heart">
-	Continue usando o Xcode como seu principal ambiente de desenvolvimento Swift.
-	Construa, depure e refatore o código do aplicativo e da biblioteca Swift exatamente como sempre fez.
-	Use o Android Studio se quiser fazer uma personalização pesada específica da plataforma.
-
-	[Saiba mais →](/docs/app-development/)
-  </Card>
-
-  <Card title="Interoperabilidade Perfeita com Android" icon="star">
-	Precisa de um SDK ou biblioteca específica do Android?
-	O Skip interopera de forma limpa com o Kotlin e o Jetpack Compose, para que você possa
-	integrar APIs do Android sem lutar contra o framework.
-
-	[Saiba mais →](/docs/platformcustomization/)
-  </Card>
-
-  <Card title="Código Aberto, Construído para o Longo Prazo" icon="github">
-	O Skip e seus frameworks principais são gratuitos e de código aberto.
-	Sem aprisionamento tecnológico, sem tempos de execução proprietários e sem esperar que os fornecedores
-	acompanhem os últimos lançamentos do iOS ou Android.
-
-	[Saida mais →](/blog/skip-is-free/)
-  </Card>
-
-</CardGrid>
+</div>

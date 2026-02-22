@@ -8,6 +8,19 @@ sideBar: false
 head:
   - tag: title
     content: 'Skip: Skip を使用して真にネイティブな iPhone および Android アプリを構築する'
+  - tag: link
+    attrs:
+      rel: preconnect
+      href: https://fonts.googleapis.com
+  - tag: link
+    attrs:
+      rel: preconnect
+      href: https://fonts.gstatic.com
+      crossorigin: true
+  - tag: link
+    attrs:
+      rel: stylesheet
+      href: https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0&display=swap
 hero:
   tagline: Skip は Swift アプリ開発を Android にもたらします。これは、開発者が単一の Swift および SwiftUI コードベースから iOS と Android の両方に対応する真にネイティブなアプリを構築できるようにするツールです。
   #image:
@@ -27,15 +40,10 @@ hero:
       variant: secondary
 ---
 
-import { Card, CardGrid } from '@astrojs/starlight/components';
+import FeatureCard from '../../../components/FeatureCard.astro';
+import SplashVideo from '../../../components/SplashVideo.astro';
 
-<div>
-  <video width="100%" height="auto" autoplay loop muted playsinline preload="auto" style="background: transparent; width: 100%;" poster="https://assets.skip.dev/splash/skip-splash-poster.png">
-	<source src="https://assets.skip.dev/splash/skip-splash.mov">
-	Your browser does not support the video tag.
-	</source>
-  </video>
-</div>
+<SplashVideo />
 
 
 # Skip の仕組み
@@ -45,57 +53,41 @@ Swift および SwiftUI ソースを作成すると, Skip Xcode プラグイン�
 
 ## Skip の利点
 
+<div class="feature-grid">
 
+  <FeatureCard title="SwiftUI、隅々まで" icon="widgets" color="blue" link="/docs/modules/skip-ui/#supported-swiftui">
+    本物の SwiftUI を一度記述すれば、両方のプラットフォームでファーストクラスのネイティブ UI を入手できます。
+    Skip は SwiftUI ビューを Jetpack Compose に変換し、レイアウト、
+    アクセシビリティ、プラットフォームの規則を維持します。
+  </FeatureCard>
 
-<CardGrid>
+  <FeatureCard title="ランタイムなし。肥大化なし。" icon="bolt" color="amber" link="/docs/modes/">
+    Skip はコンパイル時にその作業を行います。マネージド ランタイムやヘビーウェイト エンジンなしで、隅々までネイティブ コードを入手できます。
+    Android アプリは標準のオープンソース ライブラリにのみ依存します。
+  </FeatureCard>
 
-  <Card title="SwiftUI、隅々まで" icon="approve-check-circle">
-	本物の SwiftUI を一度記述すれば、両方のプラットフォームでファーストクラスのネイティブ UI を入手できます。
-	Skip は SwiftUI ビューを Jetpack Compose に変換し、レイアウト、
-	アクセシビリティ、プラットフォームの規則を維持します。
-	ガタつき、時代遅れのインターフェイス規則、不気味の谷はありません。
+  <FeatureCard title="設計によるネイティブ パフォーマンス" icon="rocket_launch" color="red" link="/docs/project-types/">
+    Skip アプリは本物のネイティブ コードを使用しているため、アプリのメモリ使用量は予測可能で、
+    起動時間が速く、パフォーマンス特性は
+    手書きの Swift および Kotlin と同じです。
+  </FeatureCard>
 
-	[詳細を見る →](/docs/modules/skip-ui/#supported-swiftui)
-  </Card>
+  <FeatureCard title="ファーストパーティ IDE" icon="code" color="purple" link="/docs/app-development/">
+    Xcode をプライマリ Swift 開発環境として引き続き使用します。
+    これまでどおりにビルド、デバッグ、リファクタリングします。
+    プラットフォーム固有のカスタマイズには Android Studio にドロップインします。
+  </FeatureCard>
 
-  <Card title="ランタイムなし。肥大化なし。" icon="cloud-download">
-	Skip はコンパイル時にその作業を行います。マネージド ランタイムやヘビーウェイト エンジンなしで、隅々までネイティブ コードを入手できます。
-	iOS アプリは Skip の依存関係なしで出荷でき、Android アプリは
-	標準のオープンソース ライブラリにのみ依存します。
+  <FeatureCard title="シームレスな Android 相互運用" icon="sync_alt" color="green" link="/docs/platformcustomization/">
+    特定の Android SDK またはライブラリが必要ですか？
+    Skip は Kotlin および Jetpack Compose とクリーンに相互運用するため、
+    フレームワークと戦うことなく Android API を統合できます。
+  </FeatureCard>
 
-	[詳細を見る →](/docs/modes/)
-  </Card>
+  <FeatureCard title="オープンソース、長期的に構築" icon="lock_open" color="teal" link="/blog/skip-is-free/">
+    Skip とそのコア フレームワークは無料でオープンソースです。
+    ロックイン、独自のランタイムはなく、ベンダーが
+    最新のプラットフォーム リリースに追いつくのを待つ必要もありません。
+  </FeatureCard>
 
-  <Card title="設計によるネイティブ パフォーマンス" icon="magnifier">
-	Skip アプリは本物のネイティブ コードを使用しているため、アプリのメモリ使用量は予測可能で、
-	起動時間が速く、パフォーマンス特性は
-	手書きの Swift および Kotlin と同じです。
-
-	[詳細を見る →](/docs/project-types/)
-  </Card>
-
-  <Card title="ファーストパーティ IDE" icon="heart">
-	Xcode をプライマリ Swift 開発環境として引き続き使用します。
-	これまでどおりに Swift アプリケーションとライブラリ コードをビルド、デバッグ、リファクタリングします。
-	プラットフォーム固有のヘビーなカスタマイズを行いたい場合は、Android Studio にドロップインします。
-
-	[詳細を見る →](/docs/app-development/)
-  </Card>
-
-  <Card title="シームレスな Android 相互運用" icon="star">
-	特定の Android SDK またはライブラリが必要ですか？
-	Skip は Kotlin および Jetpack Compose とクリーンに相互運用するため、
-	フレームワークと戦うことなく Android API を統合できます。
-
-	[詳細を見る →](/docs/platformcustomization/)
-  </Card>
-
-  <Card title="オープンソース、長期的に構築" icon="github">
-	Skip とそのコア フレームワークは無料でオープンソースです。
-	ロックイン、独自のランタイムはなく、ベンダーが
-	最新の iOS または Android リリースに追いつくのを待つ必要もありません。
-
-	[詳細を見る →](/blog/skip-is-free/)
-  </Card>
-
-</CardGrid>
+</div>

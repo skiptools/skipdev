@@ -8,6 +8,19 @@ sideBar: false
 head:
   - tag: title
     content: 'Skip: Erstellen Sie wirklich native iPhone- und Android-Apps mit Skip'
+  - tag: link
+    attrs:
+      rel: preconnect
+      href: https://fonts.googleapis.com
+  - tag: link
+    attrs:
+      rel: preconnect
+      href: https://fonts.gstatic.com
+      crossorigin: true
+  - tag: link
+    attrs:
+      rel: stylesheet
+      href: https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0&display=swap
 hero:
   tagline: Skip bringt die Swift-App-Entwicklung auf Android. Es ist ein Tool, mit dem Entwickler wirklich native Apps für iOS und Android aus einer einzigen Swift- und SwiftUI-Codebasis erstellen können.
   #image:
@@ -27,15 +40,10 @@ hero:
       variant: secondary
 ---
 
-import { Card, CardGrid } from '@astrojs/starlight/components';
+import FeatureCard from '../../../components/FeatureCard.astro';
+import SplashVideo from '../../../components/SplashVideo.astro';
 
-<div>
-  <video width="100%" height="auto" autoplay loop muted playsinline preload="auto" style="background: transparent; width: 100%;" poster="https://assets.skip.dev/splash/skip-splash-poster.png">
-	<source src="https://assets.skip.dev/splash/skip-splash.mov">
-	Your browser does not support the video tag.
-	</source>
-  </video>
-</div>
+<SplashVideo />
 
 
 # Wie Skip funktioniert
@@ -45,58 +53,42 @@ Während Sie Ihre Swift- und SwiftUI-Quelle schreiben, erstellt das Skip-Xcode-P
 
 ## Skip-Vorteile
 
+<div class="feature-grid">
 
+  <FeatureCard title="SwiftUI, von oben bis unten" icon="widgets" color="blue" link="/docs/modules/skip-ui/#supported-swiftui">
+    Schreiben Sie echtes SwiftUI einmal und erhalten Sie eine erstklassige native Benutzeroberfläche auf beiden Plattformen.
+    Skip übersetzt SwiftUI-Ansichten in Jetpack Compose und bewahrt dabei Layout,
+    Barrierefreiheit und Plattformkonventionen.
+  </FeatureCard>
 
-<CardGrid>
+  <FeatureCard title="Keine Laufzeit. Kein Bloat." icon="bolt" color="amber" link="/docs/modes/">
+    Skip erledigt seine Arbeit zur Kompilierzeit. Sie erhalten nativen Code von oben bis unten,
+    ohne verwaltete Laufzeit oder schwergewichtige Engine.
+    Ihre Android-App hängt nur von standardmäßigen Open-Source-Bibliotheken ab.
+  </FeatureCard>
 
-  <Card title="SwiftUI, von oben bis unten" icon="approve-check-circle">
-	Schreiben Sie echtes SwiftUI einmal und erhalten Sie eine erstklassige native Benutzeroberfläche auf beiden Plattformen.
-	Skip übersetzt SwiftUI-Ansichten in Jetpack Compose und bewahrt dabei Layout,
-	Barrierefreiheit und Plattformkonventionen.
-	Kein Ruckeln, keine veralteten Schnittstellenkonventionen, kein Uncanny Valley.
+  <FeatureCard title="Native Leistung durch Design" icon="rocket_launch" color="red" link="/docs/project-types/">
+    Da Skip-Apps echten nativen Code verwenden, haben Ihre Apps eine vorhersagbare Speichernutzung,
+    schnelle Startzeiten und Leistungsmerkmale, die mit
+    handgeschriebenem Swift und Kotlin identisch sind.
+  </FeatureCard>
 
-	[Erfahren Sie mehr →](/docs/modules/skip-ui/#supported-swiftui)
-  </Card>
+  <FeatureCard title="First-Party-IDEs" icon="code" color="purple" link="/docs/app-development/">
+    Verwenden Sie Xcode weiterhin als Ihre primäre Swift-Entwicklungsumgebung.
+    Erstellen, debuggen und refaktorieren Sie Swift-Code genau so, wie Sie es immer getan haben.
+    Wechseln Sie zu Android Studio für plattformspezifische Anpassungen.
+  </FeatureCard>
 
-  <Card title="Keine Laufzeit. Kein Bloat." icon="cloud-download">
-	Skip erledigt seine Arbeit zur Kompilierzeit. Sie erhalten nativen Code von oben bis unten,
-      ohne verwaltete Laufzeit oder schwergewichtige Engine.
-	Ihre iOS-App kann ohne Skip-Abhängigkeiten ausgeliefert werden, und Ihre Android-App
-	hängt nur von standardmäßigen Open-Source-Bibliotheken ab.
+  <FeatureCard title="Nahtlose Android-Interoperabilität" icon="sync_alt" color="green" link="/docs/platformcustomization/">
+    Benötigen Sie ein bestimmtes Android-SDK oder eine bestimmte Bibliothek?
+    Skip arbeitet sauber mit Kotlin und Jetpack Compose zusammen, sodass Sie
+    Android-APIs integrieren können, ohne gegen das Framework ankämpfen zu müssen.
+  </FeatureCard>
 
-	[Erfahren Sie mehr →](/docs/modes/)
-  </Card>
+  <FeatureCard title="Open Source, für die Zukunft gebaut" icon="lock_open" color="teal" link="/blog/skip-is-free/">
+    Skip und seine Kern-Frameworks sind kostenlos und Open Source.
+    Keine Anbieterbindung, keine proprietären Laufzeiten und kein Warten auf Anbieter, bis sie
+    mit den neuesten iOS- oder Android-Versionen aufholen.
+  </FeatureCard>
 
-  <Card title="Native Leistung durch Design" icon="magnifier">
-	Da Skip-Apps echten nativen Code verwenden, haben Ihre Apps eine vorhersagbare Speichernutzung,
-	schnelle Startzeiten und Leistungsmerkmale, die mit
-	handgeschriebenem Swift und Kotlin identisch sind.
-
-	[Erfahren Sie mehr →](/docs/project-types/)
-  </Card>
-
-  <Card title="First-Party-IDEs" icon="heart">
-	Verwenden Sie Xcode weiterhin als Ihre primäre Swift-Entwicklungsumgebung.
-	Erstellen, debuggen und refaktorieren Sie Swift-Anwendungs- und Bibliothekscode genau so, wie Sie es immer getan haben.
-	Wechseln Sie zu Android Studio, wenn Sie umfangreiche plattformspezifische Anpassungen vornehmen möchten.
-
-	[Erfahren Sie mehr →](/docs/app-development/)
-  </Card>
-
-  <Card title="Nahtlose Android-Interoperabilität" icon="star">
-	Benötigen Sie ein bestimmtes Android-SDK oder eine bestimmte Bibliothek?
-	Skip arbeitet sauber mit Kotlin und Jetpack Compose zusammen, sodass Sie
-	Android-APIs integrieren können, ohne gegen das Framework ankämpfen zu müssen.
-
-	[Erfahren Sie mehr →](/docs/platformcustomization/)
-  </Card>
-
-  <Card title="Open Source, für die Zukunft gebaut" icon="github">
-	Skip und seine Kern-Frameworks sind kostenlos und Open Source.
-	Keine Anbieterbindung, keine proprietären Laufzeiten und kein Warten auf Anbieter, bis sie
-	mit den neuesten iOS- oder Android-Versionen aufholen.
-
-	[Erfahren Sie mehr →](/blog/skip-is-free/)
-  </Card>
-
-</CardGrid>
+</div>

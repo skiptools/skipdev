@@ -1,0 +1,15 @@
+---
+import { getImage } from 'astro:assets';
+import posterSrc from '../assets/skip-splash-poster.png';
+
+const optimizedPoster = await getImage({ src: posterSrc, format: 'webp', width: 1920 });
+---
+
+<div>
+  <video width="100%" height="auto" autoplay loop muted playsinline preload="auto"
+    style="background: transparent; width: 100%;"
+    poster={optimizedPoster.src}>
+    <source src="https://assets.skip.dev/splash/skip-splash.mov">
+    Your browser does not support the video tag.
+  </video>
+</div>

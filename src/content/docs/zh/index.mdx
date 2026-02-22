@@ -8,6 +8,19 @@ sideBar: false
 head:
   - tag: title
     content: 'Skip: 使用 Skip 构建真正的原生 iPhone 和 Android 应用'
+  - tag: link
+    attrs:
+      rel: preconnect
+      href: https://fonts.googleapis.com
+  - tag: link
+    attrs:
+      rel: preconnect
+      href: https://fonts.gstatic.com
+      crossorigin: true
+  - tag: link
+    attrs:
+      rel: stylesheet
+      href: https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0&display=swap
 hero:
   tagline: Skip 将 Swift 应用开发带到 Android。它是一个使开发人员能够从单一的 Swift和 SwiftUI 代码库为 iOS 和 Android 构建真正原生应用的工具。
   #image:
@@ -27,15 +40,10 @@ hero:
       variant: secondary
 ---
 
-import { Card, CardGrid } from '@astrojs/starlight/components';
+import FeatureCard from '../../../components/FeatureCard.astro';
+import SplashVideo from '../../../components/SplashVideo.astro';
 
-<div>
-  <video width="100%" height="auto" autoplay loop muted playsinline preload="auto" style="background: transparent; width: 100%;" poster="https://assets.skip.dev/splash/skip-splash-poster.png">
-	<source src="https://assets.skip.dev/splash/skip-splash.mov">
-	Your browser does not support the video tag.
-	</source>
-  </video>
-</div>
+<SplashVideo />
 
 
 # Skip 如何工作
@@ -45,58 +53,42 @@ import { Card, CardGrid } from '@astrojs/starlight/components';
 
 ## Skip 优势
 
+<div class="feature-grid">
 
+  <FeatureCard title="从头到尾的 SwiftUI" icon="widgets" color="blue" link="/docs/modules/skip-ui/#supported-swiftui">
+    只需编写一次真正的 SwiftUI，即可在两个平台上获得一流的原生 UI。
+    Skip 将 SwiftUI 视图转换为 Jetpack Compose，保留布局、
+    可访问性和平台约定。
+  </FeatureCard>
 
-<CardGrid>
+  <FeatureCard title="没有运行时。没有臃肿。" icon="bolt" color="amber" link="/docs/modes/">
+    Skip 在编译时完成所有工作。您可以获得从头到尾的原生代码，
+    没有托管运行时或重量级引擎。
+    您的 Android 应用仅依赖于标准的开源库。
+  </FeatureCard>
 
-  <Card title="从头到尾的 SwiftUI" icon="approve-check-circle">
-	只需编写一次真正的 SwiftUI，即可在两个平台上获得一流的原生 UI。
-	Skip 将 SwiftUI 视图转换为 Jetpack Compose，保留布局、
-	可访问性和平台约定。
-	没有卡顿，没有过时的界面约定，没有“恐怖谷”效应。
+  <FeatureCard title="原生性能设计" icon="rocket_launch" color="red" link="/docs/project-types/">
+    因为 Skip 应用使用真正的原生代码，所以您的应用具有可预测的内存
+    使用、快速的启动时间和与
+    手写 Swift 和 Kotlin 相同的性能特征。
+  </FeatureCard>
 
-	[了解更多 →](/docs/modules/skip-ui/#supported-swiftui)
-  </Card>
+  <FeatureCard title="第一方 IDE" icon="code" color="purple" link="/docs/app-development/">
+    继续使用 Xcode 作为您的主要 Swift 开发环境。
+    像往常一样构建、调试和重构。
+    需要平台特定自定义时使用 Android Studio。
+  </FeatureCard>
 
-  <Card title="没有运行时。没有臃肿。" icon="cloud-download">
-	Skip 在编译时完成所有工作。您可以获得从头到尾的原生代码，
-      没有托管运行时或重量级引擎。
-	您的 iOS 应用可以零 Skip 依赖项发布，而您的 Android 应用
-	仅依赖于标准的开源库。
+  <FeatureCard title="无缝 Android 互操作" icon="sync_alt" color="green" link="/docs/platformcustomization/">
+    需要特定的 Android SDK 或库吗？
+    Skip 与 Kotlin 和 Jetpack Compose 清晰地互操作，因此您可以
+    集成 Android API 而无需与框架作斗争。
+  </FeatureCard>
 
-	[了解更多 →](/docs/modes/)
-  </Card>
+  <FeatureCard title="开源，为长远发展而构建" icon="lock_open" color="teal" link="/blog/skip-is-free/">
+    Skip 及其核心框架是免费和开源的。
+    没有锁定，没有专有运行时，也无需等待供应商赶上
+    最新的平台版本。
+  </FeatureCard>
 
-  <Card title="原生性能设计" icon="magnifier">
-	因为 Skip 应用使用真正的原生代码，所以您的应用具有可预测的内存
-	使用、快速的启动时间和与
-	手写 Swift 和 Kotlin 相同的性能特征。
-
-	[了解更多 →](/docs/project-types/)
-  </Card>
-
-  <Card title="第一方 IDE" icon="heart">
-	继续使用 Xcode 作为您的主要 Swift 开发环境。
-	像往常一样构建、调试和重构 Swift 应用程序和库代码。
-	如果您想进行大量的平台特定自定义，请使用 Android Studio。
-
-	[了解更多 →](/docs/app-development/)
-  </Card>
-
-  <Card title="无缝 Android 互操作" icon="star">
-	需要特定的 Android SDK 或库吗？
-	Skip 与 Kotlin 和 Jetpack Compose 清晰地互操作，因此您可以
-	集成 Android API 而无需与框架作斗争。
-
-	[了解更多 →](/docs/platformcustomization/)
-  </Card>
-
-  <Card title="开源，为长远发展而构建" icon="github">
-	Skip 及其核心框架是免费和开源的。
-	没有锁定，没有专有运行时，也无需等待供应商赶上
-	最新的 iOS 或 Android 版本。
-
-	[了解更多 →](/blog/skip-is-free/)
-  </Card>
-
-</CardGrid>
+</div>
