@@ -117,7 +117,8 @@ div.localization-screenshot-container img {
 	flex-direction: column;
 	padding: 1.75rem;
 	border-radius: 1rem;
-	background: var(--sl-color-gray-6);
+    /* background: linear-gradient(135deg, var(--card-tint) 0%), var(--sl-color-gray-6); */
+    background: var(--card-tint);
 	border: 1px solid var(--sl-color-gray-5);
 	text-decoration: none;
 	color: inherit;
@@ -155,6 +156,14 @@ div.localization-screenshot-container img {
 	font-size: 1.25rem;
 }
 
+/* ── Per-card gradient tints (dark mode) ── */
+.feature-card[data-color="blue"]   { --card-tint: rgba(96, 165, 250, 0.08); }
+.feature-card[data-color="amber"]  { --card-tint: rgba(251, 191, 36, 0.08); }
+.feature-card[data-color="red"]    { --card-tint: rgba(248, 113, 113, 0.08); }
+.feature-card[data-color="purple"] { --card-tint: rgba(192, 132, 252, 0.08); }
+.feature-card[data-color="green"]  { --card-tint: rgba(74, 222, 128, 0.08); }
+.feature-card[data-color="teal"]   { --card-tint: rgba(45, 212, 191, 0.08); }
+
 /* ── Per-card icon colors (dark mode) ── */
 .feature-card[data-color="blue"] .feature-card-icon   { background: #172554; }
 .feature-card[data-color="amber"] .feature-card-icon   { background: #451a03; }
@@ -169,6 +178,14 @@ div.localization-screenshot-container img {
 .feature-card[data-color="purple"] .material-symbols-rounded { color: #c084fc; }
 .feature-card[data-color="green"] .material-symbols-rounded  { color: #4ade80; }
 .feature-card[data-color="teal"] .material-symbols-rounded   { color: #2dd4bf; }
+
+/* ── Per-card gradient tints (light mode) ── */
+:root[data-theme='light'] .feature-card[data-color="blue"]   { --card-tint: rgba(37, 99, 235, 0.05); }
+:root[data-theme='light'] .feature-card[data-color="amber"]  { --card-tint: rgba(217, 119, 6, 0.05); }
+:root[data-theme='light'] .feature-card[data-color="red"]    { --card-tint: rgba(220, 38, 38, 0.05); }
+:root[data-theme='light'] .feature-card[data-color="purple"] { --card-tint: rgba(147, 51, 234, 0.05); }
+:root[data-theme='light'] .feature-card[data-color="green"]  { --card-tint: rgba(22, 163, 106, 0.05); }
+:root[data-theme='light'] .feature-card[data-color="teal"]   { --card-tint: rgba(13, 148, 136, 0.05); }
 
 /* ── Per-card icon colors (light mode) ── */
 :root[data-theme='light'] .feature-card[data-color="blue"] .feature-card-icon   { background: #dbeafe; }
