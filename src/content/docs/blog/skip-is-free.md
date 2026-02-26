@@ -8,7 +8,7 @@ author: the Skip Team
 ---
 
 :::note[TL;DR]
-Skip is now completely free and open source. [Become a sponsor](https://skip.dev/sponsor) to help sustain the future of truly native cross-platform development.
+Skip is now completely free and open source. [Become a sponsor](/sponsor) to help sustain the future of truly native cross-platform development.
 :::
 
 Since launching Skip in 2023, we’ve pursued one mission: enable developers to create premium mobile apps for iOS and Android from a single Swift and SwiftUI codebase — without any of the compromises that have encumbered cross-platform development tools since, well, forever.
@@ -40,9 +40,9 @@ Since day one, Skip has been bootstrapped. We haven’t taken venture capital or
 
 But independence requires community support. And that is where you come in.
 
-- **Current subscribers**: Your Small Business or Professional plan will automatically transition to an [Individual](https://skip.dev/sponsor) or [Supporter](https://skip.dev/sponsor) tier, respectively. You can cancel any time with no consequences (other than making us sad), but we hope you’ll consider staying on, at least throughout this transition period.
+- **Current subscribers**: Your Small Business or Professional plan will automatically transition to an [Individual](/sponsor) or [Supporter](/sponsor) tier, respectively. You can cancel any time with no consequences (other than making us sad), but we hope you’ll consider staying on, at least throughout this transition period.
 - **Individual developers**: If you believe in Skip’s mission, please consider supporting us through [GitHub Sponsors](https://github.com/sponsors/skiptools) with a monthly contribution.
-- **Companies and organizations**: For businesses that want to see Skip flourish, we offer corporate sponsorship tiers with visibility on our homepage and in our documentation. Your sponsorship directly funds development of the integration frameworks essential to production apps, as well as the ongoing maintenance, support, and infrastructure. Sponsorship comes with some compelling perks! Please visit https://skip.dev/sponsor to see the sponsorship tiers.
+- **Companies and organizations**: For businesses that want to see Skip flourish, we offer corporate sponsorship tiers with visibility on our homepage and in our documentation. Your sponsorship directly funds development of the integration frameworks essential to production apps, as well as the ongoing maintenance, support, and infrastructure. Sponsorship comes with some compelling perks! Please visit [https://skip.dev/sponsor](/sponsor) to see the sponsorship tiers.
 
 Investing in Skip is also investing in your own team's capabilities and competitive advantage. Your support accelerates Skip's development and ensures its long-term success, enabling your developers to build exceptional native experiences efficiently, today and into the future.
 

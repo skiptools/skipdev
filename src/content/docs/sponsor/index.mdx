@@ -16,73 +16,59 @@ hero:
     #  icon: external
     #  variant: minimal
 ---
-import { Card, CardGrid } from '@astrojs/starlight/components';
+import SponsorCard from '../../../components/SponsorCard.astro';
+
+<style>{`.sl-anchor-link { display: none; }`}</style>
 
 <script async
   src="https://js.stripe.com/v3/buy-button.js">
 </script>
 
-<style>{`
-article {
-}
-
-article.card {
-}
-
-article.card div.body {
-}
-
-.support-button {
-  margin-top: 1.5rem;
-  text-align: center;
-  align-content: end; /* doesn't work; we would like the align all the buttons at the bottom of the card */
-}
-`}</style>
-
 ## Sponsorship Tiers
 
 Gain visibility and access to our team while helping us continue to enhance Skip. Choose the tier that's right for you and your organization.
 
-<CardGrid>
-  <Card title="Individual" icon="heart">
-  ### $10/month
-  
-  For developers who want to support Skip's mission.
-  
-  **Benefits:**
-  - **Access to private insiders area in Slack** — where Skip insiders share tips, play with upcoming features, and connect directly with the core team.
+<div class="sponsor-grid">
 
-  <div style="bottom: 0px; position: relative; margin-top: 1.5rem; text-align: center;">
-    <a href="https://github.com/sponsors/skiptools/sponsorships?tier_id=573802" style="display: inline-block; padding: 0.5rem 2rem; background: #0074D4; color: white; border-radius: 0.4rem; text-decoration: none; font-weight: 600;">
-      Support as an Individual
-    </a>
-  </div>
-  </Card>
+  <SponsorCard title="Individual" icon="person" color="blue">
+    ### $10/month
 
-  <Card title="Supporter" icon="approve-check">
+    For developers who want to support Skip's mission.
+
+    **Benefits:**
+    - **Access to private insiders area in Slack** — where Skip insiders share tips, play with upcoming features, and connect directly with the core team.
+
+    <div class="sponsor-cta">
+      <a href="https://github.com/sponsors/skiptools/sponsorships?tier_id=573802" class="sponsor-button">
+        Support as an Individual
+      </a>
+    </div>
+  </SponsorCard>
+
+  <SponsorCard title="Supporter" icon="workspace_premium" color="amber">
     ### $500/month
-    
+
     For companies who want to support Skip while getting some extra exposure.
-    
+
     **Benefits:**
     - **Logo on the sponsors page** — your logo proudly displayed on the sponsors page
     - **Insiders team access** — all the perks of the Individual tier for everyone in your team
     - **Support Skip** — sleep easy knowing that you're supporting the ongoing development of Skip
-    
-  <div class="support-button">
-    <stripe-buy-button
-      buy-button-id="buy_btn_1Ss3Q1ERTkU2ZBQ6nSFJsZ7L"
-      publishable-key="pk_live_SE1WPSmGcgzV1UH5w4qi5y24"
-    >
-    </stripe-buy-button>
-    </div>
-  </Card>
 
-  <Card title="Ambassador" icon="rocket">
+    <div class="sponsor-cta">
+      <stripe-buy-button
+        buy-button-id="buy_btn_1Ss3Q1ERTkU2ZBQ6nSFJsZ7L"
+        publishable-key="pk_live_SE1WPSmGcgzV1UH5w4qi5y24"
+      >
+      </stripe-buy-button>
+    </div>
+  </SponsorCard>
+
+  <SponsorCard title="Ambassador" icon="diamond" color="purple">
     ### $2,500/month
-    
+
     For companies looking to boost visibility and credibility with the Skip community.
-    
+
     **Benefits:**
     - **Logo on the Skip homepage** — your logo displayed in a rotating spot on the homepage
     - **Logo on the sponsors page** — your logo proudly displayed on the sponsors page
@@ -90,21 +76,21 @@ Gain visibility and access to our team while helping us continue to enhance Skip
     - **Skip Plus team access** — access to internal framework previews and project templates
     - **Access to sponsor Slack** — a private Slack channel for sponsors to talk to the Skip team
     - **Support Skip** — sleep easy knowing that you're supporting ongoing development and maintenance of Skip
-    
-  <div class="support-button">
-    <stripe-buy-button
-      buy-button-id="buy_btn_1SrtXbERTkU2ZBQ6xqesxSmc"
-      publishable-key="pk_live_SE1WPSmGcgzV1UH5w4qi5y24"
-    >
-    </stripe-buy-button>
-  </div>
-  </Card>
 
-  <Card title="Partner" icon="star">
+    <div class="sponsor-cta">
+      <stripe-buy-button
+        buy-button-id="buy_btn_1SrtXbERTkU2ZBQ6xqesxSmc"
+        publishable-key="pk_live_SE1WPSmGcgzV1UH5w4qi5y24"
+      >
+      </stripe-buy-button>
+    </div>
+  </SponsorCard>
+
+  <SponsorCard title="Partner" icon="handshake" color="teal">
     ### $5,000/month
-    
+
     For companies who want increased exposure and easy access to the Skip team.
-    
+
     **Benefits:**
     - **Permanent logo on the Skip homepage** — your logo permanently displayed on the homepage
     - **Priority logo placement on sponsors page** — your logo will appear at the top of the sponsors page
@@ -114,16 +100,17 @@ Gain visibility and access to our team while helping us continue to enhance Skip
     - **Skip Plus team access** — access to internal framework previews and project templates
     - **Custom license** — Skip and all its frameworks will be provided under a custom-tailored commercial license for your team, free of the constraints of the Skip OSS license
     - **Support Skip** — sleep easy knowing that you're supporting the ongoing development and maintenance of Skip
-    
-  <div class="support-button">
-    <stripe-buy-button
-      buy-button-id="buy_btn_1SrtZGERTkU2ZBQ63BZxCRFu"
-      publishable-key="pk_live_SE1WPSmGcgzV1UH5w4qi5y24"
-    >
-    </stripe-buy-button>
-  </div>
-  </Card>
-</CardGrid>
+
+    <div class="sponsor-cta">
+      <stripe-buy-button
+        buy-button-id="buy_btn_1SrtZGERTkU2ZBQ63BZxCRFu"
+        publishable-key="pk_live_SE1WPSmGcgzV1UH5w4qi5y24"
+      >
+      </stripe-buy-button>
+    </div>
+  </SponsorCard>
+
+</div>
 
 ## Questions?
 

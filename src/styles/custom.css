@@ -1,3 +1,25 @@
+/* ── Material Symbols Rounded (self-hosted) ── */
+@font-face {
+	font-family: 'Material Symbols Rounded';
+	font-style: normal;
+	font-weight: 400;
+	font-display: swap;
+	src: url('/fonts/material-symbols-rounded.ttf') format('truetype');
+}
+
+.material-symbols-rounded {
+	font-family: 'Material Symbols Rounded';
+	font-weight: normal;
+	font-style: normal;
+	font-size: 24px;
+	line-height: 1;
+	letter-spacing: normal;
+	text-transform: none;
+	display: inline-block;
+	white-space: nowrap;
+	word-wrap: normal;
+	direction: ltr;
+}
 
 /* See theme editor at https://starlight.astro.build/guides/css-and-tailwind/#color-theme-editor */
 
@@ -240,4 +262,159 @@ div.localization-screenshot-container img {
 	gap: 0.5rem;
 }
 
+/* ── Sponsor Cards Grid ── */
+
+.sponsor-grid {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 1.25rem;
+	margin-top: 1.5rem;
+}
+
+@media (max-width: 600px) {
+	.sponsor-grid {
+		grid-template-columns: 1fr;
+	}
+}
+
+.sponsor-card {
+	display: flex;
+	flex-direction: column;
+	padding: 1.75rem;
+	border-radius: 1rem;
+	background: var(--sl-color-gray-6);
+	border: 1px solid var(--sl-color-gray-5);
+	transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.sponsor-card:hover {
+	transform: translateY(-3px);
+	box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+	border-color: var(--sl-color-accent);
+}
+
+:root[data-theme='light'] .sponsor-card:hover {
+	box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.sponsor-card-header {
+	display: flex;
+	align-items: center;
+	gap: 0.75rem;
+	margin-bottom: 0.5rem;
+}
+
+.sponsor-card-icon {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 2.5rem;
+	height: 2.5rem;
+	border-radius: 0.625rem;
+	flex-shrink: 0;
+}
+
+.sponsor-card-icon .material-symbols-rounded {
+	font-size: 1.25rem;
+}
+
+.sponsor-card-title {
+	font-size: 1.25rem;
+	font-weight: 600;
+	margin: 0;
+	color: var(--sl-color-white);
+}
+
+.sponsor-card-body {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+}
+
+.sponsor-card-body h3 {
+	font-size: 1.5rem;
+	font-weight: 700;
+	margin: 0.75rem 0 0.5rem;
+	color: var(--sl-color-white);
+}
+
+.sponsor-card-body p {
+	font-size: 0.9375rem;
+	line-height: 1.6;
+	color: var(--sl-color-gray-2);
+}
+
+:root[data-theme='light'] .sponsor-card-body p {
+	color: var(--sl-color-gray-3);
+}
+
+.sponsor-card-body ul {
+	padding-left: 1.25rem;
+	margin: 0.5rem 0;
+	font-size: 0.875rem;
+	line-height: 1.7;
+	color: var(--sl-color-gray-2);
+}
+
+:root[data-theme='light'] .sponsor-card-body ul {
+	color: var(--sl-color-gray-3);
+}
+
+.sponsor-cta {
+	margin-top: auto;
+	padding-top: 1.25rem;
+	text-align: center;
+}
+
+.sponsor-button {
+	display: inline-block;
+	padding: 0.6rem 1.75rem;
+	background: #0074D4;
+	color: var(--sl-color-white) !important;
+	border-radius: 0.5rem;
+	text-decoration: none;
+	font-weight: 600;
+	font-size: 0.9375rem;
+	transition: opacity 0.15s ease;
+}
+
+.sponsor-button p {
+	color: #ffffff !important;
+}
+
+.sponsor-button:hover {
+	opacity: 0.9;
+}
+
+/* ── Sponsor card icon & gradient colors (dark mode) ── */
+.sponsor-card[data-color="blue"] .sponsor-card-icon   { background: #172554; }
+.sponsor-card[data-color="amber"] .sponsor-card-icon   { background: #451a03; }
+.sponsor-card[data-color="purple"] .sponsor-card-icon  { background: #3b0764; }
+.sponsor-card[data-color="teal"] .sponsor-card-icon    { background: #042f2e; }
+
+.sponsor-card[data-color="blue"] .material-symbols-rounded   { color: #60a5fa; }
+.sponsor-card[data-color="amber"] .material-symbols-rounded  { color: #fbbf24; }
+.sponsor-card[data-color="purple"] .material-symbols-rounded { color: #c084fc; }
+.sponsor-card[data-color="teal"] .material-symbols-rounded   { color: #2dd4bf; }
+
+.sponsor-card[data-color="blue"]   { background: linear-gradient(135deg, rgba(96, 165, 250, 0.08), transparent 60%), var(--sl-color-gray-6); }
+.sponsor-card[data-color="amber"]  { background: linear-gradient(135deg, rgba(251, 191, 36, 0.08), transparent 60%), var(--sl-color-gray-6); }
+.sponsor-card[data-color="purple"] { background: linear-gradient(135deg, rgba(192, 132, 252, 0.08), transparent 60%), var(--sl-color-gray-6); }
+.sponsor-card[data-color="teal"]   { background: linear-gradient(135deg, rgba(45, 212, 191, 0.08), transparent 60%), var(--sl-color-gray-6); }
+
+/* ── Sponsor card icon & gradient colors (light mode) ── */
+:root[data-theme='light'] .sponsor-card[data-color="blue"] .sponsor-card-icon   { background: #dbeafe; }
+:root[data-theme='light'] .sponsor-card[data-color="amber"] .sponsor-card-icon  { background: #fef3c7; }
+:root[data-theme='light'] .sponsor-card[data-color="purple"] .sponsor-card-icon { background: #f3e8ff; }
+:root[data-theme='light'] .sponsor-card[data-color="teal"] .sponsor-card-icon   { background: #ccfbf1; }
+
+:root[data-theme='light'] .sponsor-card[data-color="blue"] .material-symbols-rounded   { color: #2563eb; }
+:root[data-theme='light'] .sponsor-card[data-color="amber"] .material-symbols-rounded  { color: #d97706; }
+:root[data-theme='light'] .sponsor-card[data-color="purple"] .material-symbols-rounded { color: #9333ea; }
+:root[data-theme='light'] .sponsor-card[data-color="teal"] .material-symbols-rounded   { color: #0d9488; }
+
+:root[data-theme='light'] .sponsor-card[data-color="blue"]   { background: linear-gradient(135deg, rgba(37, 99, 235, 0.06), transparent 60%), var(--sl-color-gray-6); }
+:root[data-theme='light'] .sponsor-card[data-color="amber"]  { background: linear-gradient(135deg, rgba(217, 119, 6, 0.06), transparent 60%), var(--sl-color-gray-6); }
+:root[data-theme='light'] .sponsor-card[data-color="purple"] { background: linear-gradient(135deg, rgba(147, 51, 234, 0.06), transparent 60%), var(--sl-color-gray-6); }
+:root[data-theme='light'] .sponsor-card[data-color="teal"]   { background: linear-gradient(135deg, rgba(13, 148, 136, 0.06), transparent 60%), var(--sl-color-gray-6); }
 
