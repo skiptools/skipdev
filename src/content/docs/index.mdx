@@ -1,28 +1,28 @@
 ---
-title: Build truly native iPhone and Android apps with Skip
-description: Introduction to using Skip for dual-platform app development.
+title: One Swift Codebase. Two Native Platforms.
+description: Skip lets you write one app in Swift and SwiftUI and ship it natively on both iOS and Android.
 template: splash
 editUrl: false
 tableOfContents: false
 sideBar: false
 head:
   - tag: title
-    content: 'Skip: Build truly native iPhone and Android apps with Skip'
+    content: 'Skip: One Swift Codebase. Two Native Platforms.'
 hero:
-  tagline: Skip brings Swift app development to Android. It is a tool that enables developers to build genuinely native apps for both iOS and Android from a single Swift and SwiftUI codebase.
+  tagline: Write your app in Swift and SwiftUI. Skip compiles it natively for iOS and produces real Jetpack Compose for Android — from a single codebase, with no added runtime.
   #image:
   #  file: ../../assets/houston.webp
   banner:
     content: |
-      Skip is now free and open source!
-      <a href="/blog/skip-is-free">Read the announcement</a>
+      Skip is free and open source — no license key, no trial period, no catch.
+      <a href="/docs/gettingstarted/">Get started</a>
   actions:
-    - text: Learn More
-      link: /docs/
-      icon: right-arrow
-      variant: primary
     - text: Get Started
       link: /docs/gettingstarted/
+      icon: right-arrow
+      variant: primary
+    - text: See How It Works
+      link: /docs/
       icon: right-arrow
       variant: secondary
 ---
@@ -34,46 +34,49 @@ import SplashVideo from '../../components/SplashVideo.astro';
 
 ## How Skip Works
 
-As you write your Swift and SwiftUI source, the Skip Xcode plugin continuously builds the equivalent project for Android. Launching your app will open it simultaneously on both the Android emulator and iOS Simulator. On iOS, your app uses direct unintermediated SwiftUI, and on Android it is bridged to the equivalent Jetpack Compose. For both platforms, you get the polish and experience that only the truly native platform SDK can provide. System integration, themes, and accessibility all work "out of the box".
+Your app runs as native SwiftUI on iOS and native Jetpack Compose on Android. There is no intermediary rendering engine — each platform uses its own recommended UI toolkit, so system themes, accessibility, and platform conventions work automatically.
+
+As you develop in Xcode, the Skip plugin continuously builds the Android version alongside iOS. Launch once and see your app running on both the iOS Simulator and Android emulator simultaneously.
 
 ## Skip Advantages
 
 <div class="feature-grid">
 
   <FeatureCard title="SwiftUI, All the Way Down" icon="widgets" color="blue" link="/docs/modules/skip-ui/#supported-swiftui">
-    Write real SwiftUI once and get a first-class native UI on both platforms.
-    Skip translates SwiftUI views into Jetpack Compose, preserving layout,
-    accessibility, and platform conventions.
+    Write your UI once in SwiftUI. On iOS it runs as-is. On Android, Skip
+    produces native Jetpack Compose — preserving layout, accessibility, and
+    each platform's conventions. No mimicry, no uncanny valley.
   </FeatureCard>
 
   <FeatureCard title="No Runtime. No Bloat." icon="bolt" color="amber" link="/docs/modes/">
-    Skip does all its work at compile time. You get native code all the way down,
-    with no managed runtime or heavyweight engine.
-    Your Android app depends only on standard open-source libraries.
+    Skip works entirely at build time. Your shipped app contains no added
+    runtime, no embedded engine, and no garbage collector on iOS.
+    The result: small binaries and predictable performance.
   </FeatureCard>
 
   <FeatureCard title="Native Performance by Design" icon="rocket_launch" color="red" link="/docs/project-types/">
-    Because Skip apps use real native code, your apps have predictable memory
-    usage, fast startup times, and performance characteristics identical to
-    hand-written Swift and Kotlin.
+    Skip apps launch fast and stay responsive because they are real native
+    code — identical in performance to hand-written Swift on iOS and
+    hand-written Kotlin on Android. No bridge tax, no frame drops from
+    garbage collection pauses.
   </FeatureCard>
 
   <FeatureCard title="First Party IDEs" icon="code" color="purple" link="/docs/app-development/">
-    Keep using Xcode as your primary Swift development environment.
-    Build, debug, and refactor exactly as you always have.
-    Drop into Android Studio for platform-specific customization.
+    Stay in Xcode for day-to-day development — your existing workflows,
+    shortcuts, and debugging tools all work unchanged. Use Android Studio
+    when you need platform-specific tuning.
   </FeatureCard>
 
   <FeatureCard title="Seamless Android Interop" icon="sync_alt" color="green" link="/docs/platformcustomization/">
-    Need a specific Android SDK or library?
-    Skip interoperates cleanly with Kotlin and Jetpack Compose, so you can
-    integrate Android APIs without fighting the framework.
+    Call any Kotlin or Java API directly from your shared code. Integrate
+    Android SDKs, Jetpack libraries, or third-party services without complex
+    bridging layers or plugin systems.
   </FeatureCard>
 
   <FeatureCard title="Open Source, Built for the Long Term" icon="lock_open" color="teal" link="/blog/skip-is-free/">
-    Skip and its core frameworks are free and open source.
-    No lock-in, no proprietary runtimes, and no waiting on vendors to catch up
-    with the latest platform releases.
+    Skip is free, open source, and community-funded — no strings attached.
+    Your iOS app has zero dependency on Skip, so you can stop using it any time
+    without rewriting a single line of iOS code.
   </FeatureCard>
 
 </div>

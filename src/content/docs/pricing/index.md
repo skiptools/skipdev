@@ -4,6 +4,16 @@ description: Skip is free and open-source.
 tableOfContents: false
 ---
 
-We are thrilled to announce that Skip is completely free and open-source! Our mission is to empower developers with a powerful, unified platform for building genuinely native iOS and Android applications. You can read about it in our [blog post announcement](/blog/skip-is-free/).
+## Free and Open Source
 
-While Skip is free to use, its continued innovation and development rely on the generous support of its community. By becoming a sponsor, you directly contribute to enhancing features, improving performance, and expanding Skip's capabilities, ensuring it remains a cutting-edge tool for mobile development. Join us in shaping the future of Skip and empowering developers worldwide – visit our [Sponsor page](/sponsor/) to learn more.
+Skip is completely free. No license key, no trial period, no revenue threshold, no per-seat pricing. The transpiler, build tools, and all core frameworks are open source under permissive licenses.
+
+Read the full story in our [announcement post](/blog/skip-is-free/).
+
+## How Skip Is Funded
+
+Skip is bootstrapped and community-funded. We have not taken venture capital or private equity investment. This independence means Skip's roadmap is driven by developers, not investors.
+
+Ongoing development — new framework support, performance improvements, tooling, and documentation — is sustained by sponsorships from individuals and companies who use Skip in production.
+
+If Skip saves your team time or money, consider [becoming a sponsor](/sponsor/). Your support directly funds the engineering that keeps Skip moving forward.

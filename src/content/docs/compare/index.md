@@ -64,8 +64,7 @@ img.table-icon {
 }
 </style>
 
-This table presents a comparison between using Skip for dual-platform iOS and Android development versus 
-some of the other cross-platform app builder technologies that are available.
+How does Skip compare to other cross-platform frameworks? The table below evaluates the criteria that matter most for production mobile apps: native UI, performance, platform API access, and long-term maintainability.
 
 | | Write<br/>Twice | Skip | Flutter | React<br/>Native | Compose<br/>Multiplatform | |
 |-:|:-:|:-:|:-:|:-:|:-:|:-|
@@ -81,7 +80,7 @@ some of the other cross-platform app builder technologies that are available.
 
 # Technology Comparison Table
 
-This table summarizes the various underlying technologies that each of the popular cross-platform development frameworks use.
+The following table breaks down the underlying technology stack of each framework.
 
 |                         | Skip       | Flutter          | React Native | Xamarin          | KMP Compose      | Ionic/Cordova |
 |------------------------:|:-----------|:-----------------|:-------------|:-----------------|:-----------------|:--------------|

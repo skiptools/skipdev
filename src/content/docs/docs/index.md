@@ -5,9 +5,9 @@ permalink: /docs/
 #tableOfContents: false
 ---
 
-Skip is a technology for building fully native iOS and Android apps.
+Skip lets you write one app in Swift and SwiftUI and ship it natively on both iOS and Android.
 
-The mobile app market is divided between the iPhone and Android. The iPhone is popular in the West and leads in app revenue, while Android has many more worldwide users overall.[^apprevenue]
+The mobile app market is split between iPhone and Android. iPhone leads in revenue per user, while Android reaches far more people worldwide.[^apprevenue]
 
 [^apprevenue]: Spending Power: iOS users spend $140 annually on apps versus $69 for Android users. iOS also dominates subscription revenue, with 5× higher average revenue per user (ARPU). Source: [iOS vs Android: Subscription Metrics Compared — appenure.com](https://www.appeneure.com/blog/ios-vs-android-subscription-metrics-compared/seobot-blog)
 
@@ -196,18 +196,18 @@ The mobile app market is divided between the iPhone and Android. The iPhone is p
 </div>
 
 
-Neglecting either platform means leaving behind a large percentage of potential users. Skip is the [only dual-platform solution](/compare/) to deliver fully native apps for the entire mobile market.
+Your iOS app is leaving money on the table. Your absence from Android is leaving users behind. Skip is the [only framework](/compare/) that delivers genuinely native apps on both platforms from a single Swift codebase.
 
 :::tip
 To jump right in and get started, please go straight to the [<u>getting started</u>](/docs/gettingstarted/) guide.
 :::
 
-With Skip, you write your shared code in Swift and SwiftUI. Your Swift is compiled natively for both iOS and Android, with no added runtime interpreter or garbage collector to slow it down. Your SwiftUI runs as-is on iOS, and it uses Google's recommended [Jetpack Compose](https://developer.android.com/compose) UI toolkit on Android. Your users get a platform-perfect look and feel, not some uncanny-valley replica.
+With Skip, you write your shared code in Swift and SwiftUI. Your Swift compiles natively for both iOS and Android — no added runtime, no interpreter, no garbage collector on iOS. SwiftUI runs as-is on Apple platforms, and Skip produces native [Jetpack Compose](https://developer.android.com/compose) on Android. Your users get a platform-perfect experience, not a cross-platform approximation.
 
 Use Skip for bits of shared logic and UI, for your entire app, or anything in between. Skip makes [integration](/docs/platformcustomization/) between your Swift and Android API as well as your SwiftUI and Compose views a snap, without significant overhead or complex bridging.
 
 :::caution[Consider This…]{icon="starlight"}
-Large tech companies and small startups alike will usually design for iOS first, then adapt their designs for Android. Clients ask for an iOS app, then expect an eventual port to Android. Skip is the only app framework designed for the iOS-first app ecosystem.
+Most teams design for iOS first and port to Android later. Clients ask for an iPhone app, then expect Android to follow. Skip is the only framework built for exactly this workflow: write Swift, ship everywhere.
 :::
 
 <img src="https://assets.skip.dev/images/skip-marketing-preview.jpg" alt="Screenshot" style="width: 90%"/>
@@ -218,33 +218,27 @@ Large tech companies and small startups alike will usually design for iOS first,
 
 ### Skip versus writing two separate native apps
 
-On the surface, using a cross-platform solution for your mobile development needs is a no-brainer. After all, you can literally cut your development time and maintenance costs in half! 
-
-Many experienced developers believe, however, that cross-platform development requires too many compromises to make it worthwhile. In the end, they say, you’ll get better results with less hassle by writing separate iOS and Android apps using the native languages, frameworks, and tooling for each platform.
-
-Imagine being on a dev team creating separate iOS and Android implementations of a mobile app. You write the iOS version in Swift and SwiftUI, and the Android version in Kotlin and Compose. You have complete freedom to craft two fully native mobile applications.
-
-Very quickly, however, you’ll find that your team is writing a lot of code twice:
+Every team maintaining separate iOS and Android apps discovers the same thing: you are writing most of your code twice.
 
 - The same model types. They’ll often have to communicate with the same network APIs, serialize to the same JSON format, and have the same persistence capabilities across platforms.
 - The same logic to enforce your business rules.
 - The same unit tests to ensure that your model and business logic are working.
 - The same onboarding screens, settings screens, forms, lists, and other “standard” UI. Parts of your app might need careful tailoring for each mobile OS, but much of the experience may be identical across iOS and Android.
 
-You tell yourselves that the massive duplication of effort and all the extra overhead to coordinate models, data formats, logic, and tests across platforms are worth it. After all, you don’t want to compromise the app by introducing non-native cross-platform code. That has traditionally come with its own very real costs, for example:
+The traditional defense for this duplication is that cross-platform frameworks are not worth the trade-offs. And historically, those trade-offs have been real:
 
 - Training or hiring for a new programming language (JavaScript, Dart, etc.) and set of application frameworks.
 - Bloating the app with an added runtime and/or garbage collector.
 - Degrading the user experience with non-native UI.
 
-But what if you could share common code and tests without these costs? What if you could:
+Skip eliminates these trade-offs. With Skip, you can:
 
 - Develop with a programming language and set of frameworks you’re already using.
 - Avoid the overhead of adding another runtime or garbage collector to either platform.
 - Produce entirely native user interfaces - SwiftUI on iOS and Compose on Android - from common SwiftUI code.
 - Call native API from your shared code whenever you need to.
 
-That is Skip. With Skip, you write your shared code in Swift, using standard iOS frameworks like Foundation and SwiftUI. On iOS, your code is used as-is. On Android, Skip's tools bridge your Swift and SwiftUI to Kotlin and Compose. The result is fully native code on both platforms. And because the resulting code is native, it means:
+You write your shared code in Swift and SwiftUI — the same language and frameworks you already use on iOS. On Android, Skip bridges your Swift and SwiftUI to Kotlin and Compose. The result is fully native code on both platforms. And because the resulting code is native, it means:
 
 1. Your Swift code [integrates perfectly](/docs/platformcustomization/) with the parts of your app you choose to develop separately on iOS and Android.
 1. You are never limited by what Skip does or does not support. You can always implement and call out to platform-specific solutions, just as you would when developing separate iOS and Android apps.
@@ -255,13 +249,13 @@ Skip can save you enormous amounts of time and effort, without requiring you to 
 
 Skip has many advantages over other cross platform solutions like Flutter and React Native:
 
-- **Genuinely Native.** Skip apps don't just “look native”, they *are* native: SwiftUI on iOS and Jetpack Compose on Android. You know the difference, and so do your users. Take full advantage of new platform features and get automatic integration with core functionality like accessibility, which is a requirement for compliance in many fields.
-- **Featherweight.** With *SkipZero*, your iOS app has no dependencies on any Skip frameworks. And the resulting Android app only depends on open source libraries.
-- **Memory Efficient.** With no additional managed runtime, Skip apps are as efficient as they can possibly be on both platforms. Skip does not introduce a garbage collected runtime into your iOS app (unlike frameworks that use JavaScript or Dart), ensuring that your app's memory watermark and battery usage are optimal.
-- **Idyllic IDE.** Skip's IDE is Xcode, the premier development environment for Swift. For serious Android customization, incorporate Kotlin written directly in Android Studio.
-- **Platform Perfect.** Skip supports [thousands of cross-platform modules](https://swiftpackageindex.com/search?query=platform%3Aios%2Candroid). It also bridges seamlessly with Kotlin and Compose, so integrating with Android libraries is painless.
-- **Foundationally open.** Swift-on-Android is only half the story. Skip's app development frameworks are all free and open-source.
-- **Ejectable.** Even if you stop using Skip, you have a pristine, fully functional iOS app.
+- **Genuinely native.** Skip apps don't just “look native”, they *are* native: SwiftUI on iOS and Jetpack Compose on Android. You know the difference, and so do your users. Take full advantage of new platform features and get automatic integration with core functionality like accessibility, which is a requirement for compliance in many fields.
+- **Zero footprint on iOS.** Your iOS app has no dependency on Skip whatsoever — it is pure, unmodified SwiftUI. The Android build depends only on standard open-source libraries.
+- **Memory efficient.** Skip adds no garbage collector or managed runtime to your iOS app. On Android, Skip Fuse compiles Swift natively, keeping memory usage and battery consumption comparable to hand-written Kotlin.
+- **Your IDE, your workflow.** Develop in Xcode with all your existing tools and workflows. Use Android Studio when you need platform-specific Kotlin.
+- **Thousands of packages.** Skip supports [thousands of cross-platform modules](https://swiftpackageindex.com/search?query=platform%3Aios%2Candroid). It also bridges seamlessly with Kotlin and Compose, so integrating Android-specific libraries is straightforward.
+- **Free and open source.** Swift-on-Android is only half the story. Skip's app development frameworks are all free and open-source.
+- **Ejectable.** If you ever stop using Skip, your iOS app remains a pristine, fully functional SwiftUI project. You are never locked in.
 
 <!--
 - **CI friendly.** Skip has cross-platform unit tests too! Ensure that your logic performs identically across platforms. Run your tests either locally or remotely, making acceptance testing a breeze.
