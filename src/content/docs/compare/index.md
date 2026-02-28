@@ -1,5 +1,5 @@
 ---
-title: Skip Comparison Matrix
+title: Framework Comparisons
 permalink: /compare/
 tableOfContents: true
 ---

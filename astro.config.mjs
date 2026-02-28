@@ -135,6 +135,7 @@ export default defineConfig({
             'docs/update-guide',
             'docs/help',
             'docs/faq',
+            'compare',
             'docs/glossary',
           ],
         },
