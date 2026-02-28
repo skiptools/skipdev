@@ -418,3 +418,25 @@ div.localization-screenshot-container img {
 :root[data-theme='light'] .sponsor-card[data-color="purple"] { background: linear-gradient(135deg, rgba(147, 51, 234, 0.06), transparent 60%), var(--sl-color-gray-6); }
 :root[data-theme='light'] .sponsor-card[data-color="teal"]   { background: linear-gradient(135deg, rgba(13, 148, 136, 0.06), transparent 60%), var(--sl-color-gray-6); }
 
+/* ── Admonition / Aside Overrides ── */
+
+/* Modern rounded style for all asides */
+.starlight-aside {
+	border-radius: 0.75rem;
+	border-inline-start-width: 0.25rem;
+	padding: 1.125rem 1.25rem;
+}
+
+/* Change Tip color from purple to teal (scoped to asides only) */
+.starlight-aside--tip {
+	--sl-color-asides-text-accent: hsl(168, 65%, 75%);
+	--sl-color-asides-border: hsl(168, 70%, 45%);
+	background-color: hsl(168, 40%, 18%);
+}
+
+:root[data-theme='light'] .starlight-aside--tip {
+	--sl-color-asides-text-accent: hsl(168, 70%, 25%);
+	--sl-color-asides-border: hsl(168, 70%, 38%);
+	background-color: hsl(168, 55%, 91%);
+}
+
