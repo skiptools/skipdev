@@ -3,7 +3,7 @@ title: Transpilation Reference
 permalink: /docs/swiftsupport/
 ---
 
-Skip's Swift to Kotlin language transpiler is able to convert a large subset of the Swift language into Kotlin. The transpiler has the following goals:
+Skip's Swift to Kotlin language transpiler is able to convert a large subset of the Swift language into Kotlin. The result is what we call [Kotlish](/docs/swiftsupport/#kotlish): code that is syntactically Swift but compiles and runs as Kotlin on Android. The transpiler has the following goals:
 
 1. Avoid generating buggy code. We would rather give you an immediate error or generate Kotlin that fails to compile altogether than to generate Kotlin that compiles but behaves differently than your Swift source.
 1. Allow you to write natural Swift. Swift is a sprawling language; we attempt to supports its most common and useful features so that you can code with confidence.
@@ -221,6 +221,290 @@ Consult the [SkipLib library](/docs/modules/skip-lib/) for current status.
     - ✓ `@ViewBuilder`
         - The `@ViewBuilder` attribute is not inherited when overriding API other than `View.body`. Specify it explicitly
     - ✕ Other result builders
+
+---
+
+
+## The Kotlish Dialect {#kotlish}
+
+Kotlish is the informal name for the hybrid dialect that exists at the intersection of Swift and Kotlin. It is code that lives in Swift source files, is parsed by Xcode as valid Swift, is ignored by the Swift compiler, and is then transpiled by the `skipstone` plugin into Kotlin. The result is a kind of pidgin language: syntactically Swift, semantically Kotlin, and surprisingly practical given its accidental design.
+
+Swift and Kotlin are undeniably similar. They were both designed in the 2010s as modern replacements for aging platform languages (Objective-C and Java, respectively), and they arrived at many of the same conclusions: type inference, null safety, trailing closures, value types vs. reference types, first-class functions, and pattern matching, among others. The resemblance is close enough that a substantial amount of code is valid in both languages with only minor syntactic adjustments.
+
+Skip's transpiler takes advantage of this resemblance. When you write code inside a `#if SKIP` block, you are writing Swift syntax that Skip converts to Kotlin. Because Xcode sees the code but the Swift compiler skips it (the block is conditionally excluded from the iOS build), you can reference Kotlin and Java types freely. Xcode will not complain about undefined symbols because it never tries to compile the block. And because Swift and Kotlin are so structurally alike, the transpiler's job is often straightforward: rename `let` to `val`, swap `:` for `=` in named arguments, replace `in` with `->` in closures, and the rest falls into place.
+
+This is Kotlish. It is not a language specification. It is not versioned. It is a happy accident of convergent language design, formalized just enough by Skip's transpiler to be genuinely useful.
+
+### Kotlish Syntax
+
+Kotlish lives inside `#if SKIP` blocks. Everything inside these blocks must be syntactically valid Swift, because Xcode's parser still reads it. But it does not need to be semantically valid Swift, because the Swift compiler never evaluates it. This enables a lot of freedom and flexibility.
+
+#### Swift Syntax Constraints
+
+Even though the code will become Kotlin, you must follow Swift's grammatical rules. The most common tripping points when translating Kotlin snippets into Kotlish:
+
+**Named parameters** use a colon in Swift, not an equals sign:
+
+```swift
+// Kotlin
+someFunction(value = 42, label = "hello")
+
+// Kotlish
+someFunction(value: 42, label: "hello")
+```
+
+**Closure arguments** use the `in` keyword, not an arrow:
+
+```swift
+// Kotlin
+list.map { item -> item.name }
+
+// Kotlish
+list.map { item in item.name }
+```
+
+**Wildcard imports** use `.__` instead of `.*`, because `.*` is not valid Swift:
+
+```swift
+// Kotlin
+import com.google.maps.android.compose.*
+
+// Kotlish
+import com.google.maps.android.compose.__
+```
+
+**Variable declarations** use `let` and `var`, not `val` and `var`:
+
+```swift
+// Kotlin
+val name = "Skip"
+
+// Kotlish
+let name = "Skip"
+```
+
+#### Kotlish Limitations
+
+Some Kotlin constructs have no syntactic equivalent in Swift. The most notable offender is the `::` scope resolution operator, used in Kotlin for class references and member references:
+
+```kotlin
+// Valid Kotlin, invalid Swift
+@OptIn(DelicateCoroutinesApi::class)
+val ref = String::length
+```
+
+There is no way to write `::` in Swift source and have Xcode accept it. For these situations, you need an escape hatch. Skip provides several, and they are covered in [Escape Hatches](#escape-hatches) below.
+
+Other constructs that require workarounds:
+
+- **Kotlin `when` expressions.** Swift uses `switch`, and while Skip transpiles `switch` to `when`, some Kotlin `when` patterns do not map cleanly back to `switch`.
+- **Kotlin `companion object` declarations.** Skip handles static members automatically, but explicit `companion object` blocks cannot be written in Swift syntax.
+- **Java-style annotations with arguments.** Some annotations like `@SuppressWarnings("unchecked")` can be written in Kotlish, but complex annotation syntax may require `SKIP INSERT`.
+- **Kotlin extension properties with custom getters.** Swift extensions support computed properties, so these usually work, but the syntax can diverge for more exotic patterns.
+
+### Escape Hatches {#escape-hatches}
+
+When Kotlish reaches its limits, Skip provides a set of comment directives that let you inject, replace, or override pieces of Kotlin directly. These are not hacks; they are a deliberate part of Skip's design, acknowledged in the [Cross-Platform Topics](/docs/platformcustomization/#skip-comments) documentation. Think of them as the emergency exits in an otherwise well-organized building.
+
+#### `SKIP INSERT` {#skip-insert}
+
+Inserts raw Kotlin into the transpiler output. The Swift code that follows it (if any) is also transpiled normally. Use this when you need to add something that has no Swift equivalent at all.
+
+```swift
+// SKIP INSERT: @OptIn(DelicateCoroutinesApi::class)
+func post(_ notification: Notification) {
+    // Swift implementation...
+}
+```
+
+The `@OptIn(DelicateCoroutinesApi::class)` annotation contains the forbidden `::` operator, so it cannot exist as Swift source. The `SKIP INSERT` comment injects it directly into the Kotlin output, and the function declaration beneath it is transpiled normally.
+
+You can also use `SKIP INSERT` to define entirely new Kotlin constructs that have no Swift counterpart:
+
+```swift
+// SKIP INSERT: fun <T> Array(data: Data): Array<T> = data.bytes as Array<T>
+```
+
+Multi-line insertions work by continuing across comment lines:
+
+```swift
+// SKIP INSERT:
+// var count by remember {
+//     mutableStateOf(100)
+// }
+```
+
+#### `SKIP REPLACE` {#skip-replace}
+
+Replaces the immediately following Swift statement with literal Kotlin. The Swift code is discarded entirely in the transpiled output. Use this when the transpiler produces incorrect Kotlin for a particular statement.
+
+```swift
+// SKIP REPLACE: mac.init(secretKeySpec)
+mac.init(secretKeySpec)
+```
+
+Why would you need this? In this case, the transpiler sees `.init(` and assumes it is a constructor call, because that is what `.init` means in Swift. But in the Java `Mac` API, `init` is a regular method. The `SKIP REPLACE` directive tells the transpiler: "I know what I want here, just emit it verbatim."
+
+A multi-line replacement for an entire function:
+
+```swift
+// SKIP REPLACE:
+// fun printOS() {
+//     print("Android")
+// }
+public func printOS() {
+    print("iOS")
+}
+```
+
+On iOS, `printOS()` prints "iOS". On Android, the transpiler ignores the Swift function body and emits the Kotlin version from the comment, which prints "Android".
+
+#### `SKIP DECLARE` {#skip-declare}
+
+Replaces only the declaration of a type, function, or property, but keeps the transpiled body. This is the surgical option: you control how the thing is declared in Kotlin, but you let the transpiler handle the implementation.
+
+```swift
+// SKIP DECLARE: open class JSONEncoder: TopLevelEncoder<Data>
+open class JSONEncoder {
+    // The body is transpiled normally...
+}
+```
+
+Here, the Swift declaration `open class JSONEncoder` would transpile to a class with no supertype. The `SKIP DECLARE` directive overrides just the class header to add `: TopLevelEncoder<Data>`, while all the methods and properties inside are still transpiled from Swift.
+
+#### `SKIP NOWARN` {#skip-nowarn}
+
+Silences a Skip transpiler warning or error on the following line. This is the "I know what I'm doing" directive:
+
+```swift
+// SKIP NOWARN
+let dict = obj as? Dictionary<Int, String>
+```
+
+Use it sparingly. If you find yourself sprinkling `SKIP NOWARN` everywhere, it usually means the approach needs rethinking rather than silencing.
+
+#### `SKIP SYMBOLFILE` {#skip-symbolfile}
+
+Marks an entire Swift source file as a header. Skip reads the file to gather type and function signatures, but it does not transpile the bodies. You are expected to provide the actual implementation in a [Kotlin file](/docs/platformcustomization/#kotlin-files). [SkipLib](/docs/modules/skip-lib/) uses this technique to implement parts of the Swift standard library in hand-written Kotlin.
+
+#### `SKIP EXTERN` {#skip-extern}
+
+Marks a function as `external` in the Kotlin output, indicating that its implementation is provided by native code (typically via JNI). This is used in C and C++ integration scenarios.
+
+### Common Kotlish Patterns
+
+Over time, certain idioms have emerged in the Skip framework libraries that represent Kotlish at its most fluent. These patterns are worth studying if you are writing transpiled code that interacts heavily with Kotlin or Java APIs.
+
+#### The Platform Value Wrapper
+
+Skip's foundation libraries use a recurring pattern where a Swift struct wraps a "platform value," which is the underlying Kotlin or Java type that does the real work:
+
+```swift
+#if SKIP
+public struct Date: KotlinConverting<java.util.Date> {
+    internal var platformValue: java.util.Date
+
+    public init(platformValue: java.util.Date) {
+        self.platformValue = platformValue
+    }
+
+    public init(timeIntervalSince1970: TimeInterval) {
+        self.platformValue = java.util.Date((timeIntervalSince1970 * 1000.0).toLong())
+    }
+
+    public func kotlin(nocopy: Bool = false) -> java.util.Date {
+        return nocopy ? platformValue : platformValue.clone() as java.util.Date
+    }
+}
+#endif
+```
+
+The Swift API surface (`Date`, `timeIntervalSince1970`) is familiar to iOS developers. The implementation delegates to `java.util.Date`. The `.kotlin()` method provides explicit conversion when you need to hand the underlying Java object to a Kotlin API. See the [Cross-Platform Topics](/docs/platformcustomization/#calling-kotlin-api) documentation for more on this pattern.
+
+#### Kotlin Type Conversions
+
+Kotlin and Java have explicit numeric conversion methods (`.toLong()`, `.toDouble()`, `.toByte()`, `.toInt()`) that do not exist in Swift's standard library. Inside `#if SKIP` blocks, you can call these freely because the Swift compiler never evaluates the code:
+
+```swift
+#if SKIP
+let millis = (interval * 1000.0).toLong()
+let bytes = array.map { $0.toUByte() }
+let hexString = java.lang.Byte.toUnsignedInt(b).toString(radix: 16).padStart(2, "0".get(0))
+#endif
+```
+
+This code looks somewhat alien to a Swift developer, but it is perfectly natural Kotlin. The transpiler passes these method calls through unchanged.
+
+#### Direct Android API Calls
+
+The real power of Kotlish is calling Android platform APIs without any bridging layer:
+
+```swift
+#if SKIP
+import android.app.NotificationChannel
+import android.app.NotificationManager
+import android.content.Context
+
+func createNotificationChannel() {
+    let context = ProcessInfo.processInfo.androidContext
+    let channel = NotificationChannel(
+        "default",
+        "Default",
+        NotificationManager.IMPORTANCE_DEFAULT
+    )
+    let manager = context.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+    manager.createNotificationChannel(channel)
+}
+#endif
+```
+
+This function calls the Android notification API directly. There is no bridge, no wrapper, no generated binding. The Swift syntax is transpiled to Kotlin, and the Kotlin calls the Android SDK as normal.
+
+#### Compose Integration
+
+Kotlish is also how you embed Jetpack Compose views within a Skip app. The `@Composable` annotation, `remember`, `mutableStateOf`, and other Compose primitives are all accessible:
+
+```swift
+#if SKIP
+import androidx.compose.runtime.__
+
+struct MapComposer: ContentComposer {
+    let latitude: Double
+    let longitude: Double
+
+    @Composable func Compose(context: ComposeContext) {
+        GoogleMap(cameraPositionState: rememberCameraPositionState {
+            position = CameraPosition.fromLatLngZoom(
+                LatLng(latitude, longitude), Float(12.0)
+            )
+        })
+    }
+}
+#endif
+```
+
+For a full treatment of Compose integration, see the [Compose Integration](/docs/platformcustomization/#swiftui-and-compose) section of the Cross-Platform Topics documentation.
+
+### When to Use Kotlish
+
+Kotlish is the right tool when you need to:
+
+- Call Android or Java APIs directly from a transpiled module.
+- Integrate with third-party Kotlin libraries.
+- Implement platform-specific functionality that Skip's framework libraries do not yet cover.
+- Write custom Compose views.
+
+Kotlish is the wrong tool when:
+
+- **You are writing a Skip Fuse (native) module.** In native mode, your Swift is compiled by the real Swift compiler, not transpiled. Use `#if os(Android)` with [AnyDynamicObject](/docs/modes/#anydynamicobject) or [bridged transpiled modules](/docs/modes/#bridgetoswift) instead.
+- **The code is getting unwieldy.** If your `#if SKIP` block is growing into hundreds of lines of Kotlin-flavored Swift with `SKIP REPLACE` comments every few lines, consider writing a [Kotlin file](/docs/platformcustomization/#kotlin-files) instead. Android Studio will give you syntax highlighting, autocompletion, and compiler errors, none of which you get for Kotlish in Xcode.
+- **You want type safety.** Xcode cannot check Kotlish for semantic correctness. You will not discover type errors, missing methods, or wrong argument types until the Android build runs. For substantial Android-specific logic, a dedicated Kotlin file compiled by the Kotlin compiler is safer.
+
+### The Transpilation Reference
+
+For a comprehensive list of which Swift language features are supported by Skip's transpiler, and how they map to Kotlin, see the [Transpilation Reference](/docs/swiftsupport/). That document covers the full breadth of the transpiler's capabilities, including edge cases around generics, enums, structs, concurrency, and more.
+
+For the complete list of Skip comment directives and their syntax, see [Skip Comments](/docs/platformcustomization/#skip-comments) in the Cross-Platform Topics documentation.
 
 ---
 

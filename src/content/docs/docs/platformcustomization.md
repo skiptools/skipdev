@@ -91,6 +91,8 @@ If you are using [Skip Lite](/docs/modes/#lite), *all* of your Swift is transpil
 
 When you call Kotlin and Java code from within transpiled `#if SKIP` blocks, remember that you are still writing *in Swift*. The code is still parsed by Xcode, so it must have valid Swift syntax. But it is excluded from your iOS build and invisible to the Swift compiler, which allows it to make any syntactically valid API call without causing Xcode errors. Just write natural Swift code, and imagine that the Kotlin or Java API you're calling is a Swift library API. Skip's transpiler will take care of the rest.
 
+We sometimes call this hybrid dialect [Kotlish](/docs/swiftsupport/#kotlish): code that is syntactically Swift but transpiles to Kotlin. The [Kotlish documentation](/docs/swiftsupport/#kotlish) covers the dialect in depth, including its limitations and the escape hatches available when the transpiler needs a hand.
+
 If you're attempting to cut and paste Kotlin inline, you'll have to turn it into valid Swift to avoid syntax errors. Luckily, the languages are extremely similar. You'll typically only have to change a few calling conventions:
 
 - Named parameter values in Kotlin are specified with an equals (`=`) sign, whereas in Swift they use a colon (`:`). Note that parameter names are never required in Kotlin.
