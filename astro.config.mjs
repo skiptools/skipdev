@@ -132,6 +132,7 @@ export default defineConfig({
             'docs/contributing',
             'docs/skip-cli',
             'docs/c-development',
+            'docs/skip-agent-skill',
             'docs/update-guide',
             'docs/help',
             'docs/faq',
