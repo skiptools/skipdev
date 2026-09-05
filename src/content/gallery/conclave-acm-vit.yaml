@@ -2,7 +2,7 @@
 # - Skip-built: open-source student-chapter project. The dual-platform mobile
 #   client lives at `apps/conclave-skip` in https://github.com/ACM-VIT/conclave.
 #   Its `Package.swift` is annotated `// This is a Skip (https://skip.tools)
-#   package.` and depends on `source.skip.tools/skip.git`, `skip-ui`,
+#   package.` and depends on `github.com/skiptools/skip.git`, `skip-ui`,
 #   `skip-fuse`, `skip-model`, and `skip-kit`. The iOS bundle ID
 #   (`com.acmvit.conclave`) matches the Android applicationId and the Skip.env
 #   `PRODUCT_BUNDLE_IDENTIFIER`.

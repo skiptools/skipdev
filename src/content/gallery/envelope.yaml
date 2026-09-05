@@ -3,7 +3,7 @@
 #   Skip gallery suggestion form (issue #23 on skiptools/skip.dev). The
 #   submission included the app's `Package.swift`, which declares
 #   `// This is a Skip (https://skip.tools) package` and depends on
-#   `source.skip.tools/skip.git` (1.8.5), `skip-ui` (1.51.0), and
+#   `github.com/skiptools/skip.git` (1.8.5), `skip-ui` (1.51.0), and
 #   `skip-marketplace` (0.3.0), plus iOS-only frameworks (Stripe, Stytch,
 #   Apollo, Plaid, VGS, Sentry) wired in alongside `skip-firebase`.
 # - Skip mode: SkipLite (declared by the developer; the Package.swift uses

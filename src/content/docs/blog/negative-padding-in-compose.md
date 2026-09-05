@@ -8,7 +8,7 @@ tableOfContents: false
 author: Abe White
 ---
 
-Skip's open-source [SkipUI library](https://source.skip.tools/skip-ui) implements the SwiftUI API for Android. To do so, SkipUI leverages [Compose](https://developer.android.com/jetpack/compose), Android's own modern, declarative UI framework.
+Skip's open-source [SkipUI library](https://github.com/skiptools/skip-ui) implements the SwiftUI API for Android. To do so, SkipUI leverages [Compose](https://developer.android.com/jetpack/compose), Android's own modern, declarative UI framework.
 
 The parallels between SwiftUI and Compose are striking, especially when it comes to layout. SwiftUI uses `HStack`, `VStack`, and `ZStack` for basic layout, with modifiers like `offset` and `padding` to shift or pad the resulting placement. Compose uses `Row`, `Column`, and `Box` for basic layout, and it too has `offset` and `padding` modifiers. Compose has one odd omission, however: it doesn't support negative padding! Supplying a negative value will throw an `IllegalArgumentException`.
 

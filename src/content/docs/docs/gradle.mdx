@@ -126,7 +126,7 @@ $ cd hello-skip
 
 $ swift build --build-tests
 
-Fetched https://source.skip.tools/skip.git (0.92s)
+Fetched https://github.com/skiptools/skip.git (0.92s)
 …
 [294/294] Linking libHelloSkip.dylib
 Build complete! (23.13s)
@@ -316,7 +316,7 @@ For more information on the published output format [Publishing a project as mod
 
 ## Gradle Dependencies
 
-Every Skip App project depends on the Skip Core Frameworks, which contain the five core modules for any application, and whose `skip.yml` files can serve as useful examples: [SkipUI](https://source.skip.tools/skip-ui/blob/main/Sources/SkipUI/Skip/skip.yml), [SkipModel](https://source.skip.tools/skip-model/blob/main/Sources/SkipModel/Skip/skip.yml), [SkipFoundation](https://source.skip.tools/skip-foundation/blob/main/Sources/SkipFoundation/Skip/skip.yml), [SkipLib](https://source.skip.tools/skip-lib/blob/main/Sources/SkipLib/Skip/skip.yml), and [SkipUnit](https://source.skip.tools/skip-unit/blob/main/Sources/SkipUnit/Skip/skip.yml). Each of these projects are automatically transpiled in turn, resulting in a web of project links that constitute a buildable Gradle project. As these are dependencies that are locally checked out, their transpiled output can be referenced from Gradle through the relative symbolic links that are created as part of a module's transpilation.
+Every Skip App project depends on the Skip Core Frameworks, which contain the five core modules for any application, and whose `skip.yml` files can serve as useful examples: [SkipUI](https://github.com/skiptools/skip-ui/blob/main/Sources/SkipUI/Skip/skip.yml), [SkipModel](https://github.com/skiptools/skip-model/blob/main/Sources/SkipModel/Skip/skip.yml), [SkipFoundation](https://github.com/skiptools/skip-foundation/blob/main/Sources/SkipFoundation/Skip/skip.yml), [SkipLib](https://github.com/skiptools/skip-lib/blob/main/Sources/SkipLib/Skip/skip.yml), and [SkipUnit](https://github.com/skiptools/skip-unit/blob/main/Sources/SkipUnit/Skip/skip.yml). Each of these projects are automatically transpiled in turn, resulting in a web of project links that constitute a buildable Gradle project. As these are dependencies that are locally checked out, their transpiled output can be referenced from Gradle through the relative symbolic links that are created as part of a module's transpilation.
 
 Read the [Dependencies](/docs/dependencies) documentation to learn more about using `skip.yml` to add Java/Kotlin dependencies.
 

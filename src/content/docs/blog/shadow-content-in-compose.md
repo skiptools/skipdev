@@ -17,7 +17,7 @@ author: Abe White
 
 <img alt="Drop shadow on complex content" src="https://assets.skip.dev/images/compose-shadow-content.png" />
 
-Skip's open-source [SkipUI library](https://source.skip.tools/skip-ui) implements the SwiftUI API for Android. To do so, SkipUI leverages [Compose](https://developer.android.com/jetpack/compose), Android's own modern, declarative UI framework.
+Skip's open-source [SkipUI library](https://github.com/skiptools/skip-ui) implements the SwiftUI API for Android. To do so, SkipUI leverages [Compose](https://developer.android.com/jetpack/compose), Android's own modern, declarative UI framework.
 
 The SwiftUI `shadow(color:radius:x:y:)` modifier adds a drop shadow with a customizable color, blur radius, and offset to any SwiftUI content. Implementing this in Compose posed a problem, because Compose's own `shadow(elevation:shape:clip:ambientColor:spotColor:)` modifier works very differently. The most critical difference is readily apparent from the modifier's signature: you have to supply the shadow's shape (or be satisfied with the rectangular default). SwiftUI's `shadow`, on the other hand, is more akin to a real shadow, automatically mirroring the outline of its target content.
 

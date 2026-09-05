@@ -103,9 +103,9 @@ let package = Package(
         .library(name: "Showcase", type: .dynamic, targets: ["Showcase"]),
     ],
     dependencies: [
-        .package(url: "https://source.skip.tools/skip.git", from: "1.0.0"),
-        .package(url: "https://source.skip.tools/skip-ui.git", from: "1.0.0"),
-        .package(url: "https://source.skip.tools/skip-keychain.git", "0.3.0"..<"2.0.0"),
+        .package(url: "https://github.com/skiptools/skip.git", from: "1.0.0"),
+        .package(url: "https://github.com/skiptools/skip-ui.git", from: "1.0.0"),
+        .package(url: "https://github.com/skiptools/skip-keychain.git", "0.3.0"..<"2.0.0"),
     ],
     targets: [
         .target(name: "Showcase", dependencies: [

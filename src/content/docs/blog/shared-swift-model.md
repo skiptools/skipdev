@@ -98,9 +98,9 @@ This command generates a `travel-posters-model` SwiftPM package containing the `
         name: "travel-posters-model",
         ...
         dependencies: [
-            .package(url: "https://source.skip.tools/skip.git", from: "1.2.0"),
-            .package(url: "https://source.skip.tools/skip-model.git", from: "1.0.0"), // <-- Insert
-            .package(url: "https://source.skip.tools/skip-fuse.git", "0.0.0"..<"2.0.0")
+            .package(url: "https://github.com/skiptools/skip.git", from: "1.2.0"),
+            .package(url: "https://github.com/skiptools/skip-model.git", from: "1.0.0"), // <-- Insert
+            .package(url: "https://github.com/skiptools/skip-fuse.git", "0.0.0"..<"2.0.0")
         ],
         targets: [
             .target(name: "TravelPostersModel",

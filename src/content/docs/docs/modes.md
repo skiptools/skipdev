@@ -82,7 +82,7 @@ Transpiled mode's advantages and disadvantages are mirror opposites of native mo
 
 - **Integration with Android APIs**. The primary benefit of transpilation is near-perfect integration with Android’s Kotlin and Java APIs. Because your Swift code is converted to Kotlin, it can [directly call other Kotlin API](/docs/platformcustomization/), just as if it were calling Swift. We call this hybrid dialect [Kotlish](/docs/swiftsupport/#kotlish): syntactically Swift, but semantically Kotlin. And because the Kotlin language features seamless integration with Java, your Swift code can call Java API as well. Unlike native mode, no [bridging](#bridging) is required.
 - **Transparency**. Transpilation allows you to see and understand all of Skip’s output. Skip’s Kotlin is fully human-readable and even overridable: Skip includes the ability to [insert or substitute literal Kotlin](/docs/platformcustomization/#skip-comments) inline with your Swift. This is of particular use during [debugging](/docs/debugging/), where you get full stack traces and can take full advantage of Andriod’s debugging tools to step through your generated Kotlin.
-- **Ejectability**. If Skip were to disappear, transpiled mode still gives you the full source code to both the iOS and Android versions of your app. You could continue to evolve the app as separate iOS and Android codebases (which is how many dual-platform apps are developed). Skip does not have any required runtime components other than the libraries it uses to provide the Foundation, SwiftUI, etc APIs on Android, and these libraries are all [free and open-source](https://source.skip.tools). 
+- **Ejectability**. If Skip were to disappear, transpiled mode still gives you the full source code to both the iOS and Android versions of your app. You could continue to evolve the app as separate iOS and Android codebases (which is how many dual-platform apps are developed). Skip does not have any required runtime components other than the libraries it uses to provide the Foundation, SwiftUI, etc APIs on Android, and these libraries are all [free and open-source](https://github.com/skiptools). 
 - **App size**. Transpiled apps don't have to bundle anything but Skip's relatively slim compatibility libraries, while native apps have to include the much larger Swift Foundation and internationalization libraries.
 - **Build time**. The combination of Skip's transpiler and the Android Kotlin compiler is faster than building with the full native Swift toolchain when iterating on your Android code.
 
@@ -124,10 +124,10 @@ let package = Package(
         .library(name: "HiyaSkipLogic", type: .dynamic, targets: ["HiyaSkipLogic"]),
     ],
     dependencies: [
-        .package(url: "https://source.skip.tools/skip.git", from: "1.2.7"),
-        .package(url: "https://source.skip.tools/skip-model.git", from: "1.0.0"),
-        .package(url: "https://source.skip.tools/skip-fuse.git", from: "1.0.0"),
-        .package(url: "https://source.skip.tools/skip-fuse-ui.git", from: "1.0.0")
+        .package(url: "https://github.com/skiptools/skip.git", from: "1.2.7"),
+        .package(url: "https://github.com/skiptools/skip-model.git", from: "1.0.0"),
+        .package(url: "https://github.com/skiptools/skip-fuse.git", from: "1.0.0"),
+        .package(url: "https://github.com/skiptools/skip-fuse-ui.git", from: "1.0.0")
     ],
     targets: [
         .target(name: "HiyaSkip", dependencies: [
@@ -638,7 +638,7 @@ A Skip Lite app typically depends on `skip-ui.git`, while a Skip Fuse app depend
 **For Skip Lite (transpiled):**
 ```swift title="Package.swift"
 dependencies: [
-    .package(url: "https://source.skip.tools/skip-ui.git", from: "1.0.0"),
+    .package(url: "https://github.com/skiptools/skip-ui.git", from: "1.0.0"),
     // ...
 ],
 targets: [
@@ -651,7 +651,7 @@ targets: [
 **For Skip Fuse (native):**
 ```swift title="Package.swift"
 dependencies: [
-    .package(url: "https://source.skip.tools/skip-fuse-ui.git", from: "1.0.0"),
+    .package(url: "https://github.com/skiptools/skip-fuse-ui.git", from: "1.0.0"),
     // ...
 ],
 targets: [

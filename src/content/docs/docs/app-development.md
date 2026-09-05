@@ -148,9 +148,9 @@ let package = Package(
     name: "travel-posters-model",
     ...
     dependencies: [
-        .package(url: "https://source.skip.tools/skip.git", from: "1.2.0"),
-        .package(url: "https://source.skip.tools/skip-model.git", from: "1.0.0"), // <-- Insert
-        .package(url: "https://source.skip.tools/skip-fuse.git", from: "1.0.0")
+        .package(url: "https://github.com/skiptools/skip.git", from: "1.2.0"),
+        .package(url: "https://github.com/skiptools/skip-model.git", from: "1.0.0"), // <-- Insert
+        .package(url: "https://github.com/skiptools/skip-fuse.git", from: "1.0.0")
     ],
     targets: [
         .target(name: "TravelPostersModel",
@@ -214,7 +214,7 @@ Using an iOS API that is not yet supported on Android will result in either an u
 If you are using [Skip Lite](/docs/modes/#lite), each of Skip's transpiled [core modules](/docs/modules/) specifies its Android-supported API set.
 :::
 
-When you encounter missing API on Android, you have options! You may be able to use alternate, supported APIs to accomplish the task. The [Swift Package Index](https://swiftpackageindex.com/search?query=platform%3Aios%2Candroid) site lists many cross-platform Swift packages that are known to build for Android. If you can't find an existing solution, you can use Skip's [iOS and Android integration](/docs/platformcustomization/) techniques to implement separate iOS and Android code paths, taking advantage of each platforms' respective native solutions. And if the API you want to use is in a framework already mirrored for Android - either as a [Skip open source library](https://source.skip.tools) or a [community library](/docs/contributing/#community-libraries) - you may be able to easily add the missing API to the existing library. If you augment an existing library, please consider [contributing](/docs/contributing/) your improvements back to the Skip community. Follow the instructions [here](/docs/contributing/#local-libraries) to configure Xcode for local Skip library development.    
+When you encounter missing API on Android, you have options! You may be able to use alternate, supported APIs to accomplish the task. The [Swift Package Index](https://swiftpackageindex.com/search?query=platform%3Aios%2Candroid) site lists many cross-platform Swift packages that are known to build for Android. If you can't find an existing solution, you can use Skip's [iOS and Android integration](/docs/platformcustomization/) techniques to implement separate iOS and Android code paths, taking advantage of each platforms' respective native solutions. And if the API you want to use is in a framework already mirrored for Android - either as a [Skip open source library](https://github.com/skiptools) or a [community library](/docs/contributing/#community-libraries) - you may be able to easily add the missing API to the existing library. If you augment an existing library, please consider [contributing](/docs/contributing/) your improvements back to the Skip community. Follow the instructions [here](/docs/contributing/#local-libraries) to configure Xcode for local Skip library development.    
 
 ### Frameworks
 
@@ -316,7 +316,7 @@ typealias ViewAdapter = View
 
 /// This is a very minimal WebView that can be used as an embedded browser view.
 /// It has no address bar or navigation buttons.
-/// For a more advanced web component, use http://source.skip.tools/skip-web
+/// For a more advanced web component, use https://github.com/skiptools/skip-web
 struct WebView: ViewAdapter {
     let url: URL
     var enableJavaScript: Bool = true

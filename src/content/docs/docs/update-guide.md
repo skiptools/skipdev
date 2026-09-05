@@ -29,8 +29,8 @@ Both Skip and Swift Package Manager use [semantic versioning](https://semver.org
         name: "skipapp-hello",
         ...
         dependencies: [
-            .package(url: "https://source.skip.tools/skip.git", from: "1.0.0"),
-            .package(url: "https://source.skip.tools/skip-ui.git", from: "1.0.0")
+            .package(url: "https://github.com/skiptools/skip.git", from: "1.0.0"),
+            .package(url: "https://github.com/skiptools/skip-ui.git", from: "1.0.0")
         ],
         ...
     )

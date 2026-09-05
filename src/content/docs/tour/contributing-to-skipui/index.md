@@ -26,7 +26,7 @@ Whenever we're working on Skip's SwiftUI support, we know we're going to want to
 
 So let's check out both SkipUI and the Showcase app source.
 
-We could go to GitHub or source.skip.tools will take you to Skip's repository listing.
+We could go to GitHub or github.com/skiptools will take you to Skip's repository listing.
 
 Now let's get SkipUI.
 

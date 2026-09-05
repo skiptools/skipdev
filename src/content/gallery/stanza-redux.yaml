@@ -1,7 +1,7 @@
 # PROVENANCE
 # - Skip-built: open-source App Fair Project app — repo
 #   Stanza-Redux/Stanza-Redux. Package.swift depends on
-#   `https://source.skip.tools/skip.git` and ships the SkipStone build plugin.
+#   `https://github.com/skiptools/skip.git` and ships the SkipStone build plugin.
 #   https://github.com/Stanza-Redux/Stanza-Redux
 # - Skip mode: SkipLite — both modules' Sources/<module>/Skip/skip.yml omit
 #   `mode: 'native'` (and Skip's convention is that the absence of that

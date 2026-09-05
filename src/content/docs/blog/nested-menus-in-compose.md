@@ -7,7 +7,7 @@ permalink: /blog/nested-menus-in-compose/
 author: Abe White
 ---
 
-Skip's open-source [SkipUI library](https://source.skip.tools/skip-ui) implements the SwiftUI API for Android. To do so, SkipUI leverages [Compose](https://developer.android.com/jetpack/compose), Android's own modern, declarative UI framework.
+Skip's open-source [SkipUI library](https://github.com/skiptools/skip-ui) implements the SwiftUI API for Android. To do so, SkipUI leverages [Compose](https://developer.android.com/jetpack/compose), Android's own modern, declarative UI framework.
 
 While implementing SwiftUI's `Menu`, we discovered that Compose doesn't build in support for nested dropdown menus. Googling revealed that we weren't the only devs wondering how to present a sub-menu from a Compose menu item, but [the answers we found](https://stackoverflow.com/questions/69456367/what-is-the-better-or-easier-way-to-create-nested-menus-in-jetpack-compose) didn't meet our needs. The code below represents our own simple, general solution to nested dropdown menus in Compose.
 
